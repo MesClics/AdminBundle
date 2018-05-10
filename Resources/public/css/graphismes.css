@@ -1,0 +1,459 @@
+/* resets */
+:root{
+    /* palette */
+    --black: #292b2c;
+    --red: #ff384e;
+    --lightred: #ff6475;
+    --hard-red: #D12E40;
+    --blue: #2d99ff;
+    --green: #00d68d;
+    --white: #fff;
+    --smoke: #f5f5f5;
+	--beige: #eee7e0;
+	--darkbeige: #aea9a3;
+    --grey: #a1a1a1;
+    --ashes: #444444;
+}
+
+/****************/
+/* OOCSS STYLES */
+/****************/
+
+/***** OOCSS-BUTTON *****/
+    .oocss-button{
+        background-color: var(--red);
+        color: var(--smoke);
+        transition: background-color 150ms ease-out;
+    }
+        .oocss-button:hover{
+            background-color: var(--hard-red);
+        }
+            .oocss-button.oocss-discret:hover{
+                transform: translateY(-3px);
+                transition: all ease-in-out 300ms;
+            }
+/***********************/
+
+/***** OOCSS-DISCRET *****/
+        .oocss-discret,
+        [class*="oocss"].oocss-discret{
+            background-color: transparent;
+            color: inherit;
+        }
+/*************************/
+
+/***** OOCSS-FORM *****/
+    .oocss-form-radio-on-off label{
+        border: solid 2px transparent;
+        color: var(--grey);
+        transition: all 150ms ease-in-out;
+    }
+    .oocss-form-radio-on-off input:checked+label{
+        border-style: solid;
+        border-color: var(--red);
+        color: var(--red);
+    }
+
+    .oocss-form-error{
+        color: var(--red);
+    }
+/**********************/
+
+/***** OOCSS-HEADED-BLOCK *****/
+    .oocss-headed-block:before{
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+        /* CLIENTS */
+        .oocss-headed-block.client-contrats:before{
+            background-image: url('../../mesclicsespaceclient/images/icones/contrats/white/contrat.png');
+        }
+        .oocss-headed-block.client-projets:before{
+            background-image: url('../../mesclicsespaceclient/images/icones/projets/white/projet.png');
+        }
+        /*COLLECTIONS*/
+        .oocss-headed-block.collection-new:before{
+            background-image: url('../../mesclicspost/images/icones/white/collection-new.png');
+        }
+        .oocss-headed-block.collections-all:before{
+            background-image: url('../../mesclicspost/images/icones/white/collection.png');
+        }
+        /* MESSAGES */
+        .oocss-headed-block.messages-all:before{
+                background-image: url('../../mesclicsmessages/images/icones/white/lus.png');
+        }
+        .oocss-headed-block.messages-draft:before{
+            background-image: url('../../mesclicsmessages/images/icones/white/non-lus.png');
+        }
+        .oocss-headed-block.message-new:before{
+            background-image: url('../../mesclicsmessages/images/icones/white/new.png');
+        }
+        .oocss-headed-block.messages-sent:before{
+            background-image: url('../../mesclicsmessages/images/icones/white/envoyes.png');
+        }
+        .oocss-headed-block.messages-unread:before{
+            background-image: url('../../mesclicsmessages/images/icones/white/messages.png');
+        }
+        /* POSTS */
+        .oocss-headed-block.publication-new:before{
+            background-image: url('../../mesclicspost/images/icones/white/publication-new.png');
+        }
+
+        .oocss-headed-block.publications-all:before{
+            background-image: url('../../mesclicspost/images/icones/white/publication.png');
+        }
+/*****************************/
+
+/***** OOCSS-INDEX *****/
+    .oocss-index{
+        background-color: black;
+        color: var(--smoke);
+        border-radius: 50%;
+    }
+        .oocss-index.oocss-icone{
+            border-radius: 0;
+            background-size: contain;
+            background-color: transparent;
+        }
+
+        .oocss-index.oocss-highlight,
+        .oocss-index__d__admin_menu,
+        .oocss-index__d__unread_messages{
+            background-color: var(--red);
+            color: var(--smoke);
+        }
+        .oocss-index.all_posts{
+            background-color: transparent;
+            background-image: url('../../mesclicspost/images/icones/white/publication.png');
+        }
+        .oocss-index.online_posts{
+            background-color: var(--red);
+        }
+        .oocss-index.onlineWithPeremption_posts{
+            background-color: transparent;
+            border: 5px solid var(--red);
+        }
+        .oocss-index.toBePublished_posts{
+            background-color: transparent;
+            border: 2px solid var(--red);
+        }
+        .oocss-index.unpublished_posts{
+            background-color: transparent;
+            border: 2px solid var(--smoke);
+        }
+        .oocss-index.draft_posts{
+            background-color: var(--smoke);
+        }
+        .oocss-index.public_posts{
+            background-color: transparent;
+            background-image: url('../../mesclicspost/images/icones/white/public.png');
+        }
+        .oocss-index.private_posts{
+            background-color: transparent;
+            background-image: url('../../mesclicspost/images/icones/white/private.png');
+        }
+/***********************/
+
+/***** OOCSS-LABEL *****/
+    .oocss-label{
+        color: var(--grey);
+    }
+/***********************/
+
+/***** OOCSS-TABLE *****/
+    .oocss-table-data{
+        background-color: var(--smoke);
+        color: var(--ashes);
+    }
+        .oocss-table-row:hover .oocss-table-data{
+            background-color: var(--red);
+            color: var(--smoke);
+        }
+
+        .oocss-table-data__d__discret,
+        .oocss-table-row:hover .oocss-table-data.oocss-discret{
+            background-color: transparent;
+        }
+        /* MESSAGES */
+        .oocss-table-row__d__messages .oocss-table-data{
+            background-color: var(--ashes);
+            color: var(--smoke);
+        }
+            .oocss-table-row__d__messages__s__unread .oocss-table-data{
+                background-color: var(--smoke);
+                color: var(--red);
+            }
+            .oocss-table-row__d__messages:hover .oocss-table-data{
+                background-color: var(--red);
+                color: var(--smoke);
+            }
+        
+    .oocss-table-col-sort.oocss-active{
+        color: var(--red);
+    }
+/***********************/
+
+/***** OOCSS-WIDGET *****/
+    .oocss-widget:not(.oocss-widget__d__discret){
+        background-color: var(--white);
+        color: var(--black);
+    }
+        .oocss-widget__d__highlight{
+            background-color: var(--red);
+            color: var(--smoke);
+        }
+/***********************/
+
+/***** OOCSS-SUB_SECTION-NAV *****/
+    .oocss-sub_section--nav{
+        border-bottom: dotted 2px var(--ashes);
+    }
+/***********************/
+
+/***** OOCSS FORMS *****/
+    .oocss-form-select,
+    .oocss-form-checkbox,
+    .oocss-form-textarea,
+    .oocss-form-submit,
+    .oocss-form-date div select{
+        background-color: var(--smoke);
+        color: var(--ashes);
+    }
+
+    .oocss-form-text{
+        border-bottom: 2px dotted var(--smoke);
+    }
+        .oocss-form-text.titre{
+            border: 0;
+            background-color: var(--smoke);
+            color: var(--ashes);
+        }
+
+    .oocss-form-checkbox__d__button{
+        border-width: 2px;
+        border-style: solid;
+    }
+    .oocss-form-checkbox__d__button:not(:checked){
+        border-color: var(--smoke);
+    }
+    .oocss-form-checkbox__d__button:checked label{
+        border-color: var(--ashes);
+    }
+
+    .oocss-form-select option{
+        border-bottom: dotted 1px var(--grey);
+    }
+
+    .oocss-form-select option:checked,
+    .oocss-form-select option:active,
+    .oocss-form-select option:focus{
+        /* TODO: javascript: changer la couleur pour les navigateurs */
+        background-color: var(--red);
+        color: var(--smoke);
+    }
+
+    .oocss-form-submit{
+        background-color: var(--red);
+        color: var(--smoke);
+    }
+/***********************/
+
+/***** OOCSS-MESSAGE *****/
+    /* OOCSS-MESSAGE--HEADERS */
+    .oocss-message--headers{
+        padding-bottom: 3vh;
+        border-bottom: dotted 2px var(--ashes);
+    }
+        .oocss-message--headers__d__lateral{
+            border-color: var(--ashes);
+        }
+
+    .oocss-message--content__d__lateral{
+        background-color: var(--smoke);
+        color: var(--ashes);
+    }
+
+    .oocss-message-controls--item{
+        background-color: var(--smoke);
+    }
+        .oocss-message-controls--item__d__lateral,
+        .oocss-message-controls--item__d__lateral:visited{
+            color: var(--smoke);
+            background-color: var(--ashes);
+        }
+
+    .oocss-message-controls--item:hover{
+        background-color: var(--ashes);
+        color: var(--smoke);
+    }
+        .oocss-message-controls--item__d__lateral:hover{
+            background-color: black;
+        }
+/*************************/
+
+/***** OOCSS-TABLE *****/
+/***********************/
+
+body{
+    /* background-image: url('../images/admin/gradients/console.png'); */
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-position: bottom left;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.desk{
+    background-image: url('../images/admin/backgrounds/filigrane.png');
+    background-position: top left;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.desk-head--logo{
+    background-image: url('../images/mesclics/logo.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100px 47px;
+}
+
+.desk--main{
+}
+
+.desk--lateral{
+    /* background-color: var(--beige);
+    color: var(--black); */
+    box-shadow: 0 5px 50px black;
+}
+
+.users_search_widget .oocss-widget--head::before{
+    background-image: url('../../mesclicsuser/images/icones/utilisateurs/black/rechercher.png');
+}
+
+.bottom_bar{
+    background-color: black;
+}
+
+.bottom_bar--user{
+    color: var(--ashes);
+}
+
+.bottom_bar-admin_menu-item--btn{
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    background-position: center center;
+}
+    .bottom_bar-admin_menu-item--btn__d__logout{
+        background-image: url('../images/admin/icones/menu/deconnexion-white.png');
+    }
+    .bottom_bar-admin_menu-item--btn__d__logout:hover{
+        background-image: url('../images/admin/icones/menu/deconnexion-red.png');
+    }
+
+    .bottom_bar-admin_menu-item--btn__d__home{
+        background-image: url('../images/admin/icones/menu/home-white.png');
+    }
+    .bottom_bar-admin_menu-item--btn__d__home:hover{
+        background-image: url('../images/admin/icones/menu/home-red.png');
+    }
+
+    .bottom_bar-admin_menu-item--btn__d__messages{
+        background-image: url('../images/admin/icones/menu/messages-white.png');
+    }
+    .bottom_bar-admin_menu--item__s__active .bottom_bar-admin_menu-item--btn__d__messages,
+    .bottom_bar-admin_menu-item--btn__d__messages:hover{
+        background-image: url('../images/admin/icones/menu/messages-red.png');
+    }
+
+    .bottom_bar-admin_menu-item--btn__d__edition{
+        background-image: url('../images/admin/icones/menu/edition-white.png');
+    }
+    .bottom_bar-admin_menu-item--btn__d__edition:hover{
+        background-image: url('../images/admin/icones/menu/edition-red.png');
+    }
+
+    .bottom_bar-admin_menu-item--btn__d__medias{
+        background-image: url('../images/admin/icones/menu/medias-white.png');
+    }
+    .bottom_bar-admin_menu-item--btn__d__medias:hover{
+        background-image: url('../images/admin/icones/menu/medias-red.png');
+    }
+
+    .bottom_bar-admin_menu-item--btn__d__clients{
+        background-image: url('../images/admin/icones/menu/clients-white.png');
+    }
+    .bottom_bar-admin_menu-item--btn__d__clients:hover{
+        background-image: url('../images/admin/icones/menu/clients-red.png');
+    }
+
+    .bottom_bar-admin_menu-item--btn__d__users{
+        background-image: url('../images/admin/icones/menu/users-white.png');
+    }
+    .bottom_bar-admin_menu-item--btn__d__users:hover{
+        background-image: url('../images/admin/icones/menu/users-red.png');
+    }
+
+    .bottom_bar-admin_menu-item--btn__d__stats{
+        background-image: url('../images/admin/icones/menu/stats-white.png');
+    }
+    .bottom_bar-admin_menu-item--btn__d__stats:hover{
+        background-image: url('../images/admin/icones/menu/stats-red.png');
+    }
+ 
+.bottom_bar-admin_menu-item--label{
+    color: var(--red);
+    background-color: black;
+}
+
+.notification{
+    background-color: var(--blue);
+    grid-column: span 2;
+}
+
+.loader{
+    background-color: black;
+}
+
+.loader-ball{
+    border-radius: 100%;
+    border-style: solid;
+    border-width: 3px;
+    border-color: var(--red);
+}
+
+/**************/
+/* ANIMATIONS */
+/**************/
+
+.bottom_bar-admin_menu--item:hover .bottom_bar-admin_menu-item--label{
+    animation: bouncing-label 300ms ease-in-out 150ms forwards;
+}
+    @keyframes bouncing-label{
+        50%{z-index: -1;}
+        75%{transform: translateY(-25px); z-index: 2;}
+        100%{transform: translateY(-20px); z-index: 2;}
+    }
+
+.loader-ball{
+    animation: load 1000ms ease-in-out infinite;
+    transform-origin: center center;
+}
+    @keyframes load{
+        50%{ transform: scale(1.1); }
+    }
+
+.oocss-index__d__admin_menu__d__messages{
+    animation: index-hey 1000ms ease-in-out infinite;
+}
+    @keyframes index-hey{
+        50%{ transform: scale(1.075) translate(-5px, 7px);}
+    }
+
+.message-form__d__new__s__sent{
+    animation: fly-away 1000ms cubic-bezier(1, 0, 1, 0.55) forwards;
+}
+
+    @keyframes fly-away{
+        30%, 60%{ transform: translateY(30vh);}
+        100%{ transform: scale(0.8) rotate(40deg) translateY(-300vh) translateX(50vw);}
+    }

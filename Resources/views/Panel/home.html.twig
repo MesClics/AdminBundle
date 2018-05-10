@@ -1,0 +1,23 @@
+{% extends "MesClicsAdminBundle::layout.html.twig" %}
+
+{# {% block sectionTitle %}
+    <h1>Console d'administration</h1>
+{% endblock sectionTitle %} #}
+
+{% block deskHeadNavRails %}
+    <a class="desk-head-nav_rails--item [ oocss-active-link ]" href="{{ path('mesclics_admin_home') }}">Console d'administration</a>   
+{% endblock deskHeadNavRails %}
+
+{% block deskMain %}
+    {% if  countMessages('unread') > 0 %}
+        <div class= "[ oocss-widget ]">
+            <div class="[ oocss-widget--head ]">
+                {% if countMessages('unread') > 1 %}
+                    <h2 class="[ oocss-title-section ]">{{ countMessages('unread') }} nouveaux messages</h2>
+                {% else %}
+                    <h2 class="[ oocss-title-section ]">{{ countMessages('unread') }} nouveau message</h2>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock deskMain %}

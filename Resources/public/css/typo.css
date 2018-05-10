@@ -1,0 +1,164 @@
+:root{
+    --extra-small-text: 10px;
+    --small-text: 12px;
+    --medium-text: 14px;
+    --big-text: 20px;
+    --extra-big-text: 30px;
+    --font-weight_normal: 300;
+    --font-weight_bold: 700;
+    --font_main: 'Open Sans';
+    font-family: var(--font_main);
+    font-weight: var(--font-weight_normal);
+    font-size: var(--medium-text);
+    letter-spacing: 2px;
+}
+
+/********************/
+/* SEMENTICAL STYLES*/
+/********************/
+h2{
+    font-size: 1.15rem;
+    font-weight: var(--font-weight_bold);
+    text-transform: uppercase;
+}
+
+h3{/* titres section */
+    font-weight: var(--font-weight_bold);
+    text-transform: uppercase;
+}
+
+/* TABLES */
+th{
+    font-size: var(--small-text);
+    text-transform: lowercase;
+}
+
+tr{
+    text-align: center;
+}
+
+label{
+    text-transform: uppercase;
+}
+
+
+
+/*****************/
+/* OOCSS STYLES **/
+/*****************/
+
+/***** OOCSS-BUTTON *****/
+    .oocss-button{
+        text-transform: uppercase;
+        text-align: center;
+    }
+        .oocss-button.oocss-no-typo{
+            text-transform: none;
+        }
+/************************/
+
+/***** OOCSS-DISCRET *****/
+    .oocss-discret{
+        font-weight: var(--font-weight_normal);
+    }
+/*************************/
+
+/***** OOCSS-FORM *****/
+    .oocss-form-label{
+        text-transform: uppercase;
+    }
+    .oocss-form-widget{
+        letter-spacing: normal;
+    }
+    .oocss-form-input.titre{
+        font-size: var(--extra-big-text);
+    }
+    .oocss-form-submit{
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+/************************/
+
+/***** OOCSS-INDEX *****/
+    .oocss-index{
+        font-size: var(--extra-small-text);
+        letter-spacing: normal;
+        line-height: 16px;
+        font-weight: bold;
+        text-align: center;
+    }
+/***********************/
+
+/***** OOCSS-INSTRUCTION *****/
+    .oocss-instruction{
+        line-height: 30px;
+        text-align: center;
+    }
+
+    .oocss-instruction--link{
+        text-transform: uppercase;
+    }
+/*****************************/
+
+/***** OOCSS-LABEL *****/
+    .oocss-label{
+        font-size: var(--small-text);
+    }
+/***********************/
+
+/***** OOCSS MESSAGE *****/
+    .oocss-message--controls{
+        font-size: var(--extra-small-text);
+        text-transform: uppercase;
+        text-align: center;
+    }
+/*************************/
+
+/***** OOCSS-SUB_SECTION-NAV *****/
+    .oocss-sub_section-nav--item{
+        text-transform: uppercase;
+    }
+/*********************************/
+
+
+/***** OOCSS-WIDGET *****/
+    .oocss-widget{
+        line-height: 24px;
+    }
+/************************/
+
+
+/*********************/
+/* GRID AREAS STYLES */
+/*********************/
+
+/***** DESK *****/
+    /* DESK HEAD LOGO */
+    .desk-head--logo{
+        font-size: 0;
+    }
+    /* DESK HEAD NAV-RAILS */
+    .desk-head-nav_rails--item{
+        text-transform: uppercase;
+    }
+/******************/
+
+/***** BOTTOM BAR *****/
+    /* BOTTOM BAR ADMIN MENU */
+    .bottom_bar-admin_menu-item--label{
+        font-size: var(--extra-small-text);
+        text-transform: uppercase;
+        text-align: center;
+    }
+/************************/
+
+
+
+/************/
+/* SECTIONS */
+/************/
+/***** MESSAGES *****/
+    .oocss-table-row__d__messages__s__unread{
+        font-weight: bold;
+    }
+/********************/

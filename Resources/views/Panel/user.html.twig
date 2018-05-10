@@ -1,0 +1,65 @@
+{% extends "MesClicsAdminBundle::layout.html.twig" %} {% block sectionTitle %}
+<h1>Utilisateur : {{ user.username }}</h1>
+{% endblock sectionTitle %}
+{% block deskHeadNavRails %}
+    <a href="{{ path('mesclics_admin_home') }}" class="desk-head-nav_rails--item">Console d'administration</a>
+    >
+    <a href="{{ path('mesclics_admin_users') }}" class="desk-head-nav_rails--item">Utilisateurs</a>
+    >
+    {% if subSection is defined %}
+        >
+        <a href="{{ path('mesclics_admin_user_' ~ subSection, {'id': user.id}) }}" class="desk-head-nav_rails--item [ oocss-active-link ]">{{ subSection|capitalize }}</a>
+        
+    {% endif %}
+{% endblock deskHeadNavRails %}
+{% block deskMain %}
+    {# DONNEES UTILISATEUR #}
+    {# FORMULAIRE DE MODIFICATION DES DONNEES UTILISATEUR #}
+    <section class="card">
+        <h2 class="[ oocss-title-section ]">Modifier les données utilisateur</h2>
+        {{ form_start(updateUserForm, {'attr' : {'class': 'form-mini'}}) }}
+        {{ form_errors(updateUserForm) }}
+        {{ form_row(updateUserForm.username) }}
+        {{ form_row(updateUserForm.email) }}
+        {{ form_row(updateUserForm.client) }}
+        {{ form_row(updateUserForm.submit) }}
+        {{ form_row(updateUserForm.banned) }}
+        {{ form_row(updateUserForm._token) }}
+        {{ form_end(updateUserForm, {'render_rest': false})}}
+    </section>
+    
+    {# FORMULAIRE LAISSER UN MESSAGE A L'UTILISATEUR #}
+    <section class="card">
+        <h2 class="[ oocss-title-section ]">Laisser un message à l'utilisateur</h2>
+        {{ form_start(userMessageForm, {'attr': {'class': 'form-mini'}}) }}
+        {{ form_row(userMessageForm.title) }}
+        {{ form_row(userMessageForm.content) }}
+        {{ form_row(userMessageForm.draft) }}
+        {{ form_row(userMessageForm.submit) }}
+        {{ form_row(userMessageForm._token) }}
+        {{ form_end(userMessageForm, {'render_rest': false})}}
+        
+        {% if unreadMessages is not null and unreadMessages|length > 0 %}
+        <div>
+            <h3>Messages non-lus par l'utilisateur</h3>
+                <ul>
+                    {% for message in unreadMessages %}
+                        <li>
+                            <span>
+                                <span>{{message.creationDate|date('d/M/Y')}}</span>
+                                <span>{{message.creationDate|date('H:m')}}</span>
+                            </span>
+                            <span>
+                                <span>{{message.title}}</span>
+                                <span>{{message.content}}</span>
+                            </span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            
+        </div>
+        {% endif %}
+    </section>
+
+   
+{% endblock deskMain%}

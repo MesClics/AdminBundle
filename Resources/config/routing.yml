@@ -1,0 +1,31 @@
+mesclics_admin_home:
+    path: /
+    defaults: { _controller: MesClicsAdminBundle:Panel:home }
+
+# CLIENTS
+mesclics_admin_client_import:
+    resource: "@MesClicsEspaceClientBundle/Resources/config/routing.yml"
+    prefix: clients
+
+# UTILISATEURS
+mesclics_admin_user_import:
+    resource: "@MesClicsUserBundle/Resources/config/routing.yml"
+    prefix: utilisateurs
+
+# MESSAGES
+mesclics_admin_message_import:
+    resource: "@MesClicsMessagesBundle/Resources/config/routing.yml"
+    prefix: messages
+
+#EDITION
+mesclics_admin_edition:
+    path: /edition/
+    defaults:
+        _controller: MesClicsPostBundle:Edition:index
+
+mesclics_admin_edition_post_import:
+    resource: "@MesClicsPostBundle/Resources/config/routing.yml"
+    prefix:   edition/
+mesclics_admin_edition_collection_import:
+    resource: "@MesClicsPostBundle/Resources/config/routing.yml"
+    prefix: edition/

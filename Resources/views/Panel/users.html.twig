@@ -1,0 +1,73 @@
+{% extends "MesClicsAdminBundle::layout.html.twig" %} {% block sectionTitle %}
+<h1>Utilisateurs</h1>
+{% endblock sectionTitle %}
+
+{% block deskHeadNavRails %}
+    <a href="{{ path('mesclics_admin_home') }}" class="desk-head-nav_rails--item">Console d'administration</a>
+    >
+    <a href="{{ path('mesclics_admin_users') }}" class="desk-head-nav_rails--item [ oocss-active-link ]">Utilisateurs</a>
+{% endblock deskHeadNavRails %}
+
+{% block deskMain %} {# section Liste des clients #}
+<section class="card">
+    <h2 class="[ oocss-title-section ]">Liste des utilisateurs</h2>
+    <table class="[ oocss-table ]">
+        <tr class="[ oocss-table-head-row ]">
+            <th>pseudo</th>
+            <th>email</th>
+            <th>client</th>
+            <th>roles</th>
+            <th>inscit à la newsletter</th>
+        </tr>
+
+        {% for item in users %}
+        <tr class="[ oocss-table-row ]">
+            <td class="[ oocss-table-data ]">
+                <a class="[ oocss-table-link ]" href="{{ path('mesclics_admin_user', { 'id' : item.id }) }}">{{ item.username }}</a>
+            </td>
+            <td class="[ oocss-table-data ]"><a class="[ oocss-table-link ]" href="{{ path('mesclics_admin_user', { 'id' : item.id }) }}">{{ item.email }}</a></td>
+            <td class="[ oocss-table-data ]">
+                {% if item.client %}
+                    <a class="[ oocss-table-link ]" href="{{ path('mesclics_admin_user', { 'id' : item.id }) }}">{{ item.client.nom }}
+                {% else %}
+                     - 
+                {% endif %}
+                </a>
+            </td>
+            <td class="[ oocss-table-data ]">
+                {% for role in item.roles %}
+                    {% if loop.first %}<a class="[ oocss-table-link ]" href="{{ path('mesclics_admin_user', { 'id' : item.id }) }}">{{ role|slice(5)|lower }}</a>{% endif %}
+                {% endfor %}
+            </td>
+            <td class="[ oocss-table-data ]">
+                {% if item.newsletter %}
+                     <a class="[ oocss-table-link ]" href="{{ path('mesclics_admin_user', { 'id' : item.id }) }}">&#10003;</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</section>
+
+{% endblock deskMain%}
+
+{% block deskLateral %}
+    <section class=" users_search_widget [ oocss-widget ]">
+        <div class="[ oocss-widget--head ]">
+            <h2 class="[ oocss-title-section ]">Rechercher un utilisateur</h2>
+        </div>
+        <!-- TODO: ajouter le formulaire pour la recherche d'un utilisateur -->
+    </section>
+    
+    <section class=" users_new_widget [ oocss-widget oocss-widget__d__highlight ]">
+        <div class="[ oocss-widget--head ]">
+            <h2 class="[ oocss-title-section ]">Ajouter un utilisateur</h2>
+        </div>
+        <div class="[ oocss-widget--content ]">
+            {{ form_start(addUserForm, {'attr' : {'class': 'form-mini'}}) }} {{ form_errors(addUserForm) }} {{ form_row(addUserForm.client)
+            }} {{ form_row(addUserForm.username) }} {{ form_row(addUserForm.email) }} {{ form_row(addUserForm.plainPassword) }} {{ form_row(addUserForm.thumbnail)
+            }} {{ form_row(addUserForm.newsletter) }} {{ form_row(addUserForm.submit) }} {{ form_row(addUserForm._token) }} {{ form_end(addUserForm,
+            {'render_rest': false})}}
+        </div>
+    </section>
+{% endblock deskLateral %}

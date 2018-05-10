@@ -1,0 +1,49 @@
+{% extends "MesClicsAdminBundle::layout.html.twig" %}
+
+{% block deskHeadNavRails %}
+    <a href="{{ path('mesclics_admin_home') }}" class="desk-head-nav_rails--item">Console d'administration</a>
+    >
+    <a href="{{ path('mesclics_admin_messages') }}" class="desk-head-nav_rails--item {% if subSection is null %}[ oocss-active-link ]{% endif %}">Messages</a>
+    {% if subSection is not null %}
+    >
+    <a href="" class="desk-head-nav_rails--item [ oocss-active-link ]">
+        {% if subSection is same as ('received') %}Tous{% endif %}
+        {% if subSection is same as ('unread') %}Non lus{% endif %}
+        {% if subSection is same as ('sent') %}Envoyés{% endif %}
+        {% if subSection is same as ('draft') %}Brouillons{% endif %}
+        {% if subSection is same as ('new') %}
+            {% if initialMessage is defined %}
+                {{ initialMessage.title }}
+            {% else %}
+                Nouveau message
+            {% endif %}
+        {% endif %}
+    </a>
+    {% endif %}
+{% endblock deskHeadNavRails %}
+
+{% block deskMain %} 
+    {# on inclue le template de la vue messages correspondant à la subSection #}
+    {% if subSection is defined and subSection is not null %}
+        <section id= "messages-{{ subSection }}">
+            {% include "MesClicsMessagesBundle:Admin:messages-" ~ subSection ~ ".html.twig" %}
+        </section>
+    {% endif %}
+{% endblock deskMain%}
+
+{% block deskLateral %}
+    <section>
+        {% include "MesClicsMessagesBundle:Admin:messages-nav.html.twig" %}
+    </section>
+
+    {# si un message est chargé on insère le template du message-preview #}
+    {% if message_preview is defined %}
+        {% include "MesClicsMessagesBundle:Admin:messages-preview.html.twig" %}
+    {% else %}
+        {% if newMessageForm is defined and subSection != 'new' %}
+            <section class="card" id="new-message">
+                {% include "MesClicsMessagesBundle:Admin:messages-new.html.twig" %}
+            </section>
+        {% endif %}
+    {% endif %}
+{% endblock deskLateral %}

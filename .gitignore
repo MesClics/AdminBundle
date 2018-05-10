@@ -1,0 +1,5 @@
+#ignore tous les dossiers et fichiers commençant par ~
+~*
+#ignore le dossier Tests
+Tests/*
+

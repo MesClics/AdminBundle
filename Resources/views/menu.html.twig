@@ -1,0 +1,50 @@
+<li class="bottom_bar-admin_menu--item {% if currentSection is same as ('déconnexion') %}[ __s__active ]{% endif %}">
+    <a class="bottom_bar-admin_menu-item--btn bottom_bar-admin_menu-item--btn__d__logout" href="{{ path('fos_user_security_logout') }}">
+        <span class="bottom_bar-admin_menu-item--label bottom_bar-admin_menu-item--label__d__logout">Déconnexion</span>
+    </a>
+</li>
+
+<li class="bottom_bar-admin_menu--item {% if currentSection is same as ('home') %}[ __s__active ]{% endif %}">
+    <a class="bottom_bar-admin_menu-item--btn bottom_bar-admin_menu-item--btn__d__home" href="{{ path('mesclics_admin_home')}}">
+        <span class="bottom_bar-admin_menu-item--label bottom_bar-admin_menu-item--label__d__home">Accueil</span>
+    </a>
+</li>
+
+<li class="bottom_bar-admin_menu--item {% if currentSection is same as ('messages') %}[ bottom_bar-admin_menu--item__s__active ]{% endif %}">
+    <a class="bottom_bar-admin_menu-item--btn bottom_bar-admin_menu-item--btn__d__messages" href="{{ path('mesclics_admin_messages_received')}}">
+        <span class="bottom_bar-admin_menu-item--label bottom_bar-admin_menu-item--label__d__messages">Messages</span>
+        {% if countMessages('unread') > 0 %}
+            <span class="[ oocss-index oocss-index__d__admin_menu oocss-index__d__admin_menu__d__messages ]">{{ countMessages('unread') }}</span>
+        {% endif %}
+    </a>
+</li>
+
+<li class="bottom_bar-admin_menu--item {% if currentSection is same as ('edition') %} [ __s__active ]{% endif %}">
+    <a class="bottom_bar-admin_menu-item--btn bottom_bar-admin_menu-item--btn__d__edition" href="{{ path('mesclics_admin_edition') }}">
+        <span class="bottom_bar-admin_menu-item--label bottom_bar-admin_menu-item--label__d__edition">Edition</span>
+    </a>
+</li>
+
+<li class="bottom_bar-admin_menu--item {% if currentSection is same as ('medias') %}[ __s__active ]{% endif %}">
+    <a class="bottom_bar-admin_menu-item--btn bottom_bar-admin_menu-item--btn__d__medias" href="">
+        <span class="bottom_bar-admin_menu-item--label bottom_bar-admin_menu-item--label__d__medias">Medias</span>
+    </a>
+</li>
+
+<li class="bottom_bar-admin_menu--item {% if currentSection is same as ('clients') %}[ __s__active ]{% endif %}">
+    <a class="bottom_bar-admin_menu-item--btn bottom_bar-admin_menu-item--btn__d__clients" href="{{ path('mesclics_admin_clients')}}">
+        <span class="bottom_bar-admin_menu-item--label bottom_bar-admin_menu-item--label__d__clients">Clients</span>
+    </a>
+</li>
+
+<li class="bottom_bar-admin_menu--item {% if currentSection is same as ('users') %}[ __s__active ]{% endif %}">
+    <a class="bottom_bar-admin_menu-item--btn bottom_bar-admin_menu-item--btn__d__users" href="{{ path('mesclics_admin_users')}}">
+        <span class="bottom_bar-admin_menu-item--label bottom_bar-admin_menu-item--label__d__users">Utilisateurs</span>
+    </a>
+</li>
+
+<li class="bottom_bar-admin_menu--item {% if currentSection is same as ('stats') %}[ __s__active ]{% endif %}">
+    <a class="bottom_bar-admin_menu-item--btn bottom_bar-admin_menu-item--btn__d__stats" href="">
+        <span class="bottom_bar-admin_menu-item--label bottom_bar-admin_menu-item--label__d__stats">Statistiques</span>
+    </a>
+</li>

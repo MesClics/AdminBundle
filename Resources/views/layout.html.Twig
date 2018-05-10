@@ -1,0 +1,60 @@
+{% extends "::layout.html.twig" %}
+
+{# parametres de templates #}
+{% set currentSection = "{{ currentSection }}" %}
+
+{# blocks #}
+{% block title %} {{ parent() }} - Console d'administration {% endblock title %}
+
+{% block body %}
+    {% block desk %}
+        <div class="desk">
+            {% block deskHead %}
+                <div class="desk--head">
+                    {% block deskHeadLogo  %}
+                        <a class="desk-head--logo" href="{{ path('mes_clics_index') }}">
+                            mesclics.fr
+                        </a>
+                    {% endblock deskHeadLogo  %}
+                    {# navigation (chemin de fer : Menu > Item > item) #}
+                    <div  class="desk-head--nav_rails">
+                        {% block deskHeadNavRails %}{% endblock deskHeadNavRails %}
+                    </div>
+                </div>
+            {% endblock deskHead %}
+            {# bloc main : contenu principal #}
+            <div class="desk--main">
+                {% block deskMain %}{% endblock deskMain %}
+            </div>
+            {# bloc lateral : contenu panneau droite écran #}
+            <div class="desk--lateral">
+                {% block deskLateral %}{% endblock deskLateral %}
+            </div>
+        </div>        
+    {% endblock desk %}
+
+    {# bloc bottom_bar #}
+    {% block bottomBar %}
+    <div class="bottom_bar">
+        {# bottom_bar_menu #}
+        <nav class="bottom_bar--admin_menu">
+            {% block bottomBarAdminMenu %}
+                {% include "MesClicsAdminBundle::menu.html.twig"%}
+            {% endblock bottomBarAdminMenu %} 
+        </nav> 
+
+        {# bottom_bar_user #}
+        <div class="bottom_bar--user">
+            {% block bottomBarUser %}
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    Connecté en tant que {{ app.user.username }}
+                {% else %}
+                    <a href="{{ path('fos_user_security_login') }}">Connexion</a>
+                {% endif %}
+            {% endblock bottomBarUser %}
+        </div>
+    </div>
+    {% endblock bottomBar %}
+
+    
+{% endblock body %}

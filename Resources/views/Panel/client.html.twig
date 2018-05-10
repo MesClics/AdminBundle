@@ -1,0 +1,27 @@
+{% extends "MesClicsAdminBundle::layout.html.twig" %} 
+
+{% block deskHeadNavRails %}
+    <a href="{{ path('mesclics_admin_home') }}" class="desk-head-nav_rails--item">
+        Console d'administration</a>
+    >
+    <a href="{{ path('mesclics_admin_clients') }}" class="desk-head-nav_rails--item">Clients</a>
+    >
+    <a href="{{ path('mesclics_admin_client', {'client_id': client.id}) }}" class="desk-head-nav_rails--item">{{ client.nom }}</a>
+    {% if subSection is defined %}
+        >
+        <a href="{{ path('mesclics_admin_client_' ~ subSection, {'client_id': client.id}) }}" class="desk-head-nav_rails--item">{{ subSection|capitalize }}</a>
+    {% endif %}
+{% endblock deskHeadNavRails %}
+
+{% block deskMain %}
+    <section>
+        {% include "MesClicsEspaceClientBundle:Admin:client.html.twig" with { 'client': client } %}
+    </section>
+{% endblock deskMain%}
+
+{% block deskLateral %}
+    <section>
+        {% include "MesClicsEspaceClientBundle:Admin:client-nav.html.twig" %}
+        {% include "MesClicsEspaceClientBundle:Widgets:client-datas.html.twig" %}
+    </section>
+{% endblock deskLateral %}

@@ -1,0 +1,6 @@
+MesClicsUtilsBundle
+MesClicsMessagesBundle
+MesClicsPostBundle
+MesClicsUserBundle
+Assetic
+FOSCKEditorBundle
