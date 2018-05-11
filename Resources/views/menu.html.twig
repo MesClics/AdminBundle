@@ -11,7 +11,7 @@
 </li>
 
 <li class="bottom_bar-admin_menu--item {% if currentSection is same as ('messages') %}[ bottom_bar-admin_menu--item__s__active ]{% endif %}">
-    <a class="bottom_bar-admin_menu-item--btn bottom_bar-admin_menu-item--btn__d__messages" href="{{ path('mesclics_admin_messages_received')}}">
+    <a class="bottom_bar-admin_menu-item--btn bottom_bar-admin_menu-item--btn__d__messages" href="{{ path('mesclics_admin_messages')}}">
         <span class="bottom_bar-admin_menu-item--label bottom_bar-admin_menu-item--label__d__messages">Messages</span>
         {% if countMessages('unread') > 0 %}
             <span class="[ oocss-index oocss-index__d__admin_menu oocss-index__d__admin_menu__d__messages ]">{{ countMessages('unread') }}</span>

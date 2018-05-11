@@ -39,11 +39,5 @@
     {# si un message est chargé on insère le template du message-preview #}
     {% if message_preview is defined %}
         {% include "MesClicsMessagesBundle:Admin:messages-preview.html.twig" %}
-    {% else %}
-        {% if newMessageForm is defined and subSection != 'new' %}
-            <section class="card" id="new-message">
-                {% include "MesClicsMessagesBundle:Admin:messages-new.html.twig" %}
-            </section>
-        {% endif %}
     {% endif %}
 {% endblock deskLateral %}
