@@ -26,9 +26,14 @@
 {% block deskMain %} 
     {# on inclue le template de la vue edition correspondant à la subSection #}
     {% if subSection is defined and subSection is same as ('collections') %}
-        <section id="collections-{{ collectionSection }}">
-            {% include "MesClicsPostBundle:Admin:collection-" ~ collectionSection ~ ".html.twig" %}
+        <section>
+            {% if collectionSection is defined %}
+                {% include "MesClicsPostBundle:Admin:collection-" ~ collectionSection ~ ".html.twig" %}
+            {% else %}
+                {% include "MesClicsPostBundle:Admin:collections.html.twig" %}
+            {% endif %}
         </section>
+        
     {% else %}
         <section>
             {% if postSection is defined %}
