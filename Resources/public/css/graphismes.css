@@ -32,6 +32,10 @@
                 transform: translateY(-3px);
                 transition: all ease-in-out 300ms;
             }
+            
+    .oocss-button-rounded{
+        border-radius: 50%;
+    }
 /***********************/
 
 /***** OOCSS-DISCRET *****/
@@ -43,12 +47,23 @@
 /*************************/
 
 /***** OOCSS-FORM *****/
+    .oocss-form-input-button + label,
     .oocss-form-radio-on-off label{
         border: solid 2px transparent;
         color: var(--grey);
         transition: all 150ms ease-in-out;
     }
-    .oocss-form-radio-on-off input:checked+label{
+/* 
+    .oocss-form-input-button{
+        border: solid 2px var(--smoke);
+        color: var(--smoke);
+        transition: all 150ms ease-in-out;
+    } */
+
+    .oocss-form-radio-on-off input:checked+label,
+    .oocss-form-input-button:checked + label,
+    .oocss-form-input-button:valid,
+    .oocss-form-input-button:focus{
         border-style: solid;
         border-color: var(--red);
         color: var(--red);

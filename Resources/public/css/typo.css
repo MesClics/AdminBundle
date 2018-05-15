@@ -77,6 +77,9 @@ label{
         font-weight: bold;
         text-transform: uppercase;
     }
+    .oocss-form-input.collection{
+        text-transform: uppercase;
+    }
 /************************/
 
 /***** OOCSS-INDEX *****/
