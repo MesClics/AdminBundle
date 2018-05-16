@@ -494,6 +494,11 @@ body{
     } */
 /*************************/
 
+/***** OOCSS-SPACE-BETWEEN *****/
+    .oocss-space-between{
+        justify-content: space-between;
+    }
+/*******************************/
 /***** OOCSS-SUB_SECTION *****/
 .oocss-sub_section-nav--bloc{
     margin-bottom: 15px;

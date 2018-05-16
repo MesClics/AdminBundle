@@ -169,6 +169,12 @@
         }
 /***********************/
 
+/***** OOCSS-INSTRUCTION *****/
+        .oocss-instruction.oocss-discret{
+            color: var(--grey);
+        }
+/*****************************/
+
 /***** OOCSS-LABEL *****/
     .oocss-label{
         color: var(--grey);

@@ -101,8 +101,14 @@ label{
     .oocss-instruction{
         line-height: 30px;
         text-align: center;
+        letter-spacing: 2px;
     }
-
+        .oocss-instruction.oocss-discret{
+            letter-spacing: normal;
+            font-size: var(--small-text);
+            font-style: italic;
+        }
+        
     .oocss-instruction--link{
         text-transform: uppercase;
     }
