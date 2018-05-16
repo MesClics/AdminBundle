@@ -9,6 +9,7 @@
     --full-w: 100vw;
     --full-h: 100vh;
     /* GAP */
+    --gap-xxs: 1px;
     --gap-xs: 3px;
     --gap-s: 5px;
     --gap-m: 10px;
@@ -311,10 +312,14 @@ body{
 }
 
 .oocss-form-input-button{
-    width: auto;
+    display: inline-block;
+    visibility: hidden;
+}
+
+.oocss-form-input-button + label{
     display: inline-block;
     padding: var(--gap-m);
-    margin: var(--gap-s);
+    margin: var(--gap-xxs);
 }
 
 
@@ -324,16 +329,14 @@ body{
     align-items: center;
 }
 
-.oocss-form-radio-on-off input,
-.oocss-form-input-button{
+.oocss-form-radio-on-off input{
     width: 0; max-width: 0;
     height: 0; max-height: 0;
     margin: 0;
     visibility: hidden;
 }
 
-.oocss-form-radio-on-off label,
-.oocss-form-input-button + label{
+.oocss-form-radio-on-off label{
     display: inline-block;
     padding: var(--gap-m);
     margin: 0;
