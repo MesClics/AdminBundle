@@ -19,6 +19,14 @@
 /* OOCSS STYLES */
 /****************/
 
+/***** OOCSS-DISCRET *****/
+        .oocss-discret,
+        [class*="oocss"].oocss-discret{
+            background-color: transparent;
+            color: inherit;
+        }
+/*************************/
+
 /***** OOCSS-BUTTON *****/
     .oocss-button{
         background-color: var(--red);
@@ -36,15 +44,17 @@
     .oocss-button-rounded{
         border-radius: 50%;
     }
+        .oocss-button-rounded.oocss-discret{
+            background-color: var(--grey);
+            color: var(--smoke);
+        }
+        .oocss-button-rounded.oocss-discret:hover{
+            background-color: var(--red);
+            color: var(--smoke);
+            transform: none;
+        }
 /***********************/
 
-/***** OOCSS-DISCRET *****/
-        .oocss-discret,
-        [class*="oocss"].oocss-discret{
-            background-color: transparent;
-            color: inherit;
-        }
-/*************************/
 
 /***** OOCSS-FORM *****/
     .oocss-form-input-button + label,
