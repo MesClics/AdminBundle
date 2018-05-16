@@ -37,6 +37,7 @@
             background-color: var(--hard-red);
         }
             .oocss-button.oocss-discret:hover{
+                background-color: transparent;
                 transform: translateY(-3px);
                 transition: all ease-in-out 300ms;
             }
