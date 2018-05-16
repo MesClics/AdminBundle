@@ -27,6 +27,11 @@ h3{/* titres section */
     text-transform: uppercase;
 }
 
+h4{
+    font-weight: var(--font-weight_normal);
+    text-transform: uppercase;
+}
+
 /* TABLES */
 th{
     font-size: var(--small-text);

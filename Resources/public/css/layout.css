@@ -242,6 +242,7 @@ body{
         grid-template-columns: 1fr;
         grid-row-gap: 5vh;
     }
+
 .oocss-form-label{
     display: block;
     padding: 5px;
@@ -297,12 +298,24 @@ body{
     margin-right: 10px;
 }
 
+.oocss-form-fieldset{
+    margin: var(--gap-m);
+}
+
+.oocss-form-input{
+    min-width: auto;
+    width: auto;
+    max-width: none;
+    margin: var(--gap-s);
+}
+
 .oocss-form-input-button{
-    width: auto; min-width: 200px; max-width: none;
+    width: auto;
     display: inline-block;
     padding: var(--gap-m);
     margin: var(--gap-s);
 }
+
 
 .oocss-form-radio-on-off{
     display: flex;
@@ -315,6 +328,7 @@ body{
     width: 0; max-width: 0;
     height: 0; max-height: 0;
     margin: 0;
+    visibility: hidden;
 }
 
 .oocss-form-radio-on-off label,
