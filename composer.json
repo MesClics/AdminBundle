@@ -3,72 +3,20 @@
     "description": "Bundle pour l'ajout d'une console d'administration",
     "license": "proprietary",
     "type": "project",
-    "require": {
-        "mesclics/messages-bundle": "*",
-        "mesclics/post-bundle": "*",
-        "mesclics/user-bundle": "*",
-        "mesclics/utils-bundle": "*"
-    },
-    "repositories": [
+    "version": "0.0.1",
+    "homepage": "https://github.com/MesClics/AdminBundle.git",
+    "authors": [
         {
-            "type": "package",
-            "package": {
-                "name": "mesclics/admin-bundle",
-                "version": "master",
-                "source": {
-                    "url": "https://github.com/MesClics/AdminBundle.git",
-                    "type": "github",
-                    "reference": "master"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "mesclics/messages-bundle",
-                "version": "master",
-                "source": {
-                    "url": "https://github.com/MesClics/MessagesBundle.git",
-                    "type": "github",
-                    "reference": "master"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "mesclics/post-bundle",
-                "version": "master",
-                "source": {
-                    "url": "https://github.com/MesClics/PostBundle.git",
-                    "type": "github",
-                    "reference": "master"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "mesclics/user-bundle",
-                "version": "master",
-                "source": {
-                    "url": "https://github.com/MesClics/UserBundle.git",
-                    "type": "github",
-                    "reference": "master"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "mesclics/utils-bundle",
-                "version": "master",
-                "source": {
-                    "url": "https://github.com/MesClics/UtilsBundle.git",
-                    "type": "github",
-                    "reference": "master"
-                }
-            }
+            "name": "mesclics.fr",
+            "email": "contact@mesclics.fr",
+            "homepage": "http://www.mesclics.fr",
+            "role": "Developer"
         }
-    ]
+    ],
+    "require": {
+        "mesclics/messages-bundle": "0.*",
+        "mesclics/post-bundle": "0.*",
+        "mesclics/user-bundle": "0.*",
+        "mesclics/utils-bundle": "0.*"
+    }
 }
