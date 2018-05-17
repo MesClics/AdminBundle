@@ -43,20 +43,64 @@
     },
     "repositories": [
         {
-            "type": "vcs",
-            "url": "https://github.com/MesClics/MessagesBundle.git"
+            "type": "package",
+            "package": {
+                "name": "mesclics/admin-bundle",
+                "version": "master",
+                "source": {
+                    "url": "https://github.com/MesClics/AdminBundle.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
         },
         {
-            "type": "vcs",
-            "url": "https://github.com/MesClics/PostBundle.git"
+            "type": "package",
+            "package": {
+                "name": "mesclics/message-bundle",
+                "version": "master",
+                "source": {
+                    "url": "https://github.com/MesClics/MessagesBundle.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
         },
         {
-            "type": "vcs",
-            "url": "https://github.com/MesClics/UserBundle.git"
+            "type": "package",
+            "package": {
+                "name": "mesclics/post-bundle",
+                "version": "master",
+                "source": {
+                    "url": "https://github.com/MesClics/PostBundle.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
         },
         {
-            "type": "vcs",
-            "url": "https://github.com/MesClics/UtilsBundle.git"
+            "type": "package",
+            "package": {
+                "name": "mesclics/user-bundle",
+                "version": "master",
+                "source": {
+                    "url": "https://github.com/MesClics/UserBundle.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "mesclics/utils-bundle",
+                "version": "master",
+                "source": {
+                    "url": "https://github.com/MesClics/UtilsBundle.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
         }
     ],
     "require-dev": {
