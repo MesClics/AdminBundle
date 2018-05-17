@@ -4,7 +4,7 @@
     "license": "proprietary",
     "type": "project",
     "require": {
-        "mesclics/message-bundle": "*",
+        "mesclics/messages-bundle": "*",
         "mesclics/post-bundle": "*",
         "mesclics/user-bundle": "*",
         "mesclics/utils-bundle": "*"
@@ -25,7 +25,7 @@
         {
             "type": "package",
             "package": {
-                "name": "mesclics/message-bundle",
+                "name": "mesclics/messages-bundle",
                 "version": "master",
                 "source": {
                     "url": "https://github.com/MesClics/MessagesBundle.git",
