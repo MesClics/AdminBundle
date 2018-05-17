@@ -1,5 +1,5 @@
 {
-    "name": "MesClics/AdminBundle",
+    "name": "mesclics/admin-bundle",
     "description": "Bundle pour l'ajout d'une console d'administration",
     "license": "proprietary",
     "type": "project",
@@ -36,10 +36,10 @@
         "symfony/polyfill-apcu": "^1.0",
         "symfony/swiftmailer-bundle": "^2.3.10",
         "symfony/symfony": "3.3.*",
-        "MesClics/MessageBundle": "*",
-        "MesClics/PostBundle": "*",
-        "MesClics/UserBundle": "*",
-        "MesClics/UtilsBundle": "*"
+        "mesclics/message-bundle": "*",
+        "mesclics/post-bundle": "*",
+        "mesclics/user-bundle": "*",
+        "mesclics/utils-bundle": "*"
     },
     "repositories": [
         {
