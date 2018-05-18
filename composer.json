@@ -15,10 +15,10 @@
     ],
     "autoload": {
         "psr-4": {
-            "MesClics\\MessagesBundle": "vendor/mesclics/MessagesBundle",
-            "MesClics\\PostBundle": "vendor/mesclics/PostBundle",
-            "MesClics\\UserBundle": "vendor/mesclics/UserBundle",
-            "MesClics\\UtilsBundle": "vendor/mesclics/UtilsBundle"
+            "MesClics\\MessagesBundle": "vendor/mesclics/messages-bundle",
+            "MesClics\\PostBundle": "vendor/mesclics/post-bundle",
+            "MesClics\\UserBundle": "vendor/mesclics/user-bundle",
+            "MesClics\\UtilsBundle": "vendor/mesclics/utils-bundle"
         },
         "classmap": [
             "app/AppKernel.php",
