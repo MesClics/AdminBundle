@@ -12,7 +12,7 @@
             {% block deskHead %}
                 <div class="desk--head">
                     {% block deskHeadLogo  %}
-                        <a class="desk-head--logo" href="{{ path('mes_clics_index') }}">
+                        <a class="desk-head--logo" href="{{  app.request.getBaseURL() }}">
                             mesclics.fr
                         </a>
                     {% endblock deskHeadLogo  %}
