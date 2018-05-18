@@ -2,7 +2,7 @@
     "name": "mesclics/admin-bundle",
     "description": "Bundle pour l'ajout d'une console d'administration",
     "license": "proprietary",
-    "type": "project",
+    "type": "symfony-bundle",
     "version": "0.0.1",
     "homepage": "https://github.com/MesClics/AdminBundle.git",
     "authors": [
@@ -13,10 +13,60 @@
             "role": "Developer"
         }
     ],
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "mesclics/post-bundle",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/mesclics/PostBundle.git",
+                    "type": "git",
+                    "reference": "origin/master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "mesclics/messages-bundle",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/mesclics/MessagesBundle.git",
+                    "type": "git",
+                    "reference": "origin/master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "mesclics/user-bundle",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/mesclics/UserBundle.git",
+                    "type": "git",
+                    "reference": "origin/master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "mesclics/utils-bundle",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/mesclics/UtilsBundle.git",
+                    "type": "git",
+                    "reference": "origin/master"
+                }
+            }
+        }
+    ],
     "require": {
-        "mesclics/messages-bundle": "0.*",
-        "mesclics/post-bundle": "0.*",
-        "mesclics/user-bundle": "0.*",
-        "mesclics/utils-bundle": "0.*"
+        "mesclics/messages-bundle": "dev-master",
+        "mesclics/post-bundle": "dev-master",
+        "mesclics/user-bundle": "dev-master",
+        "mesclics/utils-bundle": "dev-master"
     }
 }
