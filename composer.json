@@ -13,6 +13,18 @@
             "role": "Developer"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "MesClics\\MessagesBundle": "vendor/mesclics/MessagesBundle",
+            "MesClics\\PostBundle": "vendor/mesclics/PostBundle",
+            "MesClics\\UserBundle": "vendor/mesclics/UserBundle",
+            "MesClics\\UtilsBundle": "vendor/mesclics/UtilsBundle"
+        },
+        "classmap": [
+            "app/AppKernel.php",
+            "app/AppCache.php"
+        ]
+    },
     "repositories": [
         {
             "type": "package",
