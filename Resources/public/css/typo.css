@@ -13,6 +13,10 @@
     letter-spacing: 2px;
 }
 
+body{
+    line-height: 24px;
+}
+
 /********************/
 /* SEMENTICAL STYLES*/
 /********************/
@@ -21,6 +25,10 @@ h2{
     font-weight: var(--font-weight_bold);
     text-transform: uppercase;
 }
+
+    .oocss-widget h2{
+        font-size: 1.1rem;
+    }
 
 h3{/* titres section */
     font-weight: var(--font-weight_bold);
@@ -71,6 +79,7 @@ label{
 /***** OOCSS-FORM *****/
     .oocss-form-label{
         text-transform: uppercase;
+        font-size: var(--small-text);
     }
     .oocss-form-widget{
         letter-spacing: normal;
@@ -121,7 +130,7 @@ label{
 /***********************/
 
 /***** OOCSS MESSAGE *****/
-    .oocss-message--controls{
+    .message--controls{
         font-size: var(--extra-small-text);
         text-transform: uppercase;
         text-align: center;

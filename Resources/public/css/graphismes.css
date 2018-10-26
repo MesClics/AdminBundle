@@ -1,330 +1,35 @@
-/* resets */
-:root{
-    /* palette */
-    --black: #292b2c;
-    --red: #ff384e;
-    --lightred: #ff6475;
-    --hard-red: #D12E40;
-    --blue: #2d99ff;
-    --green: #00d68d;
-    --white: #fff;
-    --smoke: #f5f5f5;
-	--beige: #eee7e0;
-	--darkbeige: #aea9a3;
-    --grey: #a1a1a1;
-    --ashes: #444444;
-}
-
-/****************/
-/* OOCSS STYLES */
-/****************/
-
-/***** OOCSS-DISCRET *****/
-        .oocss-discret,
-        [class*="oocss"].oocss-discret{
-            background-color: transparent;
-            color: inherit;
-        }
-/*************************/
-
-/***** OOCSS-BUTTON *****/
-    .oocss-button{
-        background-color: var(--red);
-        color: var(--smoke);
-        transition: background-color 150ms ease-out;
-    }
-        .oocss-button:hover{
-            background-color: var(--hard-red);
-        }
-            .oocss-button.oocss-discret:hover{
-                background-color: transparent;
-                transform: translateY(-3px);
-                transition: all ease-in-out 300ms;
-            }
-            
-    .oocss-button-rounded{
-        border-radius: 50%;
-    }
-        .oocss-button-rounded.oocss-discret{
-            background-color: var(--grey);
-            color: var(--smoke);
-        }
-        .oocss-button-rounded.oocss-discret:hover{
-            background-color: var(--red);
-            color: var(--smoke);
-            transform: none;
-        }
-/***********************/
-
-
-/***** OOCSS-FORM *****/
-    .oocss-form-input-button + label,
-    .oocss-form-radio-on-off label{
-        border: solid 2px transparent;
-        color: var(--grey);
-        transition: all 150ms ease-in-out;
-    }
-/* 
-    .oocss-form-input-button{
-        border: solid 2px var(--smoke);
-        color: var(--smoke);
-        transition: all 150ms ease-in-out;
-    } */
-
-    .oocss-form-radio-on-off input:checked+label,
-    .oocss-form-input-button:checked + label,
-    .oocss-form-input-button:valid,
-    .oocss-form-input-button:focus{
-        border-style: solid;
-        border-color: var(--red);
-        color: var(--red);
-    }
-
-    .oocss-form-error{
-        color: var(--red);
-    }
-/**********************/
-
-/***** OOCSS-HEADED-BLOCK *****/
-    .oocss-headed-block:before{
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-        /* CLIENTS */
-        .oocss-headed-block.client-contrats:before{
-            background-image: url('../../mesclicsespaceclient/images/icones/contrats/white/contrat.png');
-        }
-        .oocss-headed-block.client-projets:before{
-            background-image: url('../../mesclicsespaceclient/images/icones/projets/white/projet.png');
-        }
-        /*COLLECTIONS*/
-        .oocss-headed-block.collection-new:before{
-            background-image: url('../../mesclicspost/images/icones/white/collection-new.png');
-        }
-        .oocss-headed-block.collections-all:before{
-            background-image: url('../../mesclicspost/images/icones/white/collection.png');
-        }
-        /* MESSAGES */
-        .oocss-headed-block.messages-all:before{
-                background-image: url('../../mesclicsmessages/images/icones/white/lus.png');
-        }
-        .oocss-headed-block.messages-draft:before{
-            background-image: url('../../mesclicsmessages/images/icones/white/non-lus.png');
-        }
-        .oocss-headed-block.message-new:before{
-            background-image: url('../../mesclicsmessages/images/icones/white/new.png');
-        }
-        .oocss-headed-block.messages-sent:before{
-            background-image: url('../../mesclicsmessages/images/icones/white/envoyes.png');
-        }
-        .oocss-headed-block.messages-unread:before{
-            background-image: url('../../mesclicsmessages/images/icones/white/messages.png');
-        }
-        /* POSTS */
-        .oocss-headed-block.publication-new:before{
-            background-image: url('../../mesclicspost/images/icones/white/publication-new.png');
-        }
-
-        .oocss-headed-block.publications-all:before{
-            background-image: url('../../mesclicspost/images/icones/white/publication.png');
-        }
-/*****************************/
-
-/***** OOCSS-INDEX *****/
-    .oocss-index{
-        background-color: black;
-        color: var(--smoke);
-        border-radius: 50%;
-    }
-        .oocss-index.oocss-icone{
-            border-radius: 0;
-            background-size: contain;
-            background-color: transparent;
-        }
-
-        .oocss-index.oocss-highlight,
-        .oocss-index__d__admin_menu,
-        .oocss-index__d__unread_messages{
-            background-color: var(--red);
-            color: var(--smoke);
-        }
-        .oocss-index.all_posts{
-            background-color: transparent;
-            background-image: url('../../mesclicspost/images/icones/white/publication.png');
-        }
-        .oocss-index.online_posts{
-            background-color: var(--red);
-        }
-        .oocss-index.onlineWithPeremption_posts{
-            background-color: transparent;
-            border: 5px solid var(--red);
-        }
-        .oocss-index.toBePublished_posts{
-            background-color: transparent;
-            border: 2px solid var(--red);
-        }
-        .oocss-index.unpublished_posts{
-            background-color: transparent;
-            border: 2px solid var(--smoke);
-        }
-        .oocss-index.draft_posts{
-            background-color: var(--smoke);
-        }
-        .oocss-index.public_posts{
-            background-color: transparent;
-            background-image: url('../../mesclicspost/images/icones/white/public.png');
-        }
-        .oocss-index.private_posts{
-            background-color: transparent;
-            background-image: url('../../mesclicspost/images/icones/white/private.png');
-        }
-/***********************/
-
-/***** OOCSS-INSTRUCTION *****/
-        .oocss-instruction.oocss-discret{
-            color: var(--grey);
-        }
-/*****************************/
-
-/***** OOCSS-LABEL *****/
-    .oocss-label{
-        color: var(--grey);
-    }
-/***********************/
-
-/***** OOCSS-TABLE *****/
-    .oocss-table-data{
-        background-color: var(--smoke);
-        color: var(--ashes);
-    }
-        .oocss-table-row:hover .oocss-table-data{
-            background-color: var(--red);
-            color: var(--smoke);
-        }
-
-        .oocss-table-data__d__discret,
-        .oocss-table-row:hover .oocss-table-data.oocss-discret{
-            background-color: transparent;
-        }
-        /* MESSAGES */
-        .oocss-table-row__d__messages .oocss-table-data{
-            background-color: var(--ashes);
-            color: var(--smoke);
-        }
-            .oocss-table-row__d__messages__s__unread .oocss-table-data{
-                background-color: var(--smoke);
-                color: var(--red);
-            }
-            .oocss-table-row__d__messages:hover .oocss-table-data{
-                background-color: var(--red);
-                color: var(--smoke);
-            }
-        
-    .oocss-table-col-sort.oocss-active{
-        color: var(--red);
-    }
-/***********************/
-
-/***** OOCSS-WIDGET *****/
-    .oocss-widget:not(.oocss-widget__d__discret){
-        background-color: var(--white);
-        color: var(--black);
-    }
-        .oocss-widget__d__highlight{
-            background-color: var(--red);
-            color: var(--smoke);
-        }
-/***********************/
-
-/***** OOCSS-SUB_SECTION-NAV *****/
-    .oocss-sub_section--nav{
-        border-bottom: dotted 2px var(--ashes);
-    }
-/***********************/
-
-/***** OOCSS FORMS *****/
-    .oocss-form-select,
-    .oocss-form-checkbox,
-    .oocss-form-textarea,
-    .oocss-form-submit,
-    .oocss-form-date div select{
-        background-color: var(--smoke);
-        color: var(--ashes);
-    }
-
-    .oocss-form-text{
-        border-bottom: 2px dotted var(--smoke);
-    }
-        .oocss-form-text.titre{
-            border: 0;
-            background-color: var(--smoke);
-            color: var(--ashes);
-        }
-
-    .oocss-form-checkbox__d__button{
-        border-width: 2px;
-        border-style: solid;
-    }
-    .oocss-form-checkbox__d__button:not(:checked){
-        border-color: var(--smoke);
-    }
-    .oocss-form-checkbox__d__button:checked label{
-        border-color: var(--ashes);
-    }
-
-    .oocss-form-select option{
-        border-bottom: dotted 1px var(--grey);
-    }
-
-    .oocss-form-select option:checked,
-    .oocss-form-select option:active,
-    .oocss-form-select option:focus{
-        /* TODO: javascript: changer la couleur pour les navigateurs */
-        background-color: var(--red);
-        color: var(--smoke);
-    }
-
-    .oocss-form-submit{
-        background-color: var(--red);
-        color: var(--smoke);
-    }
-/***********************/
-
-/***** OOCSS-MESSAGE *****/
-    /* OOCSS-MESSAGE--HEADERS */
-    .oocss-message--headers{
+/***** MESSAGE *****/
+    /* MESSAGE--HEADERS */
+    .message--headers{
         padding-bottom: 3vh;
         border-bottom: dotted 2px var(--ashes);
     }
-        .oocss-message--headers__d__lateral{
+        .message--headers__d__lateral{
             border-color: var(--ashes);
         }
 
-    .oocss-message--content__d__lateral{
+    .message--content__d__lateral{
         background-color: var(--smoke);
         color: var(--ashes);
     }
 
-    .oocss-message-controls--item{
+    .message-controls--item{
         background-color: var(--smoke);
     }
-        .oocss-message-controls--item__d__lateral,
-        .oocss-message-controls--item__d__lateral:visited{
+        .message-controls--item__d__lateral,
+        .message-controls--item__d__lateral:visited{
             color: var(--smoke);
             background-color: var(--ashes);
         }
 
-    .oocss-message-controls--item:hover{
+    .message-controls--item:hover{
         background-color: var(--ashes);
         color: var(--smoke);
     }
-        .oocss-message-controls--item__d__lateral:hover{
+        .message-controls--item__d__lateral:hover{
             background-color: black;
         }
 /*************************/
-
-/***** OOCSS-TABLE *****/
-/***********************/
 
 body{
     /* background-image: url('../images/admin/gradients/console.png'); */
@@ -353,9 +58,7 @@ body{
 }
 
 .desk--lateral{
-    /* background-color: var(--beige);
-    color: var(--black); */
-    box-shadow: 0 5px 50px black;
+   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
 }
 
 .users_search_widget .oocss-widget--head::before{
@@ -435,6 +138,9 @@ body{
 .bottom_bar-admin_menu-item--label{
     color: var(--red);
     background-color: black;
+    -webkit-box-shadow: 0px 5px 40px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 5px 40px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 5px 40px 0px rgba(0,0,0,0.75);
 }
 
 .notification{
@@ -442,16 +148,9 @@ body{
     grid-column: span 2;
 }
 
-.loader{
-    background-color: black;
+.popup{
 }
 
-.loader-ball{
-    border-radius: 100%;
-    border-style: solid;
-    border-width: 3px;
-    border-color: var(--red);
-}
 
 /**************/
 /* ANIMATIONS */
@@ -462,23 +161,15 @@ body{
 }
     @keyframes bouncing-label{
         50%{z-index: -1;}
-        75%{transform: translateY(-25px); z-index: 2;}
-        100%{transform: translateY(-20px); z-index: 2;}
-    }
-
-.loader-ball{
-    animation: load 1000ms ease-in-out infinite;
-    transform-origin: center center;
-}
-    @keyframes load{
-        50%{ transform: scale(1.1); }
+        75%{transform: translateY(-40px); z-index: 2;}
+        100%{transform: translateY(-35px); z-index: 2;}
     }
 
 .oocss-index__d__admin_menu__d__messages{
     animation: index-hey 1000ms ease-in-out infinite;
 }
     @keyframes index-hey{
-        50%{ transform: scale(1.075) translate(-5px, 7px);}
+        50%{ transform: scale(1.075) translate(-5px, -5px);}
     }
 
 .message-form__d__new__s__sent{
