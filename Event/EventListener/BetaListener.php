@@ -20,7 +20,10 @@ class BetaListener{
             $return;
         }
         
-        $remainingDays = $this->endDate->diff(new \DateTime())->days;
+        $now = new \DateTime();
+        $remainingDays = $this->endDate->diff($now)->days;
+
+        //var_dump($remainingDays); die();
 
         if($remainingDays <= 0){
             return;
