@@ -30,16 +30,6 @@
             background-color: black;
         }
 /*************************/
-
-body{
-    /* background-image: url('../images/admin/gradients/console.png'); */
-    background-repeat: repeat-y;
-    background-size: cover;
-    background-position: bottom left;
-    background-color: var(--black);
-    color: var(--white);
-}
-
 .desk{
     background-image: url('../images/admin/backgrounds/filigrane.png');
     background-position: top left;
@@ -47,17 +37,17 @@ body{
     background-repeat: no-repeat;
 }
 
-.desk-head--logo{
+.desk_head-logo{
     background-image: url('../images/mesclics/logo.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 100px 47px;
 }
 
-.desk--main{
+.desk-main{
 }
 
-.desk--lateral{
+.desk-lateral{
    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -73,69 +63,69 @@ body{
     color: var(--ashes);
 }
 
-.bottom_bar-admin_menu-item--btn{
+.admin_menu_item-button{
     background-repeat: no-repeat;
     background-size: 40px 40px;
     background-position: center center;
 }
-    .bottom_bar-admin_menu-item--btn__d__logout{
+    .admin_menu_item-button.logout{
         background-image: url('../images/admin/icones/menu/deconnexion-white.png');
     }
-    .bottom_bar-admin_menu-item--btn__d__logout:hover{
+    .admin_menu_item-button.logout:hover{
         background-image: url('../images/admin/icones/menu/deconnexion-red.png');
     }
 
-    .bottom_bar-admin_menu-item--btn__d__home{
+    .admin_menu_item-button.home{
         background-image: url('../images/admin/icones/menu/home-white.png');
     }
-    .bottom_bar-admin_menu-item--btn__d__home:hover{
+    .admin_menu_item-button.home:hover{
         background-image: url('../images/admin/icones/menu/home-red.png');
     }
 
-    .bottom_bar-admin_menu-item--btn__d__messages{
+    .admin_menu_item-button.messages{
         background-image: url('../images/admin/icones/menu/messages-white.png');
     }
-    .bottom_bar-admin_menu--item__s__active .bottom_bar-admin_menu-item--btn__d__messages,
-    .bottom_bar-admin_menu-item--btn__d__messages:hover{
+    .bottom_bar-admin_menu--item.active .admin_menu_item-button.messages,
+    .admin_menu_item-button.messages:hover{
         background-image: url('../images/admin/icones/menu/messages-red.png');
     }
 
-    .bottom_bar-admin_menu-item--btn__d__edition{
+    .admin_menu_item-button.edition{
         background-image: url('../images/admin/icones/menu/edition-white.png');
     }
-    .bottom_bar-admin_menu-item--btn__d__edition:hover{
+    .admin_menu_item-button.edition:hover{
         background-image: url('../images/admin/icones/menu/edition-red.png');
     }
 
-    .bottom_bar-admin_menu-item--btn__d__medias{
+    .admin_menu_item-button.medias{
         background-image: url('../images/admin/icones/menu/medias-white.png');
     }
-    .bottom_bar-admin_menu-item--btn__d__medias:hover{
+    .admin_menu_item-button.medias:hover{
         background-image: url('../images/admin/icones/menu/medias-red.png');
     }
 
-    .bottom_bar-admin_menu-item--btn__d__clients{
+    .admin_menu_item-button.clients{
         background-image: url('../images/admin/icones/menu/clients-white.png');
     }
-    .bottom_bar-admin_menu-item--btn__d__clients:hover{
+    .admin_menu_item-button.clients:hover{
         background-image: url('../images/admin/icones/menu/clients-red.png');
     }
 
-    .bottom_bar-admin_menu-item--btn__d__users{
+    .admin_menu_item-button.users{
         background-image: url('../images/admin/icones/menu/users-white.png');
     }
-    .bottom_bar-admin_menu-item--btn__d__users:hover{
+    .admin_menu_item-button.users:hover{
         background-image: url('../images/admin/icones/menu/users-red.png');
     }
 
-    .bottom_bar-admin_menu-item--btn__d__stats{
+    .admin_menu_item-button.stats{
         background-image: url('../images/admin/icones/menu/stats-white.png');
     }
-    .bottom_bar-admin_menu-item--btn__d__stats:hover{
+    .admin_menu_item-button.stats:hover{
         background-image: url('../images/admin/icones/menu/stats-red.png');
     }
  
-.bottom_bar-admin_menu-item--label{
+.admin_menu_item-label{
     color: var(--red);
     background-color: black;
     -webkit-box-shadow: 0px 5px 40px 0px rgba(0,0,0,0.75);
@@ -156,7 +146,7 @@ body{
 /* ANIMATIONS */
 /**************/
 
-.bottom_bar-admin_menu--item:hover .bottom_bar-admin_menu-item--label{
+.bottom_bar-admin_menu--item:hover .admin_menu_item-label{
     animation: bouncing-label 300ms ease-in-out 150ms forwards;
 }
     @keyframes bouncing-label{
@@ -165,7 +155,7 @@ body{
         100%{transform: translateY(-35px); z-index: 2;}
     }
 
-.oocss-index__d__admin_menu__d__messages{
+.oocss-index__d__admin_menu.messages{
     animation: index-hey 1000ms ease-in-out infinite;
 }
     @keyframes index-hey{

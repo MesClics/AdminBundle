@@ -10,9 +10,9 @@
     {% block desk %}
         <div class="desk">
             {% block deskHead %}
-                <div class="desk--head">
+                <div class="desk-head">
                     {% block deskHeadLogo  %}
-                        <a class="desk-head--logo" href="{{  app.request.getBaseURL() }}">
+                        <a class="desk_head-logo" href="{{  app.request.getBaseURL() }}">
                             mesclics.fr
                         </a>
                     {% endblock deskHeadLogo  %}
@@ -23,11 +23,11 @@
                 </div>
             {% endblock deskHead %}
             {# bloc main : contenu principal #}
-            <div class="desk--main">
+            <div class="desk-main">
                 {% block deskMain %}{% endblock deskMain %}
             </div>
             {# bloc lateral : contenu panneau droite écran #}
-            <div class="desk--lateral">
+            <div class="desk-lateral">
                 {% block deskLateral %}{% endblock deskLateral %}
             </div>
         </div>        
