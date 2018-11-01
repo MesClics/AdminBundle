@@ -80,5 +80,8 @@
         "mesclics/post-bundle": "dev-master",
         "mesclics/user-bundle": "dev-master",
         "mesclics/utils-bundle": "dev-master"
+    },
+    "require-dev": {
+        "mashape/unirest-php": "2.*"
     }
 }
