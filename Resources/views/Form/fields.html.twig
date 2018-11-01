@@ -1,0 +1,113 @@
+{# form_row #}
+{% block form_row %}
+    {% spaceless %}
+        <div class="oocss-form-row">
+            <div class="oocss-form-label">
+                {{ form_label(form) }}
+            </div>
+            <div class="oocss-form-error {% if error_options is defined and error_options.attr.class is defined and error_options.attr.class is not null %}{{ error_options.attr.class }}{% endif %}">
+                {{ form_errors(form, {'error_options': error_options|default(null)}) }}
+            </div>
+            <div class="oocss-form-widget {% if widget_options is defined and widget_options.attr.class is defined and widget_options.attr.class is not null %}{{ widget_options.attr.class }}{% endif %}">
+                {{ form_widget(form, {'widget_options': widget_options|default(null)}) }}
+            </div>
+        </div>
+    {% endspaceless %}
+{% endblock form_row %}
+
+{% block form_rows %}
+    {% spaceless %}
+        {% for child in form if not child.rendered %}
+            {{ form_row(child, {'widget_options': widget_options|default(null)}) }}
+        {% endfor %}
+    {% endspaceless %}
+{% endblock form_rows %}
+
+{# form widget #}
+{% block form_widget %}
+    {% spaceless %}
+        {% if compound %}
+            {% if widget_options.instructions is defined and widget_options.instructions is not null %}
+                <p class="oocss-instruction oocss-discret">{{ widget_options.instructions }}</p>
+            {% endif %}
+            {% with {
+                'widget_options': widget_options|default(null)
+            } %}
+            {{ block('form_widget_compound') }}
+            {% endwith %}
+        {% else %}
+            {% if widget_options.instructions is defined and widget_options.instructions is not null %}
+                <p class="oocss-instruction oocss-discret">{{ widget_options.instructions }}</p>
+            {% endif %}
+            {% with {
+                'widget_options': widget_options|default(null)
+            } %}
+            {{ block('form_widget_simple') }}
+            {% endwith %}
+        {% endif %}
+    {% endspaceless %}
+{% endblock form_widget %}
+
+{% block form_widget_simple %}
+    {% spaceless %}
+        {% set type = type|default('text') %}
+        {% if type == 'range' or type == 'color' %}
+        {# Attribute "required" is not supported #}
+        {% set required = false %}
+        {% endif %}
+        
+        <input type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %} />
+
+    {% endspaceless %}
+{% endblock form_widget_simple %}
+
+{% block form_widget_compound %}
+    {% spaceless %}
+        <div {{ block('widget_container_attributes') }}>
+            {% if form is rootform %}
+            {{ form_errors(form) }}
+            {% endif %}
+            {% with {
+                'widget_options': widget_options|default(null)
+            } %}
+            {{ block('form_rows') }}
+            {% endwith %}
+            {{ form_rest(form) }}
+        </div>
+    {% endspaceless %}    
+{% endblock form_widget_compound %}
+
+
+{# FIELDS #}
+{# submit widget #}
+{% block submit_widget %}
+    {% spaceless %}
+        <div class="ok">
+            {% set type = type|default('submit') %}
+            {% set submit_label = submit_label|default(null) %}
+            {% set attr = {'class': 'oocss-form-input oocss-form-submit oocss-button', 'label': submit_label} %}
+            {{ block('button_widget') }}
+        </div>
+    {% endspaceless %}
+{% endblock submit_widget %}
+
+{% block datetime_widget %}
+    {% spaceless %}
+        {% if widget == 'single_text' %}
+        {% with {'widget_options': widget_options|default(null)} %}
+        {{ block('form_widget_simple') }}
+        {% endwith %}
+        {% else %}
+            <div {{ block('widget_container_attributes') }}>
+                {{ form_errors(form.date) }}
+                {{ form_errors(form.time) }}
+                <div class="oocss-form-widget {% if widget_options.date is defined and widget_options.date.attr.class is defined and widget_options.date.attr.class is not null %}{{ widget_options.date.attr.class }}{% endif %}">
+                    {{ form_widget(form.date, {'widget_options': widget_options.date|default(null)}) }}
+                </div>
+                <div class="oocss-form-widget {% if widget_options.time is defined and widget_options.time.attr.class is defined and widget_options.time.attr.class is not null %}{{ widget_options.time.attr.class }}{% endif %}">
+                    {{ form_widget(form.time, {'widget_options': widget_options.time|default(null)}) }}
+                </div>
+            </div>
+        {% endif %}
+    {% endspaceless %}
+{% endblock datetime_widget %}
