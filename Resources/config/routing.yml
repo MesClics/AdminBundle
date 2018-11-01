@@ -10,7 +10,7 @@ mesclics_admin_client_import:
 # UTILISATEURS
 mesclics_admin_user_import:
     resource: "@MesClicsUserBundle/Resources/config/routing.yml"
-    prefix: utilisateurs
+    prefix: users
 
 # MESSAGES
 mesclics_admin_message_import:
@@ -26,6 +26,7 @@ mesclics_admin_edition:
 mesclics_admin_edition_post_import:
     resource: "@MesClicsPostBundle/Resources/config/routing.yml"
     prefix:   edition/
+    
 mesclics_admin_edition_collection_import:
     resource: "@MesClicsPostBundle/Resources/config/routing.yml"
     prefix: edition/
