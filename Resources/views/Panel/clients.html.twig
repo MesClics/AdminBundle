@@ -7,11 +7,12 @@
 {% endblock deskHeadNavRails %}
 
 {% block deskMain %} {# section Liste des clients #}
-        {% include "MesClicsEspaceClientBundle:Widgets:client-search.html.twig" %}
-        <!-- Si la sous-section est clients -->
-        <section class="oocss-widget large clients-list">
-            {% include "MesClicsEspaceClientBundle:Widgets:clients-list.html.twig" %}
-        </section>
-
-        {% include "MesClicsEspaceClientBundle:Widgets:client-new.html.twig" %}
+        <div class="oocss-widgets-collection">
+            {% include "MesClicsEspaceClientBundle:Widgets:client-search.html.twig" %}
+            {% include "MesClicsEspaceClientBundle:Widgets:client-new.html.twig" %}
+        </div>
+        <!-- Si clients n'est pas vide -->
+        {% if clients is defined and clients is not empty %}
+            {% include "MesClicsEspaceClientBundle:Widgets:clients-list.html.twig" with clients %}
+        {% endif %}
 {% endblock deskMain%}
