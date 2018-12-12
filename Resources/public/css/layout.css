@@ -17,7 +17,7 @@ body{
     /* DESK */
     .desk{
         display: grid;
-        grid-template-columns: 70vw 1fr;
+        grid-template-columns: 100vw;
         grid-template-rows: 100px 1fr;
         /*debug*/
         /* border: solid 3px yellow; */
@@ -53,9 +53,13 @@ body{
         padding: var(--gap-xxl) var(--gap-xxxl) var(--gap-xxl) var(--gap-xxxl);
         overflow-x: hidden;
         overflow-y: auto;
-        /*debug*/
-        /* border: solid 3px purple; */
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 2em;
+        align-items: flex-start;
     }
+
     /*DESK LATERAL*/
     .desk-lateral{
         grid-row: 1 / span 2;
@@ -69,8 +73,6 @@ body{
         grid-gap: var(--gap-xxl);
         padding: var(--gap-xxl);
         justify-items: center;
-        /*debug*/
-        /* border: solid 3px orange; */
     }
 /*******************************/
 
@@ -95,16 +97,10 @@ body{
     }
 
     .oocss-widget {
-        width: 350px;
-        max-width: calc(100% - 2 * (var(--gap-xxl)));
         display: grid;
-        grid-template-rows: 50px auto;
+        grid-template-rows: minmax(40px, auto) auto;
         grid-auto-columns: minmax(1px, 100%);
     }
-        .oocss-widget.large {
-            width: 100%;
-            max-width: 100%;
-        }
 /*******************************/
 
 /***** in grid .bottom_bar *****/

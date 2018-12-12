@@ -7,14 +7,11 @@
 {% endblock deskHeadNavRails %}
 
 {% block deskMain %} {# section Liste des clients #}
-    <!-- Si la sous-section est clients -->
-    <section>
-        <h2 class="[ oocss-title-section ]">Liste des clients</h2>
-        {% include "MesClicsEspaceClientBundle:Admin:clients.html.twig" %}
-    </section>
-{% endblock deskMain%}
-
-{% block deskLateral %}
         {% include "MesClicsEspaceClientBundle:Widgets:client-search.html.twig" %}
+        <!-- Si la sous-section est clients -->
+        <section class="oocss-widget large clients-list">
+            {% include "MesClicsEspaceClientBundle:Widgets:clients-list.html.twig" %}
+        </section>
+
         {% include "MesClicsEspaceClientBundle:Widgets:client-new.html.twig" %}
-{% endblock deskLateral %}
+{% endblock deskMain%}
