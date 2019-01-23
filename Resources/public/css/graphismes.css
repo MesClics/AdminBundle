@@ -68,6 +68,10 @@
     cursor: url('../images/mesclics/cursor_auto_dark_grey.png') 17 2, auto;
 }
 
+.oocss-widget--content a, a:hover, select, select:hover, option, option:hover, input, input:hover, label, button, button:hover{
+    cursor: url('../images/mesclics/cursor_pointer.png') 17 2, pointer;
+}
+
 .oocss-widget.clients-search .oocss-widget--head::before{
     background-image: url('../images/admin/icones/clients/white/rechercher.png');
 }

@@ -43,6 +43,8 @@
 /***** OOCSS-LABEL *****/
     .oocss-label{
         font-size: var(--small-text);
+        text-transform: uppercase;
+        letter-spacing: 2px;
     }
 /***********************/
 
