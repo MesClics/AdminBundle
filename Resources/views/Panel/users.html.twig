@@ -59,15 +59,17 @@
         <!-- TODO: ajouter le formulaire pour la recherche d'un utilisateur -->
     </section>
     
-    <section class=" users_new_widget [ oocss-widget oocss-widget highlight ]">
-        <div class="[ oocss-widget--head ]">
-            <h2 class="[ oocss-title-section ]">Ajouter un utilisateur</h2>
-        </div>
-        <div class="[ oocss-widget--content ]">
-            {{ form_start(addUserForm, {'attr' : {'class': 'form-mini'}}) }} {{ form_errors(addUserForm) }} {{ form_row(addUserForm.client)
-            }} {{ form_row(addUserForm.username) }} {{ form_row(addUserForm.email) }} {{ form_row(addUserForm.plainPassword) }} {{ form_row(addUserForm.thumbnail)
-            }} {{ form_row(addUserForm.newsletter) }} {{ form_row(addUserForm.submit) }} {{ form_row(addUserForm._token) }} {{ form_end(addUserForm,
-            {'render_rest': false})}}
-        </div>
-    </section>
+    {% if addUserForm is defined %}
+        <section class=" users_new_widget [ oocss-widget oocss-widget highlight ]">
+            <div class="[ oocss-widget--head ]">
+                <h2 class="[ oocss-title-section ]">Ajouter un utilisateur</h2>
+            </div>
+            <div class="[ oocss-widget--content ]">
+                {{ form_start(addUserForm, {'attr' : {'class': 'form-mini'}}) }} {{ form_errors(addUserForm) }} {{ form_row(addUserForm.client)
+                }} {{ form_row(addUserForm.username) }} {{ form_row(addUserForm.email) }} {{ form_row(addUserForm.plainPassword) }} {{ form_row(addUserForm.thumbnail)
+                }} {{ form_row(addUserForm.newsletter) }} {{ form_row(addUserForm.submit) }} {{ form_row(addUserForm._token) }} {{ form_end(addUserForm,
+                {'render_rest': false})}}
+            </div>
+        </section>
+    {% endif %}
 {% endblock deskLateral %}

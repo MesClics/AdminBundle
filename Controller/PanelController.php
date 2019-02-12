@@ -19,7 +19,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 class PanelController extends Controller{
     /**
-     * @Security("has_role('ROLE_CLIENT')")
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function homeAction(Request $request){
         //on récupère le compteur de messages non lus pour l'utilisateur
