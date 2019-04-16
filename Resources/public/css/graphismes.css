@@ -1,3 +1,8 @@
+
+:root{
+    --oocss-slideshow-slider-cursors-color: var(--ashes);
+    --oocss-slideshow-slider-cursor-active-color: var(--red);
+}
 /***** MESSAGE *****/
     /* MESSAGE--HEADERS */
     .message--headers{
@@ -32,8 +37,8 @@
 /*************************/
 .desk{
     background-image: url('../images/admin/backgrounds/filigrane.png');
-    background-position: bottom left;
-    background-size: contain;
+    background-position: top left;
+    background-size: auto 100vh;
     background-repeat: no-repeat;
 }
 
