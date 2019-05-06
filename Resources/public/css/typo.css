@@ -17,7 +17,7 @@
     .oocss-index{
         font-size: var(--extra-small-text);
         letter-spacing: normal;
-        line-height: 16px;
+        line-height: 30px;
         font-weight: bold;
         text-align: center;
     }
@@ -48,6 +48,13 @@
     }
 /***********************/
 
+/***** OOCSS-LEGEND *****/
+    .oocss-legend--item{
+        font-size: var(--extra-small-text);
+        text-transform: uppercase;
+    }
+/************************/
+
 /***** OOCSS MESSAGE *****/
     .message--controls{
         font-size: var(--extra-small-text);
@@ -71,6 +78,10 @@
     .oocss-widget--title{
         width: 100%;
         text-align: center;
+    }
+
+    .oocss-widget h3{
+        font-size: var(--small-text);
     }
 /************************/
 

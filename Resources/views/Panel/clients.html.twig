@@ -7,14 +7,13 @@
 {% endblock deskHeadNavRails %}
 
 {% block deskMain %} {# section Liste des clients #}
-    <div class="oocss-widgets-collection-columns">
-        <div class="oocss-widgets-collection-rows">
-            {% include "MesClicsEspaceClientBundle:Widgets:client-search.html.twig" %}
-            {% include "MesClicsEspaceClientBundle:Widgets:client-new.html.twig" %}
-        </div>
-        <!-- Si clients n'est pas vide -->
+
+<div class="oocss-widgets-collection-rows">
+{% include "MesClicsEspaceClientBundle:Widgets:client-search.html.twig" %}
+{% include "MesClicsEspaceClientBundle:Widgets:client-new.html.twig" %}
+</div>
+           
         {% if clients is defined and clients is not empty %}
             {% include "MesClicsEspaceClientBundle:Widgets:clients-list.html.twig" with clients %}
         {% endif %}
-    </div>
 {% endblock deskMain%}

@@ -54,15 +54,28 @@ body{
     .desk-main{
         grid-row: 2 / span 1;
         grid-column: 1 / span 1;
-        padding: var(--gap-xxl) var(--gap-xxxl) var(--gap-xxl) var(--gap-xxxl);
+        padding: var(--gap-xxxl) var(--gap-xxxl) var(--gap-xxl) var(--gap-xxxl);
         overflow-x: hidden;
         overflow-y: auto;
 
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        grid-gap: 4em;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-auto-columns: 300px;
+        grid-gap: var(--gap-xxxl);
         align-items: flex-start;
     }
+        @media screen and (max-width: 719px){
+            .desk-main{
+                grid-gap: 2em;
+                padding: var(--gap-xl);
+            }
+        }
+        @media screen and (max-width: 479px){
+            .desk-main{
+                grid-gap: 1em;
+                padding: var(--gap-m);
+            }
+        }
 
     /*DESK LATERAL*/
     .desk-lateral{
@@ -152,9 +165,6 @@ body{
 /*********/
 /* SIZES */
 /*********/
-.desk-main{
-    padding-top: 10vh;
-}
 
 .desk-main .oocss-table{
     min-width: 80%;

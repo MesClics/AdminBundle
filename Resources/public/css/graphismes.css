@@ -70,11 +70,11 @@
 .oocss-widget--content{
     background-color: var(--white);
     color: var(--ashes);
-    cursor: url('../images/mesclics/cursor_auto_dark_grey.png') 17 2, auto;
+    cursor: var(--cursor-auto-grey);
 }
 
-.oocss-widget--content a, a:hover, select, select:hover, option, option:hover, input, input:hover, label, button, button:hover{
-    cursor: url('../images/mesclics/cursor_pointer.png') 17 2, pointer;
+.oocss-widget--content a, .oocss-widget--content a:hover, .oocss-widget--content select, .oocss-widget--content select:hover, .oocss-widget--content option, .oocss-widget--content option:hover, .oocss-widget--content input, .oocss-widget--content input:hover, .oocss-widget--content label, .oocss-widget--content button, .oocss-widget--content button:hover{
+    cursor: var(--cursor-pointer-grey);
 }
 
 .oocss-widget.clients-search .oocss-widget--head::before{
@@ -87,6 +87,14 @@
 
 .oocss-widget.clients-list .oocss-widget--head::before{
     background-image: url('../images/admin/icones/clients/white/client.png');
+}
+
+.oocss-widget.posts-list .oocss-widget--head::before{
+    background-image: url('../images/admin/icones/edition/white/publication.png');
+}
+/* TABLES */
+.oocss-clickable-table-row:hover .oocss-table-data{
+    cursor: var(--cursor-pointer-grey);
 }
 
 .bottom_bar{

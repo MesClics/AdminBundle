@@ -35,13 +35,11 @@
         </section>
         
     {% else %}
-        <section>
-            {% if postSection is defined %}
-                {% include "MesClicsPostBundle:Admin:post-" ~ postSection ~ ".html.twig" %}
-            {% else %}
-                {% include "MesClicsPostBundle:Admin:posts.html.twig" %}
-            {% endif %}
-        </section>
+        {% if postSection is defined %}
+            {% include "MesClicsPostBundle:Admin:post-" ~ postSection ~ ".html.twig" %}
+        {% else %}
+            {% include "MesClicsPostBundle:Widgets:posts-list.html.twig" %}
+        {% endif %}
     {% endif %}
 {% endblock deskMain%}
 
