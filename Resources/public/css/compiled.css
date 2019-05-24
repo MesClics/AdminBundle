@@ -277,8 +277,7 @@ a.oocss-active-link{
     flex-direction: row;
     align-items: center;
 }
-.oocss-form-date div select{
-    padding: 5px;
+.oocss-form-date .oocss-form-select{
     margin-right: 5px;
     margin-left: 5px;
 }
