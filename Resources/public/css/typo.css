@@ -18,14 +18,13 @@
         font-size: var(--extra-small-text);
         letter-spacing: normal;
         line-height: 30px;
-        font-weight: bold;
+        font-weight: var(--font-weight-bold);
         text-align: center;
     }
 /***********************/
 
 /***** OOCSS-INSTRUCTION *****/
     .oocss-instruction{
-        line-height: 30px;
         text-align: center;
         letter-spacing: 2px;
     }
@@ -33,6 +32,7 @@
             letter-spacing: normal;
             font-size: var(--small-text);
             font-style: italic;
+            text-transform: lowercase;
         }
         
     .oocss-instruction--link{
@@ -116,6 +116,6 @@
 /************/
 /***** MESSAGES *****/
     .oocss-table-row.messages__s__unread{
-        font-weight: bold;
+        font-weight: var(--font-weight-bold);
     }
 /********************/

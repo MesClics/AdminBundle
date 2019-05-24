@@ -61,20 +61,51 @@
     box-shadow: 0px 5px 40px 0px var(--shadow);
 }
 
-.oocss-widget.discret{
+.oocss-widget.oocss-discret{
     background-color: transparent;
     color: var(--white);
     box-shadow: none;
 }
 
-.oocss-widget--content{
-    background-color: var(--white);
-    color: var(--ashes);
-    cursor: var(--cursor-auto-grey);
-}
+/***** OOCSS-WIDGET *****/
+    .oocss-widget{
+        background-color: var(--black);
+        color: var(--white);
+    }
+        .oocss-widget.highlight{
+            background-color: var(--red);
+            color: var(--smoke);
+        }
+        .oocss-widget.oocss-discret{
+            background-color: transparent;
+            color: var(--white);
+            border: dotted 1px var(--ashes);
+        }
+
+    .oocss-widget--content{
+        background-color: var(--white);
+        color: var(--ashes);
+        cursor: var(--cursor-auto-grey);
+    }
+    .oocss-discret .oocss-widget--content{
+        background-color: transparent;
+        color: var(--white);
+    }
+    .oocss-widget--content-zone{
+        background-color: var(--smoke);
+    }
+    .oocss-widget--content-zone.highlight{
+        background-color: var(--green);
+        color: var(--white);
+    }
+/***********************/
 
 .oocss-widget--content a, .oocss-widget--content a:hover, .oocss-widget--content select, .oocss-widget--content select:hover, .oocss-widget--content option, .oocss-widget--content option:hover, .oocss-widget--content input, .oocss-widget--content input:hover, .oocss-widget--content label, .oocss-widget--content button, .oocss-widget--content button:hover{
     cursor: var(--cursor-pointer-grey);
+}
+
+.oocss-widget.oocss-discret .oocss-widget--content a, .oocss-widget.oocss-discret .oocss-widget--content a:hover, .oocss-widget.oocss-discret .oocss-widget--content select, .oocss-widget.oocss-discret .oocss-widget--content select:hover, .oocss-widget.oocss-discret .oocss-widget--content option, .oocss-widget.oocss-discret .oocss-widget--content option:hover, .oocss-widget.oocss-discret .oocss-widget--content input, .oocss-widget.oocss-discret .oocss-widget--content input:hover, .oocss-widget.oocss-discret .oocss-widget--content label, .oocss-widget.oocss-discret .oocss-widget--content button, .oocss-widget.oocss-discret .oocss-widget--content button:hover{
+    cursor: var(--cursor-pointer-white);
 }
 
 .oocss-widget.clients-search .oocss-widget--head::before{
@@ -91,6 +122,26 @@
 
 .oocss-widget.posts-list .oocss-widget--head::before{
     background-image: url('../images/admin/icones/edition/white/publication.png');
+}
+
+.oocss-widget.posts-new .oocss-widget--head::before{
+    background-image: url('../images/admin/icones/edition/white/publication-new.png');
+}
+
+.oocss-widget.posts-edit .oocss-widget--head::before{
+    background-image: url('../images/admin/icones/edition/white/publication-edit.png');
+}
+
+.oocss-widget.collections-new .oocss-widget--head::before{
+    background-image: url('../images/admin/icones/edition/white/collection-new.png');
+}
+
+.oocss-widget.collections-list .oocss-widget--head::before{
+    background-image: url('../images/admin/icones/edition/white/collection.png');
+}
+
+.oocss-widget.collections-edit .oocss-widget--head::before{
+    background-image: url('../images/admin/icones/edition/white/collection-edit.png');
 }
 /* TABLES */
 .oocss-clickable-table-row:hover .oocss-table-data{
