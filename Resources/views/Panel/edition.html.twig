@@ -20,20 +20,33 @@
         {% elseif postSection is same as ('edit') %}<a href="" class="desk-head-nav_rails--item [ oocss-active-link ]">Modifier une publication</a>
         {% endif %}
     </a>
+    {% elseif collectionSection is defined %}
+    >
     {% endif %}
 {% endblock deskHeadNavRails %}
 
-{% block deskMain %} 
+    {% block deskMain %}<div class="oocss-widget small oocss-discret">
+        <div class="oocss-widget--head">
+            <h2 class="oocss-widget--title">Accès Rapide</h2>
+        </div>
+        <div class="oocss-widget--content">
+            <section id="edition-nav" class="oocss-full-container-width">
+                {% include "MesClicsPostBundle:Admin:edition-nav.html.twig" %}
+            </section>
+        </div>
+
+    </div>
     {# on inclue le template de la vue edition correspondant à la subSection #}
     {% if subSection is defined and subSection is same as ('collections') %}
-        <section>
             {% if collectionSection is defined %}
-                {% include "MesClicsPostBundle:Admin:collection-" ~ collectionSection ~ ".html.twig" %}
+                {% if collectionSection is same as ('new') %}
+                    {% include "MesClicsPostBundle:Widgets:collection-" ~ collectionSection ~ ".html.twig" with {'widget_size': 'large'} %}
+                {% else %}
+                    {% include "MesClicsPostBundle:Widgets:collection-" ~ collectionSection ~ ".html.twig" %}
+                {% endif %}
             {% else %}
-                {% include "MesClicsPostBundle:Admin:collections.html.twig" %}
-            {% endif %}
-        </section>
-        
+                {% include "MesClicsPostBundle:Widgets:collections.html.twig" %}
+            {% endif %}       
     {% else %}
         {% if postSection is defined %}
             {% include "MesClicsPostBundle:Admin:post-" ~ postSection ~ ".html.twig" %}
@@ -41,21 +54,16 @@
             {% include "MesClicsPostBundle:Widgets:posts-list.html.twig" %}
         {% endif %}
     {% endif %}
-{% endblock deskMain%}
 
-{% block deskLateral%}
-    <section id="edition-nav" class="oocss-full-container-width">
-        {% include "MesClicsPostBundle:Admin:edition-nav.html.twig" %}
-    </section>
-
-    {# si un post est chargé on insère le template du post-preview #}
-    {% if post_preview is defined %}
-        {% include "MesClicsPostBundle:Admin:post-preview.html.twig" %}
-    {% else %}
-        {% if newPostForm is defined and subSection != 'publication-new' %}
-            <section class="card" id="new-post">
-                {% include "MesClicsPostBundle:Admin:post-new.html.twig" %}
-            </section>
-        {% endif %}
+    {% if collectionSection is not defined or (collectionSection is defined and collectionSection is not same as ('new')) %}
+        <section class="oocss-widget small collections-new">
+            <div class="oocss-widget--head">
+                <h2 class="oocss-widget--title">Ajouter une collection</h2>
+            </div>
+        
+            <div class="oocss-widget--content">
+                TODO: insérer le form en version slideshow
+            </div>
+        </section>
     {% endif %}
-{% endblock deskLateral %}
+{% endblock deskMain%}
