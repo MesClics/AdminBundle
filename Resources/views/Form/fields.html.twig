@@ -1,3 +1,4 @@
+
 {# form_row #}
 {% block form_row %}
     {% spaceless %}
@@ -102,10 +103,10 @@
                 {{ form_errors(form.date) }}
                 {{ form_errors(form.time) }}
                 <div class="oocss-form-widget {% if widget_options.date is defined and widget_options.date.attr.class is defined and widget_options.date.attr.class is not null %}{{ widget_options.date.attr.class }}{% endif %}">
-                    {{ form_widget(form.date, {'widget_options': widget_options.date|default(null)}) }}
+                   {{ form_widget(form.date, {'widget_options': widget_options.date|default(null)}) }}
                 </div>
                 <div class="oocss-form-widget {% if widget_options.time is defined and widget_options.time.attr.class is defined and widget_options.time.attr.class is not null %}{{ widget_options.time.attr.class }}{% endif %}">
-                    {{ form_widget(form.time, {'widget_options': widget_options.time|default(null)}) }}
+                    à {{ form_widget(form.time, {'widget_options': widget_options.time|default(null)}) }}
                 </div>
             </div>
         {% endif %}
