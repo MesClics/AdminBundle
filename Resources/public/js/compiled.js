@@ -87,6 +87,13 @@ for (let i = 0; i < slideshows.length; i++) {
     let nextBtn = slideshow.querySelector(".oocss-slideshow--next");
 
     //functions
+    function isNotRadio(elt){
+        console.log(elt);
+        if(elt.getAttribute('type') != "radio"){
+            return true;
+        }
+        return false;
+    }
     function handleFocus(step) {
         step.setAttribute("tabindex", null);
         let childrenElts = step.getElementsByTagName("input", "textarea", "button", "select");
@@ -110,8 +117,12 @@ for (let i = 0; i < slideshows.length; i++) {
                             }
                         } else if (i == 0) {
                             e.preventDefault();
-                            //get next input and select
-                            childrenElts[i + 1].select();
+                            if(isNotRadio(childrenElts[i])){
+                                //get next input and select
+                                childrenElts[i + 1].select();
+                            } else{
+                                clickOnNextBtn();
+                            }
                         }
                     }
                 });
@@ -168,7 +179,7 @@ for (let i = 0; i < slideshows.length; i++) {
 
         //focus on first element;
         //let step = slideshow.querySelector("[data-step-order='" + stepNb + "']");
-        let stepFirstFocusableChild = step.getElementsByTagName("input", "textarea", "button", "select")[0];
+        let stepFirstFocusableChild = step.getElementsByTagName("input", "textarea", "button", "radio", "select")[0];
 
         if (stepFirstFocusableChild) {
             stepFirstFocusableChild.select();
@@ -482,4 +493,9 @@ for(let i = 0; i < clickableTableRows.length; i++){
 
     }
 }
+window.addEventListener("load", function(e){
+    let sortableTables = document.getElementsByTagName("table").querySelectorAll(".oocss-sortable");
+
+    console.log("sortable tables", sortableTables);
+});
 //# sourceMappingURL=compiled.js.map
