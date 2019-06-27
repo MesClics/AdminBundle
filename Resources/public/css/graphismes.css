@@ -49,6 +49,10 @@
     background-size: 100px 47px;
 }
 
+.desk-head-nav_rails--item:last-child{
+    color: var(--red);
+}
+
 .desk-main{
 }
 
@@ -59,49 +63,46 @@
 /* WIGETS */
 .oocss-widget{
     box-shadow: 0px 5px 40px 0px var(--shadow);
-}
-
-.oocss-widget.oocss-discret{
-    background-color: transparent;
+    background-color: var(--black);
     color: var(--white);
-    box-shadow: none;
 }
-
-/***** OOCSS-WIDGET *****/
-    .oocss-widget{
-        background-color: var(--black);
-        color: var(--white);
+    .oocss-widget.highlight{
+        background-color: var(--red);
+        color: var(--smoke);
     }
-        .oocss-widget.highlight{
-            background-color: var(--red);
-            color: var(--smoke);
-        }
-        .oocss-widget.oocss-discret{
-            background-color: transparent;
-            color: var(--white);
-            border: dotted 1px var(--ashes);
-        }
-
-    .oocss-widget--content{
-        background-color: var(--white);
-        color: var(--ashes);
-        cursor: var(--cursor-auto-grey);
+    .oocss-widget.highlight2{
+        background-color: var(--yellow);
+        color: var(--smoke);
     }
-    .oocss-discret .oocss-widget--content{
+    .oocss-widget.oocss-discret{
         background-color: transparent;
-        color: var(--white);
+        color: var(--red);
+        box-shadow: none;
     }
-    .oocss-widget--content-zone{
-        background-color: var(--smoke);
-    }
-    .oocss-widget--content-zone.highlight{
-        background-color: var(--green);
-        color: var(--white);
-    }
-/***********************/
+
+.oocss-widget--content{
+    background-color: var(--white);
+    color: var(--ashes);
+    cursor: var(--cursor-auto-grey);
+}
+.oocss-discret .oocss-widget--content{
+    background-color: transparent;
+    color: var(--smoke);
+}
+.oocss-widget--content-zone{
+    background-color: var(--smoke);
+}
+.oocss-widget--content-zone.highlight{
+    background-color: var(--green);
+    color: var(--white);
+}
 
 .oocss-widget--content a, .oocss-widget--content a:hover, .oocss-widget--content select, .oocss-widget--content select:hover, .oocss-widget--content option, .oocss-widget--content option:hover, .oocss-widget--content input, .oocss-widget--content input:hover, .oocss-widget--content label, .oocss-widget--content button, .oocss-widget--content button:hover{
     cursor: var(--cursor-pointer-grey);
+}
+
+.oocss-widget.oocss-discret .oocss-widget--content{
+    cursor: var(--cursor-auto-white);
 }
 
 .oocss-widget.oocss-discret .oocss-widget--content a, .oocss-widget.oocss-discret .oocss-widget--content a:hover, .oocss-widget.oocss-discret .oocss-widget--content select, .oocss-widget.oocss-discret .oocss-widget--content select:hover, .oocss-widget.oocss-discret .oocss-widget--content option, .oocss-widget.oocss-discret .oocss-widget--content option:hover, .oocss-widget.oocss-discret .oocss-widget--content input, .oocss-widget.oocss-discret .oocss-widget--content input:hover, .oocss-widget.oocss-discret .oocss-widget--content label, .oocss-widget.oocss-discret .oocss-widget--content button, .oocss-widget.oocss-discret .oocss-widget--content button:hover{
@@ -116,8 +117,36 @@
     background-image: url('../images/admin/icones/clients/white/ajouter.png');
 }
 
+.oocss-widget.client-update .oocss-widget--head::before{
+    background-image: url('../images/admin/icones/clients/white/highlight.png');
+}
+
 .oocss-widget.clients-list .oocss-widget--head::before{
     background-image: url('../images/admin/icones/clients/white/client.png');
+}
+
+.oocss-widget.client-projets .oocss-widget--head::before{
+    background-image: url('../images/admin/icones/projets/white/projet.png');
+}
+
+.oocss-widget.client-projets-new .oocss-widget--head::before{
+    background-image: url('../images/admin/icones/projets/white/ajouter.png');
+}
+
+.oocss-widget.client-projet-edit .oocss-widget--head::before{
+    background-image: url('../images/admin/icones/projets/white/highlight.png');
+}
+
+.oocss-widget.client-contrats .oocss-widget--head::before{
+    background-image: url('../images/admin/icones/contrats/white/contrat.png');
+}
+
+.oocss-widget.client-contrats-new .oocss-widget--head::before{
+    background-image: url('../images/admin/icones/contrats/white/new.png');
+}
+
+.oocss-widget.client-contrat-associer-projets .oocss-widget--head::before{
+    background-image: url('../images/admin/icones/contrats/white/lier.png');
 }
 
 .oocss-widget.posts-list .oocss-widget--head::before{
@@ -143,11 +172,93 @@
 .oocss-widget.collections-edit .oocss-widget--head::before{
     background-image: url('../images/admin/icones/edition/white/collection-edit.png');
 }
+/***********************/
+
+/* OOCSS-HEADED-BLOCKS */
+    /* CLIENTS */
+    .oocss-headed-block.client-contrats:before{
+        background-image: url('../../mesclicsespaceclient/images/icones/contrats/white/contrat.png');
+    }
+    .oocss-headed-block.client-projets:before{
+        background-image: url('../../mesclicsespaceclient/images/icones/projets/white/projet.png');
+    }
+    .oocss-headed-block.client-projets-new:before{
+        background-image: url('../../mesclicsespaceclient/images/icones/projets/white/ajouter.png');
+    }
+    .oocss-headed-block.client-projets-remove:before{
+        background-image: url('../../mesclicsespaceclient/images/icones/projets/white/supprimer.png');
+    }
+    .oocss-headed-block.client-contrats-new:before{
+        background-image: url('../../mesclicsespaceclient/images/icones/contrats/white/new.png');
+    }
+
+    /*COLLECTIONS*/
+    .oocss-headed-block.collection-new:before{
+        background-image: url('../../mesclicspost/images/icones/white/collection-new.png');
+    }
+    .oocss-headed-block.collections-all:before{
+        background-image: url('../../mesclicspost/images/icones/white/collection.png');
+    }
+
+    /* MESSAGES */
+    .oocss-headed-block.messages-all:before{
+            background-image: url('../../mesclicsmessages/images/icones/white/lus.png');
+    }
+    .oocss-headed-block.messages-draft:before{
+        background-image: url('../../mesclicsmessages/images/icones/white/non-lus.png');
+    }
+    .oocss-headed-block.message-new:before{
+        background-image: url('../../mesclicsmessages/images/icones/white/new.png');
+    }
+    .oocss-headed-block.messages-sent:before{
+        background-image: url('../../mesclicsmessages/images/icones/white/envoyes.png');
+    }
+    .oocss-headed-block.messages-unread:before{
+        background-image: url('../../mesclicsmessages/images/icones/white/messages.png');
+    }
+    
+    /* POSTS */
+    .oocss-headed-block.publication-new:before{
+        background-image: url('../../mesclicspost/images/icones/white/publication-new.png');
+    }
+    .oocss-headed-block.publications-all:before{
+        background-image: url('../../mesclicspost/images/icones/white/publication.png');
+    }
+/*******************/
 /* TABLES */
+.oocss-table-head-row{
+    color: var(--grey);
+}
+
+.oocss-table-data:not(.discret){
+    border-bottom: dotted 1px var(--beige);
+}
+
+    .oocss-table-row:hover .oocss-table-data:not(.discret){
+        background-color: var(--smoke);
+        transition: all ease-in-out 300ms;
+    }
+    
+
+.oocss-table-data-icon path{
+    stroke: var(--ashes);
+}
+
+    /* MESSAGES */
+    .oocss-table-row.messages__s__unread .oocss-table-data{
+        color: var(--red);
+    }
+
 .oocss-clickable-table-row:hover .oocss-table-data{
     cursor: var(--cursor-pointer-grey);
 }
+    
+.oocss-table-col-sort.oocss-active{
+    color: var(--red);
+}
+/*******************/
 
+/* BOTTOM-BAR */
 .bottom_bar{
     background-color: black;
 }
@@ -225,6 +336,7 @@
     -moz-box-shadow: 0px 5px 40px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 5px 40px 0px rgba(0,0,0,0.75);
 }
+/******************/
 
 .notification{
     background-color: var(--blue);
@@ -260,4 +372,12 @@
     @keyframes fly-away{
         30%, 60%{ transform: translateY(30vh);}
         100%{ transform: scale(0.8) rotate(40deg) translateY(-300vh) translateX(50vw);}
+    }
+
+    .popup-illustration.projet-remove path{
+        stroke: var(--ashes);
+    }
+    .popup-illustration.projet-remove svg{
+        width: 50%;
+        height: auto;
     }
