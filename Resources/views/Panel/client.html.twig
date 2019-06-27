@@ -9,19 +9,15 @@
     <a href="{{ path('mesclics_admin_client', {'client_id': client.id}) }}" class="desk-head-nav_rails--item">{{ client.nom }}</a>
     {% if subSection is defined %}
         >
-        <a href="{{ path('mesclics_admin_client_' ~ subSection, {'client_id': client.id}) }}" class="desk-head-nav_rails--item">{{ subSection|capitalize }}</a>
+        <a href="{{ path('mesclics_admin_client_' ~ subSection, {'client_id': client.id}) }}" class="desk-head-nav_rails--item">{{ subSection }}</a>
     {% endif %}
 {% endblock deskHeadNavRails %}
 
 {% block deskMain %}
-    <section>
-        {% include "MesClicsEspaceClientBundle:Admin:client-nav.html.twig" %}
-    </section>
-        {% include "MesClicsEspaceClientBundle:Widgets:client-datas.html.twig" %}
-    <section>
-        {% include "MesClicsEspaceClientBundle:Admin:client.html.twig" with { 'client': client } %}
-    </section>
+        {% include "MesClicsEspaceClientBundle:Widgets:client-nav.html.twig" %}
+        {% if subSection is not defined or subSection is same as ('datas') %}
+            {% include "MesClicsEspaceClientBundle:Widgets:client-datas.html.twig" %}
+        {% else %}
+            {% include "MesClicsEspaceClientBundle:Admin:client.html.twig" with { 'client': client } %}
+        {% endif %}
 {% endblock deskMain%}
-
-{% block deskLateral %}
-{% endblock deskLateral %}

@@ -3,17 +3,17 @@
 {% block deskHeadNavRails %}
     <a href="{{ path('mesclics_admin_home') }}" class="desk-head-nav_rails--item">Console d'administration</a>
     >
-    <a href="{{ path('mesclics_admin_edition') }}" class="desk-head-nav_rails--item {% if subSection is not defined %}oocss-active-link{% endif %}">Edition</a>
+    <a href="{{ path('mesclics_admin_edition') }}" class="desk-head-nav_rails--item">Edition</a>
     {% if subSection is defined %}
     >
-    <a href="{{ path('mesclics_admin_' ~ subSection) }}" class="desk-head-nav_rails--item {% if postSection is not defined and collectionSection is not defined %}oocss-active-link{% endif %}">
+    <a href="{{ path('mesclics_admin_' ~ subSection) }}" class="desk-head-nav_rails--item">
         {% if subSection is same as ('posts') %}Publications{% endif %}
         {% if subSection is same as ('collections') %}Collections{% endif %}
     </a>
     {% endif %}
     {% if postSection is defined %}
         >
-        <a href="" class="desk-head-nav_rails--item oocss-active-link">
+        <a href="" class="desk-head-nav_rails--item">
             {% if postSection is same as ('new') %}
                 Ajouter une publication
             {% elseif postSection is same as ('edit') and currentPost is defined %}
@@ -22,7 +22,7 @@
         </a>
     {% elseif collectionSection is defined %}
         >
-        <a href="" class="desk-head-nav_rails--item oocss-active-link">
+        <a href="" class="desk-head-nav_rails--item">
             {% if collectionSection is same as ('new') %}
                 Ajouter une collection
             <!-- TODO: Ajouter le lien ligne 19 -->
@@ -33,22 +33,36 @@
     {% endif %}
 {% endblock deskHeadNavRails %}
 
-    {% block deskMain %}<div class="oocss-widget small oocss-discret">
-        <div class="oocss-widget--head">
-            <h2 class="oocss-widget--title">Accès Rapide</h2>
+    {% block deskMain %}
+    
+    <div class="oocss-widgets-collection-rows">
+        <div class="oocss-widget small oocss-discret oocss-widget-not-closable">
+            <div class="oocss-widget--content">
+                <section id="edition-nav" class="oocss-full-container-width">
+                    {% include "MesClicsPostBundle:Admin:edition-nav.html.twig" %}
+                </section>
+            </div>
+
         </div>
-        <div class="oocss-widget--content">
-            <section id="edition-nav" class="oocss-full-container-width">
-                {% include "MesClicsPostBundle:Admin:edition-nav.html.twig" %}
+
+        {% if (subSection is defined and subSection is same as ('collections')) and (collectionSection is not defined or collectionSection is not same as ('new')) %}
+            <section class="oocss-widget small collections-new">
+                <div class="oocss-widget--head">
+                    <h2 class="oocss-widget--title">Ajouter une collection</h2>
+                </div>
+            
+                <div class="oocss-widget--content">
+                    {% with {'isSlideshow': true} %}{% include "MesClicsPostBundle:Widgets:collection-form.html.twig" %}{% endwith %}
+                </div>
             </section>
-        </div>
+        {% endif %}
 
     </div>
     {# on inclue le template de la vue edition correspondant à la subSection #}
     {% if subSection is defined and subSection is same as ('collections') %}
             {% if collectionSection is defined %}
                 {% if collectionSection is same as ('new') %}
-                    {% include "MesClicsPostBundle:Widgets:collection-" ~ collectionSection ~ ".html.twig" with {'widget_size': 'large'} %}
+                    {% include "MesClicsPostBundle:Widgets:collection-" ~ collectionSection ~ ".html.twig" %}
                 {% else %}
                     {% include "MesClicsPostBundle:Widgets:collection-" ~ collectionSection ~ ".html.twig" %}
                 {% endif %}
@@ -61,17 +75,5 @@
         {% else %}
             {% include "MesClicsPostBundle:Widgets:posts-list.html.twig" %}
         {% endif %}
-    {% endif %}
-
-    {% if collectionSection is not defined or (collectionSection is defined and collectionSection is not same as ('new')) %}
-        <section class="oocss-widget small collections-new">
-            <div class="oocss-widget--head">
-                <h2 class="oocss-widget--title">Ajouter une collection</h2>
-            </div>
-        
-            <div class="oocss-widget--content">
-                TODO: insérer le form en version slideshow
-            </div>
-        </section>
     {% endif %}
 {% endblock deskMain%}

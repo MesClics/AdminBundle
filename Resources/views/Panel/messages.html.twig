@@ -3,10 +3,10 @@
 {% block deskHeadNavRails %}
     <a href="{{ path('mesclics_admin_home') }}" class="desk-head-nav_rails--item">Console d'administration</a>
     >
-    <a href="{{ path('mesclics_admin_messages') }}" class="desk-head-nav_rails--item {% if subSection is null %}[ oocss-active-link ]{% endif %}">Messages</a>
+    <a href="{{ path('mesclics_admin_messages') }}" class="desk-head-nav_rails--item">Messages</a>
     {% if subSection is not null %}
     >
-    <a href="" class="desk-head-nav_rails--item [ oocss-active-link ]">
+    <a href="" class="desk-head-nav_rails--item">
         {% if subSection is same as ('received') %}Tous{% endif %}
         {% if subSection is same as ('unread') %}Non lus{% endif %}
         {% if subSection is same as ('sent') %}Envoyés{% endif %}

@@ -61,6 +61,27 @@ window.addEventListener('load', function (e) {
     }
 });
 
+var closeButtons = document.querySelectorAll(".popup-close");
+
+closeButtons.forEach(function(element){
+    element.addEventListener("click", function(event){
+        closePopup(event.target);
+    });
+})
+
+function closePopup(element){
+    var popup = findAncestor(element, "popup");
+    popup.classList.add("closed");
+}
+
+function submitAfterAnimation(form){
+    form.addEventListener("webkitAnimationEnd", function(event){
+        event.target.submit();
+    })
+    form.addEventListener("animationend", function(event){
+        event.target.submit();
+    })
+}
 var form = document.querySelector('.message-form__d__new');
 var hasBeenAnimated = false;
 
@@ -88,15 +109,15 @@ for (let i = 0; i < slideshows.length; i++) {
 
     //functions
     function isNotRadio(elt){
-        console.log(elt);
         if(elt.getAttribute('type') != "radio"){
             return true;
         }
         return false;
     }
+
     function handleFocus(step) {
         step.setAttribute("tabindex", null);
-        let childrenElts = step.getElementsByTagName("input", "textarea", "button", "select");
+        let childrenElts = step.querySelectorAll('input,textarea,button,select');
         if (childrenElts.length > 0) {
             for (let i = 0; i < childrenElts.length; i++) {
                 childElt = childrenElts[i];
@@ -147,7 +168,7 @@ for (let i = 0; i < slideshows.length; i++) {
     function slideTo(stepNb) {
         let step = slideshowContent.querySelector("[data-step-order='" + stepNb + "']");
         if (!step) {
-            console.log("pas de data-step-order");
+            // console.log("pas de data-step-order");
             step = steps[stepNb - 1];
         }
         let stepHTMLOrder = getHTMLOrder(step);
@@ -179,7 +200,7 @@ for (let i = 0; i < slideshows.length; i++) {
 
         //focus on first element;
         //let step = slideshow.querySelector("[data-step-order='" + stepNb + "']");
-        let stepFirstFocusableChild = step.getElementsByTagName("input", "textarea", "button", "radio", "select")[0];
+        let stepFirstFocusableChild = step.querySelectorAll('input,textarea,button,radio')[0];
 
         if (stepFirstFocusableChild) {
             stepFirstFocusableChild.select();
@@ -497,5 +518,42 @@ window.addEventListener("load", function(e){
     let sortableTables = document.getElementsByTagName("table").querySelectorAll(".oocss-sortable");
 
     console.log("sortable tables", sortableTables);
+});
+window.addEventListener("load", function(e){
+    //get all oocss-widgets
+    let widgets = document.querySelectorAll(".oocss-widget");
+    function handleOpenClose(widget){
+        toggleOpenCloseClass(widget);
+    }
+
+    function toggleOpenCloseClass(elt){
+        if(elt.classList.contains("oocss-widget-opened")){
+            elt.classList.remove("oocss-widget-opened");
+            elt.classList.add("oocss-widget-closed");
+        } else if(elt.classList.contains("oocss-widget-closed")){
+            elt.classList.remove("oocss-widget-closed");
+            elt.classList.add("oocss-widget-opened");
+        }
+
+        console.log(elt);
+    }
+
+    widgets.forEach(function(widget){
+        if (!widget.classList.contains("oocss-widget-not-closable")) {
+                //create an open/close div
+                let openClose = document.createElement("button");
+                openClose.classList.add("oocss-widget-openclose");
+                widgetHead = widget.querySelector(".oocss-widget--head");
+                if(widgetHead){               
+                    openClose.addEventListener("click" ,function(e){
+                        handleOpenClose(widget)
+                    });
+                    widgetHead.append(openClose);
+
+                    widget.classList.add("oocss-widget-opened");
+
+                }
+        }
+    })
 });
 //# sourceMappingURL=compiled.js.map

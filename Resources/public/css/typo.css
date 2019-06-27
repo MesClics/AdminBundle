@@ -40,14 +40,6 @@
     }
 /*****************************/
 
-/***** OOCSS-LABEL *****/
-    .oocss-label{
-        font-size: var(--small-text);
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
-/***********************/
-
 /***** OOCSS-LEGEND *****/
     .oocss-legend--item{
         font-size: var(--extra-small-text);
@@ -62,6 +54,12 @@
         text-align: center;
     }
 /*************************/
+
+/***** DESK-NAV_RAILS--ITEM *****/
+    .desk-head-nav_rails--item:last-child{
+        font-weight: var(--font-weight-bold);
+    }
+/********************************/
 
 /***** OOCSS-SUB_SECTION-NAV *****/
     .oocss-sub_section-nav--item{
@@ -78,6 +76,7 @@
     .oocss-widget--title{
         width: 100%;
         text-align: center;
+        line-height: 30px;
     }
 
     .oocss-widget h3{

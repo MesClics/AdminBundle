@@ -8,7 +8,7 @@
     >
     {% if subSection is defined %}
         >
-        <a href="{{ path('mesclics_admin_user_' ~ subSection, {'id': user.id}) }}" class="desk-head-nav_rails--item [ oocss-active-link ]">{{ subSection|capitalize }}</a>
+        <a href="{{ path('mesclics_admin_user_' ~ subSection, {'id': user.id}) }}" class="desk-head-nav_rails--item">{{ subSection|capitalize }}</a>
         
     {% endif %}
 {% endblock deskHeadNavRails %}

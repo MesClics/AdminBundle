@@ -57,5 +57,15 @@
     </div>
     {% endblock bottomBar %}
 
+    {% if popups is defined and popups is not empty %}
+        <div class="popup from-left">
+            {% block popup %}
+                    {% for popup in popups %}
+                        {% include popup.template with { 'options': popup.options|default(null) } %}
+                    {% endfor %}
+            {% endblock popup %}
+        </div>
+    {% endif %}
+
     
 {% endblock body %}

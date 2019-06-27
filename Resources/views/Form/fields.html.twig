@@ -3,7 +3,7 @@
 {% block form_row %}
     {% spaceless %}
         <div class="oocss-form-row">
-            <div class="oocss-form-label">
+            <div class="oocss-label">
                 {{ form_label(form) }}
             </div>
             <div class="oocss-form-error {% if error_options is defined and error_options.attr.class is defined and error_options.attr.class is not null %}{{ error_options.attr.class }}{% endif %}">

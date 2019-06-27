@@ -3,17 +3,16 @@
 {% block deskHeadNavRails %}
     <a href="{{ path('mesclics_admin_home') }}" class="desk-head-nav_rails--item">Console d'administration</a>
     >
-    <a href="{{ path('mesclics_admin_clients') }}" class="desk-head-nav_rails--item [ oocss-active-link ]">Clients</a>
+    <a href="{{ path('mesclics_admin_clients') }}" class="desk-head-nav_rails--item">Clients</a>
 {% endblock deskHeadNavRails %}
 
-{% block deskMain %} {# section Liste des clients #}
+{% block deskMain %} 
+    <div class="oocss-widgets-collection-rows">
+        {% include "MesClicsEspaceClientBundle:Widgets:client-search.html.twig" %}
+        {% with {'isSlideshow': true } %}{% include "MesClicsEspaceClientBundle:Widgets:client-new.html.twig" %}{% endwith %}
+    </div>
 
-<div class="oocss-widgets-collection-rows">
-{% include "MesClicsEspaceClientBundle:Widgets:client-search.html.twig" %}
-{% include "MesClicsEspaceClientBundle:Widgets:client-new.html.twig" %}
-</div>
-           
-        {% if clients is defined and clients is not empty %}
-            {% include "MesClicsEspaceClientBundle:Widgets:clients-list.html.twig" with clients %}
-        {% endif %}
+    {% if clients is defined and clients is not empty %}
+        {% include "MesClicsEspaceClientBundle:Widgets:clients-list.html.twig" with clients %}
+    {% endif %}
 {% endblock deskMain%}
