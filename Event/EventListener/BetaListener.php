@@ -15,7 +15,7 @@ class BetaListener{
     }
 
     public function processBeta(FilterResponseEvent $event){
-        //on teste si la requête est bvien la requête principale:
+        //on teste si la requête est bien la requête principale:
         if(!$event->isMasterRequest()){
             $return;
         }

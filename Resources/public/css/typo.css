@@ -2,6 +2,12 @@
 /* OOCSS STYLES **/
 /*****************/
 
+/***** OOCSS6BUTTON *****/
+    .oocss-button.oocss-interface{
+        font-size: 0;
+    }
+/************************/
+
 /***** OOCSS-FORM *****/
 
     .oocss-form-input.titre{

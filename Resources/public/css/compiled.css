@@ -151,9 +151,14 @@ a:hover:not(.oocss-table-link, .oocss-sub_section-nav--link){
         padding: var(--gap-m);
         width: auto;
     }
-        .oocss-button.oocss-discret:not(.oocss-button-rounded){
+        /* .oocss-button.oocss-discret:not(.oocss-button-rounded){
             margin: var(--gap-xs);
             padding: var(--gap-l);
+        } */
+        .oocss-button.oocss-interface{
+            min-width: calc((2 * (2px + var(--gap-xxs)) + 32px));
+            min-height: calc((2 * (2px + var(--gap-xxs)) + 32px));
+            padding: var(--gap-xxs);
         }
     
     .oocss-button-rounded{
@@ -229,8 +234,7 @@ a:hover:not(.oocss-table-link, .oocss-sub_section-nav--link){
 .oocss-form-text,
 .oocss-form-select,
 .oocss-form-checkbox,
-.oocss-form-textarea,
-.oocss-form-submit{
+.oocss-form-textarea{
     padding: var(--gap-l);
 }
 
@@ -723,12 +727,16 @@ a:hover:not(.oocss-table-link, .oocss-sub_section-nav--link){
         background-color: var(--red);
         color: inherit;
         transition: background-color 150ms ease-out;
+        border: 2px solid transparent;
     }
         .oocss-button:hover{
             background-color: var(--hard-red);
         }
             .oocss-button:not(.oocss-headed-block).oocss-discret{
-                border: 2px solid var(--smoke);
+                border-color: var(--smoke);
+            }
+            .alert .oocss-button:not(.oocss-headed-block).oocss-discret{
+                opacity: 0.7;
             }
             .oocss-button.oocss-discret:hover{
                 background-color: transparent;
@@ -737,15 +745,18 @@ a:hover:not(.oocss-table-link, .oocss-sub_section-nav--link){
             }
             .oocss-button:not(.oocss-headed-block).oocss-discret:hover{
                 border-color: var(--red);
-                color: red;
+            }
+            .alert .oocss-button:not(.oocss-headed-block).oocss-discret:hover{
+                border-color: var(--smoke);
+                opacity: 1;
             }
             
     .oocss-button-rounded{
         border-radius: 50%;
+        color: var(--smoke);
     }
         .oocss-button-rounded.oocss-discret{
             background-color: var(--grey);
-            color: var(--smoke);
         }
         .oocss-button-rounded.oocss-discret:hover{
             background-color: var(--red);
@@ -797,6 +808,17 @@ a:hover:not(.oocss-table-link, .oocss-sub_section-nav--link){
 /***** OOCSS-HEADED-BLOCK *****/
     .oocss-widget .oocss-headed-block{
         color: var(--smoke);
+    }
+
+    .oocss-widget:not(.oocss-discret) .oocss-headed-block{
+        color: var(--ashes);
+    }
+    .oocss-widget:not(.oocss-discret) .oocss-headed-block.oocss-form-submit{
+        color: var(--smoke);
+    }
+    .oocss-widget:not(.oocss-discret) .oocss-headed-block.oocss-discret{
+        color: var(--grey);
+        border: 2px solid var(--grey);
     }
 
     .oocss-headed-block:before{
@@ -1259,6 +1281,8 @@ body{
                 grid-row: 3 / span 1;
                 grid-column: 2 / span 1;
                 width: 100%;
+                display: grid;
+                grid-row-gap: var(--gap-xxl);
             }
 
             .popup-footer{
@@ -1284,7 +1308,7 @@ body{
         width: 100vw;
         height: 100vh;
         position: fixed;
-        top: 0;
+        top: 0; 
         left: 0;
         z-index: -1000;
         opacity: 0;
@@ -1370,10 +1394,10 @@ body{
 /***** in grid .desk *****/
     /* DESK HEAD*/
     .desk-head{
-        grid-column: 1 / span 2;
+        grid-column: 1;
         grid-row: 1 / span 1;
         display: grid;
-        grid-template-columns: 180px 1fr;
+        grid-template-columns: 180px auto 1fr;
         /*debug*/
         /* border: solid 3px red; */
     }
@@ -1426,6 +1450,22 @@ body{
         flex-direction: row;
         align-items: center;
     }
+
+    /* DESK HEAD NAV-CHRONO */
+    .desk-head--nav-chrono{
+        display: inline-grid;
+        grid-auto-columns: max-content;
+        grid-auto-flow: column;
+        grid-gap: var(--gap-m);
+        align-items: center;
+    }
+        .desk-head--nav-chrono:before{
+            display: block;
+            content: " ";
+            width: var(--gap-s);
+            height: 30px;
+            border-right: 2px solid var(--ashes);
+        }
 /********************************/
 
 /*****in grid .desk-lateral*****/
@@ -1622,10 +1662,14 @@ a, a:hover, select, select:hover, option, option:hover, input, input:hover, labe
         cursor: var(--cursor-auto-grey-shadowed);
         box-shadow: -15px 5px 30px var(--shadow);
     }
-        .alert .popup-in{
+        .alert.popup-in{
             background-color: var(--red);
-            color: var(--white);
+            color: var(--smoke);
+            cursor: var(--cursor-auto-white-shadowed);
         }
+         .alert.popup-in a, .alert.popup-in input, .alert.popup-in label, .alert.popup-in button, .alert.popup-in input[type="submit"]{
+             cursor: var(--cursor-pointer-white-shadowed);
+         }
 
     .popup-close-shortlink{
         cursor: var(--cursor-pointer-white-shadowed);
@@ -1913,6 +1957,28 @@ a, a:hover, select, select:hover, option, option:hover, input, input:hover, labe
 }
 /***********************/
 
+/* OOCSS-BUTTON */
+.oocss-button.oocss-interface{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: transparent;
+}
+
+.oocss-button.prev{
+    background-image: url('../../mesclics/images/interface/grey/prev.png');
+}
+    .oocss-button.prev:hover{
+        background-image: url('../../mesclics/images/interface/smoke/prev.png');
+    }
+
+.oocss-button.next{
+    background-image: url('../../mesclics/images/interface/grey/next.png');
+}   
+    .oocss-button.next:hover{
+        background-image: url('../../mesclics/images/interface/smoke/next.png');
+    }
+/****************/
+
 /* OOCSS-HEADED-BLOCKS */
     /* CLIENTS */
     .oocss-headed-block.client-contrats:before{
@@ -1921,15 +1987,30 @@ a, a:hover, select, select:hover, option, option:hover, input, input:hover, labe
     .oocss-headed-block.client-projets:before{
         background-image: url('../../mesclicsespaceclient/images/icones/projets/white/projet.png');
     }
+        .oocss-widget:not(.oocss-discret) .oocss-headed-block.client-projets:before{
+            background-image: url('../../mesclicsespaceclient/images/icones/projets/ashes/projet.png');
+        }
+    .oocss-headed-block.client-contrats-projets-unlink:before{
+        background-image: url('../../mesclicsespaceclient/images/icones/projets/grey/delier.png');
+    }
     .oocss-headed-block.client-projets-new:before{
         background-image: url('../../mesclicsespaceclient/images/icones/projets/white/ajouter.png');
     }
     .oocss-headed-block.client-projets-remove:before{
         background-image: url('../../mesclicsespaceclient/images/icones/projets/white/supprimer.png');
     }
+        .oocss-headed-block.client-projets-remove.oocss-discret:before{
+            background-image: url('../../mesclicsespaceclient/images/icones/projets/grey/supprimer.png');
+        }
     .oocss-headed-block.client-contrats-new:before{
         background-image: url('../../mesclicsespaceclient/images/icones/contrats/white/new.png');
     }
+    .oocss-headed-block.client-contrats-remove:before{
+        background-image: url('../../mesclicsespaceclient/images/icones/contrats/white/supprimer.png');
+    }
+        .oocss-headed-block.client-contrats-remove.oocss-discret:before{
+            background-image: url('../../mesclicsespaceclient/images/icones/contrats/grey/supprimer.png');
+        }
 
     /*COLLECTIONS*/
     .oocss-headed-block.collection-new:before{
@@ -1938,6 +2019,14 @@ a, a:hover, select, select:hover, option, option:hover, input, input:hover, labe
     .oocss-headed-block.collections-all:before{
         background-image: url('../../mesclicspost/images/icones/white/collection.png');
     }
+
+    /*INTERFACE*/
+    .oocss-headed-block.save:before{
+        background-image: url('../../mesclics/images/interface/white/save.png');  
+    }
+        .oocss-headed-block.save.oocss-discret:before{
+            background-image: url('../../mesclics/images/interface/grey/save.png');
+        }
 
     /* MESSAGES */
     .oocss-headed-block.messages-all:before{
@@ -2114,9 +2203,17 @@ a, a:hover, select, select:hover, option, option:hover, input, input:hover, labe
     }
 
     .popup-illustration.projet-remove path{
-        stroke: var(--ashes);
+        stroke: var(--smoke);
     }
     .popup-illustration.projet-remove svg{
+        width: 50%;
+        height: auto;
+    }
+
+    .popup-illustration.contrat-remove path{
+        stroke: var(--smoke) !important;
+    }
+    .popup-illustration.contrat-remove svg{
         width: 50%;
         height: auto;
     }
@@ -2200,7 +2297,7 @@ label{
     }
     .oocss-button:not(.oocss-headed-block){
         text-align: center;
-        line-height: calc( 100% + (2 * var(--gap-l)));
+        /* line-height: calc( 100% + (2 * var(--gap-l))); */
     }
         .oocss-button.oocss-no-typo{
             text-transform: none;
@@ -2224,7 +2321,6 @@ label{
     }
     
     .oocss-form-submit{
-        font-weight: var(--font-weight-bold);
         text-transform: uppercase;
     }
 /************************/
@@ -2285,6 +2381,12 @@ label{
 /*****************/
 /* OOCSS STYLES **/
 /*****************/
+
+/***** OOCSS6BUTTON *****/
+    .oocss-button.oocss-interface{
+        font-size: 0;
+    }
+/************************/
 
 /***** OOCSS-FORM *****/
 
@@ -2402,4 +2504,5 @@ label{
         font-weight: var(--font-weight-bold);
     }
 /********************/
+
 /*# sourceMappingURL=compiled.css.map */

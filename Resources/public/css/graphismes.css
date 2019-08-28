@@ -174,6 +174,28 @@
 }
 /***********************/
 
+/* OOCSS-BUTTON */
+.oocss-button.oocss-interface{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: transparent;
+}
+
+.oocss-button.prev{
+    background-image: url('../../mesclics/images/interface/grey/prev.png');
+}
+    .oocss-button.prev:hover{
+        background-image: url('../../mesclics/images/interface/smoke/prev.png');
+    }
+
+.oocss-button.next{
+    background-image: url('../../mesclics/images/interface/grey/next.png');
+}   
+    .oocss-button.next:hover{
+        background-image: url('../../mesclics/images/interface/smoke/next.png');
+    }
+/****************/
+
 /* OOCSS-HEADED-BLOCKS */
     /* CLIENTS */
     .oocss-headed-block.client-contrats:before{
@@ -182,15 +204,30 @@
     .oocss-headed-block.client-projets:before{
         background-image: url('../../mesclicsespaceclient/images/icones/projets/white/projet.png');
     }
+        .oocss-widget:not(.oocss-discret) .oocss-headed-block.client-projets:before{
+            background-image: url('../../mesclicsespaceclient/images/icones/projets/ashes/projet.png');
+        }
+    .oocss-headed-block.client-contrats-projets-unlink:before{
+        background-image: url('../../mesclicsespaceclient/images/icones/projets/grey/delier.png');
+    }
     .oocss-headed-block.client-projets-new:before{
         background-image: url('../../mesclicsespaceclient/images/icones/projets/white/ajouter.png');
     }
     .oocss-headed-block.client-projets-remove:before{
         background-image: url('../../mesclicsespaceclient/images/icones/projets/white/supprimer.png');
     }
+        .oocss-headed-block.client-projets-remove.oocss-discret:before{
+            background-image: url('../../mesclicsespaceclient/images/icones/projets/grey/supprimer.png');
+        }
     .oocss-headed-block.client-contrats-new:before{
         background-image: url('../../mesclicsespaceclient/images/icones/contrats/white/new.png');
     }
+    .oocss-headed-block.client-contrats-remove:before{
+        background-image: url('../../mesclicsespaceclient/images/icones/contrats/white/supprimer.png');
+    }
+        .oocss-headed-block.client-contrats-remove.oocss-discret:before{
+            background-image: url('../../mesclicsespaceclient/images/icones/contrats/grey/supprimer.png');
+        }
 
     /*COLLECTIONS*/
     .oocss-headed-block.collection-new:before{
@@ -199,6 +236,14 @@
     .oocss-headed-block.collections-all:before{
         background-image: url('../../mesclicspost/images/icones/white/collection.png');
     }
+
+    /*INTERFACE*/
+    .oocss-headed-block.save:before{
+        background-image: url('../../mesclics/images/interface/white/save.png');  
+    }
+        .oocss-headed-block.save.oocss-discret:before{
+            background-image: url('../../mesclics/images/interface/grey/save.png');
+        }
 
     /* MESSAGES */
     .oocss-headed-block.messages-all:before{
@@ -375,9 +420,17 @@
     }
 
     .popup-illustration.projet-remove path{
-        stroke: var(--ashes);
+        stroke: var(--smoke);
     }
     .popup-illustration.projet-remove svg{
+        width: 50%;
+        height: auto;
+    }
+
+    .popup-illustration.contrat-remove path{
+        stroke: var(--smoke) !important;
+    }
+    .popup-illustration.contrat-remove svg{
         width: 50%;
         height: auto;
     }

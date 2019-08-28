@@ -12,3 +12,15 @@ services:
     #         - "2018-04-30"
     #     tags:
     #         - { name: kernel.event_listener, event: kernel.response, method: processBeta }
+    
+#     mesclics_admin.navigation.visited_page_listener:
+#         class: MesClics\NavigationBundle\Events\EventListeners\NavigationEventListener
+#         tags:
+#             - { name: kernel.event_listener, event: kernel.controller, method: test }
+
+    mesclics_admin.navigation_subscriber:
+        class: MesClics\AdminBundle\Event\EventListener\AdminNavigationSubscriber
+        arguments:
+          - '@mesclics_navigation.navigator'
+        tags:
+          - { name: kernel.event_subscriber }
