@@ -1,16 +1,9 @@
 <?php
 namespace MesClics\AdminBundle\Event\EventListener;
 
-use ResponseEvent;
-use MesClics\UserBundle\Entity\User;
 use Symfony\Component\HttpKernel\KernelEvents;
 use MesClics\NavigationBundle\Entity\VisitedRoute;
 use MesClics\NavigationBundle\Events\ChronologyEvents;
-use Symfony\Component\EventDispatcher\EventDispatcher;
-use Symfony\Component\HttpKernel\Event\GetResponseEvent;
-use Symfony\Component\Security\Core\AuthenticationEvents;
-use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
-use Symfony\Component\Security\Core\Event\AuthenticationEvent;
 use MesClics\NavigationBundle\Events\ChronologyVisitingRouteEvent;
 use Symfony\Component\HttpKernel\Event\FilterControllerArgumentsEvent;
 use MesClics\NavigationBundle\Events\EventListeners\NavigationSubscriberInterface;
@@ -23,9 +16,6 @@ class AdminNavigationSubscriber extends NavigationSubscriberInterface{
             KernelEvents::CONTROLLER_ARGUMENTS => 'onKernelControllerArguments',
             ChronologyEvents::VISITING_ROUTE => 'onChronologyVisitingRoute',
         );
-    }
-
-    public function onKernelRequest(GetResponseEvent $event){
     }
     
     // DEPREC: >= 4.3 : FilterControllerArgumentsEvent -> ControllerArgumentsEvent
