@@ -22,7 +22,6 @@ class AdminNavigationSubscriber extends NavigationSubscriberInterface{
     public function onKernelControllerArguments(FilterControllerArgumentsEvent $event){
         $request = $event->getRequest();
         $request->attributes->set('navigator', $this->navigator);
-
         
         $isVisitedRoute = $request->query->get("chronology", false);
 
@@ -38,16 +37,24 @@ class AdminNavigationSubscriber extends NavigationSubscriberInterface{
             $request = $event->getRequest();
             
             if($request->attributes->get('_route')){
+                //check if route starts with "mesclics_admin"
+                $isAnAdminRoute = preg_match('/^mesclics_admin/', $request->attributes->get('_route'));
+                if(!$isAnAdminRoute){
+                    return;
+                }
+
                 $route = new VisitedRoute($request->attributes->get('_route'), $request->attributes->get('_route_params'));
                 // TODO: add a parameter false to addRoute() method if controller gets a "no-not-save-in-chronology parameter OR annotation
-                $this->navigator->addRoute($route);
+
+                if($this->navigator->getUser() && !is_string($this->navigator->getUser())){
+                    $this->navigator->addRoute($route);
+                }
             }
-            $this->navigator->setPrevCurrNext(null);
         }
     }
 
     public function onChronologyVisitingRoute(ChronologyVisitingRouteEvent $event){
         //update navigator's prev, curr & next parameters
-        $this->navigator->setPrevCurrNext($event->getRoute());
+        $this->navigator->getVisitedRoutes()->setPrevCurrNext($event->getRoute());
     }
 }
