@@ -1892,6 +1892,10 @@ a, a:hover, select, select:hover, option, option:hover, input, input:hover, labe
     cursor: var(--cursor-pointer-white);
 }
 
+.oocss-widget.actions .oocss-widget--head:before{
+    background-image: url('../images/navigation/icones/actions/white/action.png');
+}
+
 .oocss-widget.clients-search .oocss-widget--head::before{
     background-image: url('../images/admin/icones/clients/white/rechercher.png');
 }

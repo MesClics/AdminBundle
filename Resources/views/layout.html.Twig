@@ -22,7 +22,7 @@
                     {# navigation (chemin de fer : Menu > Item > item) #}
                     <div class="desk-head--nav-chrono">
                         {% set options = {'visitedRoutes': {'prev': {'class': 'oocss-button oocss-interface prev', 'title': 'prev', 'label': 'prev'}, 'next': {'class': 'oocss-button oocss-interface next', 'title': 'next', 'label': 'next'}}} %}
-                        {% include "MesClicsNavigationBundle:Widgets:PrevNext.html.twig" with {'options': options} %}
+                        {% include "MesClicsNavigationBundle:Widgets:PrevNextVisitedRoutes.html.twig" with {'options': options} %}
                     </div>
                 </div>
             {% endblock deskHead %}
