@@ -633,10 +633,12 @@ a:hover:not(.oocss-table-link, .oocss-sub_section-nav--link){
 
 .oocss-widget.small{
     grid-column: span 1;
+    max-width: 33%;
 }
 
 .oocss-widget.medium{
     grid-column: span 2;
+    max-width: 66%;
 }
 
     @media screen and (max-width: 599px){
@@ -1515,7 +1517,7 @@ body{
 /*********/
 
 .desk-main .oocss-table{
-    min-width: 80%;
+    /* min-width: 80%; */
 }
 
 .desk-head-nav_rails--item{

@@ -165,7 +165,7 @@ body{
 /*********/
 
 .desk-main .oocss-table{
-    min-width: 80%;
+    /* min-width: 80%; */
 }
 
 .desk-head-nav_rails--item{
