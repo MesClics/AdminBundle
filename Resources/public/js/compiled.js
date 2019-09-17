@@ -515,9 +515,14 @@ for(let i = 0; i < clickableTableRows.length; i++){
     }
 }
 window.addEventListener("load", function(e){
-    let sortableTables = document.getElementsByTagName("table").querySelectorAll(".oocss-sortable");
+    let tables = document.getElementsByTagName("table");
 
-    console.log("sortable tables", sortableTables);
+    if (tables.length) {
+        let sortableTables = tables.querySelectorAll(".oocss-sortable");
+
+        console.log("sortable tables", sortableTables);
+
+    }
 });
 window.addEventListener("load", function(e){
     //get all oocss-widgets
