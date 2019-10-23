@@ -392,6 +392,41 @@
     grid-column: span 2;
 }
 
+/***** FLASH-MESSAGES *****/
+.flash-messages{
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.75);
+}
+.flash-message{
+    background-color: var(--white);
+}
+
+.flash-message.success{
+    color: var(--green);
+}
+.flash-message.success::before{
+    background-color: var(--green);
+}
+
+.flash-message.error{
+    color: var(--red);
+}
+.flash-message.error::before{
+    background-color: var(--red);
+}
+
+.flash-message.warning{
+    color: var(--yellow);
+}
+.flash-message.warning::before{
+    background-color: var(--yellow);
+}
+.flash-message .oocss-close:before{
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-image: url('../../mesclics/images/interface/ashes/cross.png');
+}
+/**************************/
+
 
 
 /**************/
@@ -407,6 +442,20 @@
         100%{transform: translateY(-35px); z-index: 2;}
     }
 
+
+.flash-messages{
+    animation : flashMessages 500ms ease-in-out 150ms forwards;
+    overflow: hidden;
+}
+.flash-message.oocss-closed{
+    min-height: 0;
+    height: 0;
+    transition: min-height 500ms linear 150ms, height 500ms linear 150ms;
+}
+    @keyframes flashMessages{
+        75%{transform: translateY(calc(var(--bottom-bar-h) + 105%));}
+        100%{transform: translateY(calc(-1 * ( var(--bottom-bar-h) + 100%)));}
+    }
 .oocss-index__d__admin_menu.messages{
     animation: index-hey 1000ms ease-in-out infinite;
 }

@@ -209,9 +209,15 @@ a:hover:not(.oocss-table-link, .oocss-sub_section-nav--link){
     grid-row-gap: var(--gap-xxl);
 }
     .oocss-form.embedded{
-        margin-top: var(--gap-m);
         margin-left: var(--gap-l);
         grid-row-gap: var(--gap-s);
+        padding: var(--gap-m);
+        /* background-color: var(--smoke); */
+        border: 2px solid var(--smoke);
+        border-radius: var(--gap-m);
+    }
+    .oocss-form.embedded:not(:first-child){
+        margin-top: var(--gap-xxl);
     }
     .oocss-form__d__message{
         grid-template-columns: 1fr;
@@ -258,7 +264,7 @@ a:hover:not(.oocss-table-link, .oocss-sub_section-nav--link){
     height: auto; max-height: auto; min-height: auto;
     padding-right: 20px;
     background-image: url('../../mesclics/images/interface/ashes/arrow-down.png');
-    background-position: 100% center;
+    background-position: calc(100% - var(--gap-s)) center;
     background-repeat: no-repeat;
     background-size: 15px;
 
@@ -735,6 +741,9 @@ a:hover:not(.oocss-table-link, .oocss-sub_section-nav--link){
             .oocss-button:not(.oocss-headed-block).oocss-discret{
                 border-color: var(--smoke);
             }
+            .oocss-button:not(.oocss-headed-block).oocss-very-discret{
+                border-color: transparent;
+            }
             .alert .oocss-button:not(.oocss-headed-block).oocss-discret{
                 opacity: 0.7;
             }
@@ -1004,6 +1013,9 @@ a:hover:not(.oocss-table-link, .oocss-sub_section-nav--link){
     .oocss-form-text{
         background-color: var(--smoke);
     }
+        /* .embedded .oocss-form-text{
+            background-color: var(--white);
+        } */
 
     .oocss-form-checkbox__d__button{
         border-width: 2px;
@@ -1214,9 +1226,6 @@ body{
             transform: translateX(var(--gap)) translateY(calc(-1 * var(--gap)));
         }
 
-        .menu-button{
-        }
-
         .menu-bloc{
             display: flex;
             flex-direction: column;
@@ -1351,6 +1360,7 @@ body{
 
 :root{
     --oocss-slideshow-slider-height: 30px;
+    --flash-messages-counter: 0;
 }
 /*********/
 /* GRIDS */
@@ -1358,7 +1368,7 @@ body{
 body{
     display: grid;
     grid-template-columns: 100vw;
-    grid-template-rows: calc(100vh - var(--bottom-bar-h)) var(--bottom-bar-h);
+    grid-template-rows: calc(100vh - var(--bottom-bar-h)) var(--bottom-bar-h) auto;
     grid-column-gap: 1rem;
     grid-row-gap: 0;
     max-height: 100vh;
@@ -1373,7 +1383,7 @@ body{
         display: grid;
         grid-template-columns: 100vw;
         grid-template-rows: 100px 1fr;
-        padding-bottom: var(--gap-m);
+        padding-bottom: var(--gap-xl);
         /*debug*/
         /* border: solid 3px yellow; */
     }
@@ -1405,7 +1415,7 @@ body{
     .desk-main{
         grid-row: 2 / span 1;
         grid-column: 1 / span 1;
-        padding: var(--gap-xxxl) var(--gap-xxxl) var(--gap-xxl) var(--gap-xxxl);
+        padding: var(--gap-xxxl) var(--gap-xxxl) 400px var(--gap-xxxl);
         overflow-x: hidden;
         overflow-y: auto;
 
@@ -1481,6 +1491,39 @@ body{
         display: grid;
         grid-auto-flow: column;
         padding-left: 30px;
+    }
+
+    .flash-messages{
+        display: grid;
+        grid-auto-flow: row;
+        /* align-content: end; */
+        width: 100vw;
+    }
+
+    .flash-message{
+        display: grid;
+        grid-template-columns: var(--gap-m) 1fr auto;
+        grid-column-gap: var(--gap-m);
+        align-items: center;
+        min-height: calc(2 * var(--line-height));
+    }
+
+    .flash-message::before{
+        content: " ";
+        display: inline-block;
+        min-width: var(--gap-s);
+        height: 100%;
+    }
+
+    .flash-message .oocss-close:before{
+        display: inline-block;
+        content: "";
+        width: 16px;
+        height: 16px;
+    }
+
+    .flash-message--content{
+        margin-bottom: 0;
     }
 /*******************************/
 
@@ -1568,6 +1611,7 @@ body{
     --hard-red: #D12E40;
     --blue: #2d99ff;
     --green: #00d68d;
+    --yellow: #f4b64b;
     --white: #fff;
     --smoke: #f5f5f5;
 	--beige: #eee7e0;
@@ -2175,6 +2219,41 @@ a, a:hover, select, select:hover, option, option:hover, input, input:hover, labe
     grid-column: span 2;
 }
 
+/***** FLASH-MESSAGES *****/
+.flash-messages{
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.75);
+}
+.flash-message{
+    background-color: var(--white);
+}
+
+.flash-message.success{
+    color: var(--green);
+}
+.flash-message.success::before{
+    background-color: var(--green);
+}
+
+.flash-message.error{
+    color: var(--red);
+}
+.flash-message.error::before{
+    background-color: var(--red);
+}
+
+.flash-message.warning{
+    color: var(--yellow);
+}
+.flash-message.warning::before{
+    background-color: var(--yellow);
+}
+.flash-message .oocss-close:before{
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-image: url('../../mesclics/images/interface/ashes/cross.png');
+}
+/**************************/
+
 
 
 /**************/
@@ -2190,6 +2269,20 @@ a, a:hover, select, select:hover, option, option:hover, input, input:hover, labe
         100%{transform: translateY(-35px); z-index: 2;}
     }
 
+
+.flash-messages{
+    animation : flashMessages 500ms ease-in-out 150ms forwards;
+    overflow: hidden;
+}
+.flash-message.oocss-closed{
+    min-height: 0;
+    height: 0;
+    transition: min-height 500ms linear 150ms, height 500ms linear 150ms;
+}
+    @keyframes flashMessages{
+        75%{transform: translateY(calc(var(--bottom-bar-h) + 105%));}
+        100%{transform: translateY(calc(-1 * ( var(--bottom-bar-h) + 100%)));}
+    }
 .oocss-index__d__admin_menu.messages{
     animation: index-hey 1000ms ease-in-out infinite;
 }
@@ -2231,10 +2324,11 @@ a, a:hover, select, select:hover, option, option:hover, input, input:hover, labe
     --font-weight-semibold: 400;
     --font-weight-bold: 700;
     --font_main: 'Open Sans';
+    --line-height : 24px;
 }
 
 body{
-    line-height: 24px;
+    line-height: var(--line-height);
     font-family: var(--font_main);
     font-weight: var(--font-weight-normal);
     font-size: var(--medium-text);
@@ -2410,6 +2504,7 @@ label{
         line-height: 30px;
         font-weight: var(--font-weight-bold);
         text-align: center;
+        overflow: visible;
     }
 /***********************/
 
@@ -2498,6 +2593,12 @@ label{
         text-align: center;
     }
 /************************/
+
+/***** FLASH-MESSAGES *****/
+.flash-message .oocss-close{
+    font-size: 0;
+}
+/**************************/
 
 
 /************/
