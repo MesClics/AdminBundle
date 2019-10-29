@@ -2277,7 +2277,7 @@ a, a:hover, select, select:hover, option, option:hover, input, input:hover, labe
 .flash-message.oocss-closed{
     min-height: 0;
     height: 0;
-    transition: min-height 500ms linear 150ms, height 500ms linear 150ms;
+    transition: min-height 250ms linear 150ms, height 500ms linear 150ms;
 }
     @keyframes flashMessages{
         75%{transform: translateY(calc(var(--bottom-bar-h) + 105%));}
