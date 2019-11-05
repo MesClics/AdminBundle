@@ -504,26 +504,56 @@ var clickableTableRows = document.querySelectorAll(".oocss-clickable-table-row")
 
 for(let i = 0; i < clickableTableRows.length; i++){
     let clickableTableRow = clickableTableRows[i];
+    let link = clickableTableRow.getAttribute("data-link");
 
-    let link = clickableTableRow.getElementsByTagName("a")[0].getAttribute("href");
+    // let link = clickableTableRow.getElementsByTagName("a")[0].getAttribute("href");
 
     if(link) {
-        clickableTableRow.addEventListener("click", function (e) {
-            window.location.href = link;
-        });
+        let tds = clickableTableRow.getElementsByTagName("td");
+        console.log(tds);
+
+        for(let i = 0; i < tds.length; i++){
+            let clickableTableData = tds[i];
+
+            let linksOrButtons = clickableTableData.querySelectorAll("a,button");
+            console.log(linksOrButtons);
+            if (linksOrButtons.length == 0) {
+                //if child is not a link or button
+                clickableTableData.addEventListener("click", function (e) {
+                    window.location.href = link;
+                });
+
+            }
+        }
 
     }
 }
-window.addEventListener("load", function(e){
-    let tables = document.getElementsByTagName("table");
 
-    if (tables.length) {
-        let sortableTables = tables.querySelectorAll(".oocss-sortable");
 
-        console.log("sortable tables", sortableTables);
+console.log("popups script is loaded");
 
+window.addEventListener("load", function(event){
+    let popupBtns = event.target.querySelectorAll(".oocss-open-popup");
+    for(let i = 0; i < popupBtns.length; i++){
+        let popupBtn = popupBtns[i];
+
+        popupBtn.addEventListener("click", function(e){
+            e.preventDefault()
+            let datas = e.target.getAttribute("data-popup");
+            console.log(datas);
+        })
     }
 });
+// window.addEventListener("load", function(e){
+//     let tables = document.getElementsByTagName("table");
+
+//     if (tables.length) {
+//         let sortableTables = tables.querySelectorAll(".oocss-sortable");
+
+//         console.log("sortable tables", sortableTables);
+
+//     }
+// });
 window.addEventListener("load", function(e){
     //get all oocss-widgets
     let widgets = document.querySelectorAll(".oocss-widget");
@@ -561,6 +591,15 @@ window.addEventListener("load", function(e){
         }
     })
 });
+window.addEventListener("load", function(){
+  let flashMessages = document.querySelectorAll('.flash-message');
+  if (flashMessages.length > 1) {
+    for (let i = 0; i < flashMessages.length; i++) {
+      let flashMessage = flashMessages[i];
+      flashMessage.style.order = i * -1;
+    }
+  }
+});
 window.addEventListener("load", function () {
     var closeBtns = document.querySelectorAll(".oocss-close");
     if (closeBtns.length) {
@@ -577,14 +616,5 @@ window.addEventListener("load", function () {
             });
         }
     }
-});
-window.addEventListener("load", function(){
-  let flashMessages = document.querySelectorAll('.flash-message');
-  if (flashMessages.length > 1) {
-    for (let i = 0; i < flashMessages.length; i++) {
-      let flashMessage = flashMessages[i];
-      flashMessage.style.order = i * -1;
-    }
-  }
 });
 //# sourceMappingURL=compiled.js.map
