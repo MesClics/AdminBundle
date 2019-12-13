@@ -16,7 +16,8 @@
 {% block deskMain %}
         {% include "MesClicsEspaceClientBundle:Widgets:client-nav.html.twig" %}
         {% if subSection is not defined or subSection is same as ('datas') %}
-            {% include "MesClicsEspaceClientBundle:Widgets:client-datas.html.twig" %}
+            {% with {'client': client}%}{% include "MesClicsEspaceClientBundle:Widgets:client-datas.html.twig" %}{% endwith %}
+            {% with {'client': client}%}{% include "MesClicsEspaceClientBundle:Widgets:client-links.html.twig" %}{% endwith %}
         {% else %}
             {% include "MesClicsEspaceClientBundle:Admin:client.html.twig" with { 'client': client } %}
         {% endif %}
