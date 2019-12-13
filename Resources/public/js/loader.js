@@ -18,21 +18,22 @@ function loaderClassAdd() {
     loader.classList.add("loader-active");    
 }
 
-function loaderClassRemove(){
-    loader.addEventListener('animationiteration', function(e){
-        e.target.classList.remove("loader-active");
-    });
+function loaderClassRemove(force = false){
+    if(!force){
+        loader.addEventListener('animationiteration', function(e){
+            e.target.classList.remove("loader-active");
+        });
 
-    loader.addEventListener('webkitAnimationIteration', function (e) {
-        e.target.classList.remove("loader-active");
-    });
+        loader.addEventListener('webkitAnimationIteration', function (e) {
+            e.target.classList.remove("loader-active");
+        });
 
-    loader.addEventListener('MSAnimationIteration', function (e) {
-        e.target.classList.remove("loader-active");
-    });
-    
-    
-    // loader.classList.remove("loader-active");
+        loader.addEventListener('MSAnimationIteration', function (e) {
+            e.target.classList.remove("loader-active");
+        });
+    } else{    
+        loader.classList.remove("loader-active");
+    }
 }
 
 window.addEventListener('beforeunload', function(e){

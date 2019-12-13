@@ -1,3 +1,53 @@
+function ajaxGet(url, callback){
+	var req = new XMLHttpRequest();
+	req.open("GET", url);
+	
+	req.addEventListener("load", function(){
+		if(req.status >= 200 && req.status < 400){
+			callback(req.responseText);
+		}
+		else{
+        	//action à réaliser en cas d'erreur
+            console.error("Erreur " + req.status + " : " + req.statusText);
+		}
+	});
+
+    //action à réaliser en cas d'erreur reseau
+	req.addEventListener("error", function(){
+		console.error("Erreur avec l'url " + url + " !!! Le serveur n'est pas joignable...");
+	});
+
+	req.send(null);
+}
+
+// Exécute un appel AJAX POST
+// Prend en paramètres l'URL cible, la donnée à envoyer et la fonction callback appelée en cas de succès
+// Le paramètre isJson permet d'indiquer si l'envoi concerne des données JSON
+function ajaxPost(url, data, callback, isJson) {
+    var req = new XMLHttpRequest();
+    req.open("POST", url);
+    req.addEventListener("load", function () {
+        if (req.status >= 200 && req.status < 400) {
+            // Appelle la fonction callback en lui passant la réponse de la requête
+            callback(req.responseText);
+        } else {
+        	//action à réaliser en cas d'erreur
+            console.error(req.status + " " + req.statusText + " " + url);
+        }
+    });
+    
+    //action à réaliser en cas d'erreur reseau
+    req.addEventListener("error", function () {
+        console.error("Erreur réseau avec l'URL " + url);
+    });
+    if (isJson) {
+        // Définit le contenu de la requête comme étant du JSON
+        req.setRequestHeader("Content-Type", "application/json");
+        // Transforme la donnée du format JSON vers le format texte avant l'envoi
+        data = JSON.stringify(data);
+    }
+    req.send(data);
+}
 // Find the closest ancestor of el with class cls
 
 function findAncestor(el, cls) {
@@ -24,21 +74,22 @@ function loaderClassAdd() {
     loader.classList.add("loader-active");    
 }
 
-function loaderClassRemove(){
-    loader.addEventListener('animationiteration', function(e){
-        e.target.classList.remove("loader-active");
-    });
+function loaderClassRemove(force = false){
+    if(!force){
+        loader.addEventListener('animationiteration', function(e){
+            e.target.classList.remove("loader-active");
+        });
 
-    loader.addEventListener('webkitAnimationIteration', function (e) {
-        e.target.classList.remove("loader-active");
-    });
+        loader.addEventListener('webkitAnimationIteration', function (e) {
+            e.target.classList.remove("loader-active");
+        });
 
-    loader.addEventListener('MSAnimationIteration', function (e) {
-        e.target.classList.remove("loader-active");
-    });
-    
-    
-    // loader.classList.remove("loader-active");
+        loader.addEventListener('MSAnimationIteration', function (e) {
+            e.target.classList.remove("loader-active");
+        });
+    } else{    
+        loader.classList.remove("loader-active");
+    }
 }
 
 window.addEventListener('beforeunload', function(e){
@@ -61,27 +112,6 @@ window.addEventListener('load', function (e) {
     }
 });
 
-var closeButtons = document.querySelectorAll(".popup-close");
-
-closeButtons.forEach(function(element){
-    element.addEventListener("click", function(event){
-        closePopup(event.target);
-    });
-})
-
-function closePopup(element){
-    var popup = findAncestor(element, "popup");
-    popup.classList.add("closed");
-}
-
-function submitAfterAnimation(form){
-    form.addEventListener("webkitAnimationEnd", function(event){
-        event.target.submit();
-    })
-    form.addEventListener("animationend", function(event){
-        event.target.submit();
-    })
-}
 var form = document.querySelector('.message-form__d__new');
 var hasBeenAnimated = false;
 
@@ -311,6 +341,38 @@ for (let i = 0; i < slideshows.length; i++) {
 
 
 }
+
+function handleTableGrids(){
+    let tables = document.querySelectorAll('.oocss-table');
+
+    for(let i = 0; i< tables.length; i++){
+        let table = tables[i];
+
+        let tableCols = table.querySelectorAll('.oocss-table-head');
+        let tableColsNb = tableCols.length;
+
+        let tableColsTemplate = [];
+
+        for(let y = 0; y < tableColsNb; y++){
+            let col = tableCols[y];
+            let hasColWidth = col.dataset.columnWidth;
+            if(hasColWidth){
+                tableColsTemplate.push(hasColWidth);
+            } else{
+                tableColsTemplate.push('minmax(auto, 1fr)');
+            }
+        }
+        // console.log(tableColsTemplate);
+
+        table.style.setProperty('--cols-nb', tableColsNb);
+        tableColsTemplate = tableColsTemplate.join(" ");
+        table.style.setProperty('--cols-template', tableColsTemplate);
+    }
+}
+
+window.addEventListener("load", function(){
+    handleTableGrids();
+});
 window.addEventListener("load", function () {
     let filters = document.querySelectorAll(".oocss-filters");
     let filtersList = new Object();
@@ -509,14 +571,12 @@ for(let i = 0; i < clickableTableRows.length; i++){
     // let link = clickableTableRow.getElementsByTagName("a")[0].getAttribute("href");
 
     if(link) {
-        let tds = clickableTableRow.getElementsByTagName("td");
-        console.log(tds);
+        let tds = clickableTableRow.querySelectorAll(".oocss-table-data");
 
         for(let i = 0; i < tds.length; i++){
             let clickableTableData = tds[i];
 
             let linksOrButtons = clickableTableData.querySelectorAll("a,button");
-            console.log(linksOrButtons);
             if (linksOrButtons.length == 0) {
                 //if child is not a link or button
                 clickableTableData.addEventListener("click", function (e) {
@@ -525,25 +585,10 @@ for(let i = 0; i < clickableTableRows.length; i++){
 
             }
         }
-
     }
 }
 
 
-console.log("popups script is loaded");
-
-window.addEventListener("load", function(event){
-    let popupBtns = event.target.querySelectorAll(".oocss-open-popup");
-    for(let i = 0; i < popupBtns.length; i++){
-        let popupBtn = popupBtns[i];
-
-        popupBtn.addEventListener("click", function(e){
-            e.preventDefault()
-            let datas = e.target.getAttribute("data-popup");
-            console.log(datas);
-        })
-    }
-});
 // window.addEventListener("load", function(e){
 //     let tables = document.getElementsByTagName("table");
 
@@ -601,7 +646,11 @@ window.addEventListener("load", function(){
   }
 });
 window.addEventListener("load", function () {
-    var closeBtns = document.querySelectorAll(".oocss-close");
+    listenCloseBtns();
+});
+
+function listenCloseBtns(){
+    let closeBtns = document.querySelectorAll(".oocss-close");
     if (closeBtns.length) {
         for (let i = 0; i < closeBtns.length; i++) {
             let btn = closeBtns[i];
@@ -616,5 +665,30 @@ window.addEventListener("load", function () {
             });
         }
     }
+}
+window.addEventListener("load", function(event){
+    let popupBtns = event.target.querySelectorAll(".oocss-open-popup");
+    for(let i = 0; i < popupBtns.length; i++){
+        let popupBtn = popupBtns[i];
+        let path = popupBtn.dataset.popupPath;
+        popupBtn.addEventListener("click", function(e){
+            e.preventDefault();
+            //activate loader
+            loaderClassAdd();
+            ajaxGet(path, buildPopup);
+        })
+    }
 });
+
+function buildPopup(response){
+    // include popup
+    let popupNode = document.createElement("template");
+    popupNode = response.trim();
+    //close loader
+    loaderClassRemove(true);
+    // console.log(popupNode.firstChild);
+    document.querySelector(".flash-messages").insertAdjacentHTML('beforebegin', popupNode);
+    // relaod closeParent.js listenCloseBtns() function
+    listenCloseBtns();
+}
 //# sourceMappingURL=compiled.js.map

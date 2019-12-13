@@ -32,7 +32,8 @@
 
 /***** OOCSS-INSTRUCTION *****/
     .oocss-instruction{
-        text-align: center;
+        display: inline-block;
+        /* text-align: center; */
         letter-spacing: 2px;
     }
         .oocss-instruction.oocss-discret{

@@ -113,6 +113,10 @@
     background-image: url('../images/navigation/icones/actions/white/action.png');
 }
 
+.oocss-widget.client-links .oocss-widget--head::before{
+    background-image: url('../images/admin/icones/clients/white/lier.png');
+}
+
 .oocss-widget.clients-search .oocss-widget--head::before{
     background-image: url('../images/admin/icones/clients/white/rechercher.png');
 }
@@ -149,8 +153,8 @@
     background-image: url('../images/admin/icones/contrats/white/new.png');
 }
 
-.oocss-widget.client-contrat-associer-projets .oocss-widget--head::before{
-    background-image: url('../images/admin/icones/contrats/white/lier.png');
+.oocss-widget.client-contrat-projets .oocss-widget--head::before{
+    background-image: url('../images/admin/icones/contrats/white/projets.png');
 }
 
 .oocss-widget.posts-list .oocss-widget--head::before{
@@ -189,6 +193,7 @@
     background-image: url('../../mesclics/images/interface/grey/prev.png');
 }
     .oocss-button.prev:hover{
+        background-color: transparent;
         background-image: url('../../mesclics/images/interface/smoke/prev.png');
     }
 
@@ -196,6 +201,7 @@
     background-image: url('../../mesclics/images/interface/grey/next.png');
 }   
     .oocss-button.next:hover{
+        background-color: transparent;
         background-image: url('../../mesclics/images/interface/smoke/next.png');
     }
 /****************/
@@ -273,17 +279,20 @@
     .oocss-headed-block.publications-all:before{
         background-image: url('../../mesclicspost/images/icones/white/publication.png');
     }
+    .oocss-headed-block.publication-remove:before{
+        background-image: url('../../mesclicspost/images/icones/white/publication-remove.png');
+    }
 /*******************/
 /* TABLES */
 .oocss-table-head-row{
     color: var(--grey);
 }
 
-.oocss-table-data:not(.discret){
+.oocss-table-row:not(.discret){
     border-bottom: dotted 1px var(--beige);
 }
 
-    .oocss-table-row:hover .oocss-table-data:not(.discret){
+    .oocss-table-row:hover{
         background-color: var(--smoke);
         transition: all ease-in-out 300ms;
     }
@@ -472,18 +481,8 @@
         100%{ transform: scale(0.8) rotate(40deg) translateY(-300vh) translateX(50vw);}
     }
 
-    .popup-illustration.projet-remove path{
-        stroke: var(--smoke);
-    }
-    .popup-illustration.projet-remove svg{
-        width: 50%;
-        height: auto;
-    }
 
-    .popup-illustration.contrat-remove path{
-        stroke: var(--smoke) !important;
-    }
-    .popup-illustration.contrat-remove svg{
+    .popup-in .popup-illustration svg{
         width: 50%;
         height: auto;
     }
