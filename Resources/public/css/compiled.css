@@ -1991,101 +1991,102 @@ a, a:hover, select, select:hover, option, option:hover, input, input:hover, labe
 /* FIX: heritage seems no to work here */
 .oocss-widget .oocss-widget--head::before{
     mask-size: cover;
-    -webkit-mask-size: cover;
-    background-color: var(--white);
+    -webkit-mask-size: cover !important;
+    background-color: var(--white) !important;
+}
+
+.oocss-widget.oocss-discret .oocss-widget--head::before{
+    background-color: transparent !important;
 }
 
 .oocss-widget.actions .oocss-widget--head::before{
     mask-image: url('../../mesclicsnavigation/images/svg/action.svg');
     -webkit-mask: url('../../mesclicsnavigation/images/svg/action.svg');
-    /* mask-size: cover;
-    -webkit-mask-size: cover;
-    background-color: var(--white); */
 }
 
 .oocss-widget.client-links .oocss-widget--head::before{
-    mask-image: url('../images/admin/icones/clients/white/lier.png');
-    -webkit-mask: url('../images/admin/icones/clients/white/lier.png');
+    mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/links.svg');
+    -webkit-mask: url('../../mesclicsespaceclient/images/icones/clients/svg/links.svg');
 }
 
 .oocss-widget.clients-search .oocss-widget--head::before{
-        mask-image: url('../images/admin/icones/clients/white/rechercher.png');
-        -webkit-mask: url('../images/admin/icones/clients/white/rechercher.png');
+        mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/search.svg');
+        -webkit-mask: url('../../mesclicsespaceclient/images/icones/clients/svg/search.svg');
 }
 
 .oocss-widget.client-new .oocss-widget--head::before{
-        mask-image: url('../images/admin/icones/clients/white/ajouter.png');
-        -webkit-mask: url('../images/admin/icones/clients/white/ajouter.png');
+        mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/new.svg');
+        -webkit-mask: url('../../mesclicsespaceclient/images/icones/clients/svg/new.svg');
 }
 
 .oocss-widget.client-update .oocss-widget--head::before{
-        mask-image: url('../images/admin/icones/clients/white/highlight.png');
-        -webkit-mask: url('../images/admin/icones/clients/white/highlight.png');
+        mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/edit.svg');
+        -webkit-mask: url('../../mesclicsespaceclient/images/icones/clients/svg/edit.svg');
 }
 
 .oocss-widget.clients-list .oocss-widget--head::before{
-        mask-image: url('../images/admin/icones/clients/white/client.png');
-        -webkit-mask: url('../images/admin/icones/clients/white/client.png');
+        mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/client.svg');
+        -webkit-mask: url('../../mesclicsespaceclient/images/icones/clients/svg/client.svg');
 }
 
 .oocss-widget.client-projets .oocss-widget--head::before{
-        mask-image: url('../images/admin/icones/projets/white/projet.png');
-        -webkit-mask: url('../images/admin/icones/projets/white/projet.png');
+        mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
+        -webkit-mask: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
 }
 
 .oocss-widget.client-projets-new .oocss-widget--head::before{
-        mask-image: url('../images/admin/icones/projets/white/ajouter.png');
-        -webkit-mask: url('../images/admin/icones/projets/white/ajouter.png');
+        mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/new.svg');
+        -webkit-mask: url('../../mesclicsespaceclient/images/icones/projets/svg/new.svg');
 }
 
 .oocss-widget.client-projet-edit .oocss-widget--head::before{
-        mask-image: url('../images/admin/icones/projets/white/highlight.png');
-        -webkit-mask: url('../images/admin/icones/projets/white/highlight.png');
+        mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/edit.svg');
+        -webkit-mask: url('../../mesclicsespaceclient/images/icones/projets/svg/edit.svg');
 }
 
 .oocss-widget.client-contrats .oocss-widget--head::before{
-        mask-image: url('../images/admin/icones/contrats/white/contrat.png');
-        -webkit-mask: url('../images/admin/icones/contrats/white/contrat.png');
+        mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/contrat.svg');
+        -webkit-mask: url('../../mesclicsespaceclient/images/icones/contrats/svg/contrat.svg');
 }
 
 .oocss-widget.client-contrats-new .oocss-widget--head::before{
-        mask-image: url('../images/admin/icones/contrats/white/new.png');
-        -webkit-mask: url('../images/admin/icones/contrats/white/new.png');
+        mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/new.svg');
+        -webkit-mask: url('../../mesclicsespaceclient/images/icones/contrats/svg/new.svg');
 }
 
 .oocss-widget.client-contrat-projets .oocss-widget--head::before{
-        mask-image: url('../images/admin/icones/contrats/white/projets.png');
-        -webkit-mask: url('../images/admin/icones/contrats/white/projets.png');
+        mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
+        -webkit-mask: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
 }
 
 .oocss-widget.posts-list .oocss-widget--head::before{
-        mask-image: url('../images/admin/icones/edition/white/publication.png');
-        -webkit-mask: url('../images/admin/icones/edition/white/publication.png');
+        mask-image: url('../../mesclicspost/images/icones/svg/post.svg');
+        -webkit-mask: url('../../mesclicspost/images/icones/svg/post.svg');
 }
 
 .oocss-widget.posts-new .oocss-widget--head::before{
-        mask-image: url('../images/admin/icones/edition/white/publication-new.png');
-        -webkit-mask: url('../images/admin/icones/edition/white/publication-new.png');
+        mask-image: url('../../mesclicspost/images/icones/svg/post-new.svg');
+        -webkit-mask: url('../../mesclicspost/images/icones/svg/post-new.svg');
 }
 
 .oocss-widget.posts-edit .oocss-widget--head::before{
-        mask-image: url('../images/admin/icones/edition/white/publication-edit.png');
-        -webkit-mask: url('../images/admin/icones/edition/white/publication-edit.png');
+        mask-image: url('../../mesclicspost/images/icones/svg/post-edit.svg');
+        -webkit-mask: url('../../mesclicspost/images/icones/svg/post-edit.svg');
 }
 
 .oocss-widget.collections-new .oocss-widget--head::before{
-        mask-image: url('../images/admin/icones/edition/white/collection-new.png');
-        -webkit-mask: url('../images/admin/icones/edition/white/collection-new.png');
+        mask-image: url('../../mesclicspost/images/icones/svg/collection-new.svg');
+        -webkit-mask: url('../../mesclicspost/images/icones/svg/collection-new.svg');
 }
 
 .oocss-widget.collections-list .oocss-widget--head::before{
-        mask-image: url('../images/admin/icones/edition/white/collection.png');
-        -webkit-mask: url('../images/admin/icones/edition/white/collection.png');
+        mask-image: url('../../mesclicspost/images/icones/svg/collection.svg');
+        -webkit-mask: url('../../mesclicspost/images/icones/svg/collection.svg');
 }
 
 .oocss-widget.collections-edit .oocss-widget--head::before{
-        mask-image: url('../images/admin/icones/edition/white/collection-edit.png');
-        -webkit-mask: url('../images/admin/icones/edition/white/collection-edit.png');
+        mask-image: url('../../mesclicspost/images/icones/svg/collection-edit.svg');
+        -webkit-mask: url('../../mesclicspost/images/icones/svg/collection-edit.svg');
 }
 /***********************/
 
@@ -2114,6 +2115,10 @@ a, a:hover, select, select:hover, option, option:hover, input, input:hover, labe
 /****************/
 
 /* OOCSS-HEADED-BLOCKS */
+    .oocss-headed-block::before{
+        mask-size: cover;
+        -webkit-mask-size: cover !important;
+    }
     /* CLIENTS */
     .oocss-headed-block.client-contrats:before{
         background-image: url('../../mesclicsespaceclient/images/icones/contrats/white/contrat.png');
@@ -2181,13 +2186,13 @@ a, a:hover, select, select:hover, option, option:hover, input, input:hover, labe
     
     /* POSTS */
     .oocss-headed-block.publication-new:before{
-        background-image: url('../../mesclicspost/images/icones/white/publication-new.png');
+        background-image: url('../../mesclicspost/images/icones/svg/post-new.svg');
     }
     .oocss-headed-block.publications-all:before{
-        background-image: url('../../mesclicspost/images/icones/white/publication.png');
+        background-image: url('../../mesclicspost/images/icones/svg/post.svg');
     }
-    .oocss-headed-block.publication-remove:before{
-        background-image: url('../../mesclicspost/images/icones/white/publication-remove.png');
+    .oocss-headed-block.publication-remove::before{
+        background-image: url('../../mesclicspost/images/icones/svg/grey/post-remove.svg');
     }
 /*******************/
 /* TABLES */
