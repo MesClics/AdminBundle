@@ -1,40 +1,38 @@
 <?php
 namespace MesClics\AdminBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Security\Core\Exception\AccessDeniedException;
-use MesClics\EspaceClientBundle\Entity\Client;
-use MesClics\EspaceClientBundle\Form\ClientType;
 use MesClics\UserBundle\Entity\User;
-use MesClics\UserBundle\Form\UserAdminRegistrationType;
 use MesClics\UserBundle\Form\UserType;
 use MesClics\MessagesBundle\Entity\Message;
-use MesClics\MessagesBundle\Form\UserMessageType;
 use Symfony\Component\HttpFoundation\Request;
+use MesClics\EspaceClientBundle\Entity\Client;
+use Symfony\Component\HttpFoundation\Response;
+use MesClics\EspaceClientBundle\Form\ClientType;
+use MesClics\AdminBundle\Widget\PanelHomeWidgets;
+use MesClics\MessagesBundle\Form\UserMessageType;
+use MesClics\UserBundle\Form\UserAdminRegistrationType;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class PanelController extends Controller{
     /**
      * @Security("has_role('ROLE_ADMIN')")
      */
-    public function homeAction(Request $request){
-        //on récupère le compteur de messages non lus pour l'utilisateur
-        $em = $this->getDoctrine()->getManager();
-        $messagesRepo = $em->getRepository('MesClicsMessagesBundle:Message');
-        $user = $this->get('security.token_storage')->getToken()->getUser();
+    public function homeAction(PanelHomeWidgets $admin_widgets, Request $request){
+        $widgets_params = array(
+            'user' => $this->get('security.token_storage')->getToken()->getUser()
+        );
+        $admin_widgets->initialize($widgets_params);
 
-        $unread_messages_count = $messagesRepo->countUnreadMessages($user);
-        
         $args = array(
-            'currentSection' => 'home',
-            'unread_messages_count' => $unread_messages_count
+            'widgets' => $admin_widgets->getWidgets()
         );
         //on génère la vue
-        return $this->render('MesClicsAdminBundle:Panel:home.html.twig', $args);
+        return $this->render('MesClicsAdminBundle::layout.html.twig', $args);
     }
 
     public function traductionAction($name){

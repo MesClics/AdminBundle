@@ -54,6 +54,167 @@ function findAncestor(el, cls) {
     while ((el = el.parentElement) && !el.classList.contains(cls));
     return el;
 }
+
+function findNearest(el, cls) {
+    while ((el = el.parentElement) && !el.querySelector(cls));
+    return el;
+}
+window.addEventListener("load", function(event){
+    let refreshBtns = document.querySelectorAll(".oocss-refresher");
+
+    for (let index = 0; index < refreshBtns.length; index++) {
+        let element = refreshBtns[index];
+        
+        element.addEventListener("click", function(e){
+            let btn = e.target;
+            //if admin get scroll into desk-main container, else get scroll into document
+            if(document.querySelector(".desk-main")){
+                var scroll = [document.querySelector(".desk-main").scrollLeft, document.querySelector(".desk-main").scrollTop];
+            } else{
+                var scroll = [document.documentElement.scrollLeft, document.documentElement.scrollTop];
+            }
+
+            refresh(btn, scroll);
+        });
+    }
+});
+
+function refresh(element, scroll = null) {
+
+    //reload, widget and preserve scroll
+    let path = element.dataset.path;
+
+    // execute ajaxGet on container if data-target-selector is specified
+    if (element.dataset.targetSelector) {
+        ajaxGet(path, function (response) {
+            let htmlNode = document.createElement("template");
+            htmlNode = response.trim();
+
+            htmlNode = stringToHTMLDoc(htmlNode);
+
+            // Get the container content into the response
+            replace(element.dataset.targetSelector, htmlNode);
+        });
+    } else{
+        window.location = path;
+    }
+}
+
+
+function replace(containerSelector, newHTMLDocument, scroll){
+    let old_elt = document.querySelector(containerSelector);
+    let new_elt = newHTMLDocument.querySelector(containerSelector);
+
+    if(old_elt){
+        let eltParent = old_elt.parentNode;
+        eltParent.appendChild(new_elt);
+        old_elt.remove();
+    }
+    // elt.replaceWith(newHTMLContent);
+
+    if(scroll){
+
+        if (document.querySelector(".desk-main")) {
+            var scrollContainer = document.querySelector(".desk-main");
+        } else {
+            var scrollContainer = document.documentElement;
+        }        
+        scrollContainer.pageXOffset = scroll[0];
+        scrollContainer.pageYOffset = scroll[1];
+    }
+}
+
+function stringToHTMLDoc(str){
+    var parser = new DOMParser();
+    var doc = parser.parseFromString(str, 'text/html');
+    return doc;
+}
+window.addEventListener("load", function () {
+    handleAddHtmlOnClick();
+});
+
+function handleAddHtmlOnClick(){
+    let btns = document.querySelectorAll(".oocss-html-adder");
+
+    for (let index = 0; index < btns.length; index++) {
+        let btn = btns[index];
+        
+        
+        let target = document.querySelector(btn.dataset.targetSelector);
+
+        let path = btn.dataset.path;
+        
+        let callback = function(response) {
+            let htmlNode = document.createElement("template");
+            htmlNode = response.trim();
+
+            target.insertAdjacentHTML('beforeend', htmlNode);
+        }
+
+        btn.addEventListener("click", function(){
+            ajaxGet(path, callback);
+        });
+    }
+}
+
+
+    window.addEventListener("load", function(){
+
+    listenHTMLModifyBtns();
+})
+
+function listenHTMLModifyBtns(){
+    let btns = document.querySelectorAll(".oocss-html-modifier");
+
+    for (let index = 0; index < btns.length; index++) {
+        let btn = btns[index];
+
+
+
+        //if admin get scroll into desk-main container, else get scroll into document
+        if (document.querySelector(".desk-main")) {
+            var scroll = [document.querySelector(".desk-main").scrollLeft, document.querySelector(".desk-main").scrollTop];
+        } else {
+            var scroll = [document.documentElement.scrollLeft, document.documentElement.scrollTop];
+        }
+
+
+        btn.addEventListener("click", function(e){
+            modifyHTML(e.target);
+
+            document.addEventListener("load", function(){
+                if (document.querySelector(".desk-main")) {
+                    var scrollContainer = document.querySelector(".desk-main");
+                } else {
+                    var scrollContainer = document.documentElement;
+                }
+
+                scrollContainer.pageXOffset = scroll[0];
+                scrollContainer.pageYOffset = scroll[1];
+            });
+        });
+    }
+}
+
+// if the element gets a data-target-selector, then it will replace innerHTML by the ajax returning response, else it will reload the current page after returning the ajax response
+function modifyHTML(element){
+    let path = element.dataset.path;
+    let target = document.querySelector(element.dataset.targetSelector);
+    let callback = function (response) {
+        if(target){
+            // let htmlNode = document.createElement("template");
+            let htmlNode = response.trim();
+            // console.log(target);
+            target.innerHTML = htmlNode;
+        } else{
+            if (response) {
+                document.location.reload(true);
+            }
+        }
+    }
+
+    ajaxGet(path, callback);
+}
 var loader = document.querySelector(".loader");
 var animationOn = false;
 

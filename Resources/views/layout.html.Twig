@@ -17,7 +17,18 @@
                         </a>
                     {% endblock deskHeadLogo  %}
                     <div  class="desk-head--nav_rails">
-                        {% block deskHeadNavRails %}{% endblock deskHeadNavRails %}
+                        {% block deskHeadNavRails %}
+                            <a href={{ path("mesclics_admin_home") }} class="desk-head-nav_rails--item">Console d'administration</a>
+                            {% if navRails is defined and navRails is not empty %}
+                            >
+                                {% for label, url in navRails %}
+                                    <a href={{ url }} class="desk-head-nav_rails--item">{{ label }}</a>
+                                    {% if not loop.last %}
+                                    >                                        
+                                    {% endif %} 
+                                {% endfor %}                                
+                            {% endif %}
+                        {% endblock deskHeadNavRails %}
                     </div>
                     {# navigation (chemin de fer : Menu > Item > item) #}
                     <div class="desk-head--nav-chrono">
@@ -28,7 +39,13 @@
             {% endblock deskHead %}
             {# bloc main : contenu principal #}
             <div class="desk-main">
-                {% block deskMain %}{% endblock deskMain %}
+                {% block deskMain %}
+                {% if widgets is defined and widgets is not empty %}
+                    {% for widget in widgets %}
+                        {% include widget.template with widget.variables|default({}) %}
+                    {% endfor %}
+                {% endif %}
+                {% endblock deskMain %}
             </div>
             {# bloc lateral : contenu panneau droite écran #}
             <div class="desk-lateral">

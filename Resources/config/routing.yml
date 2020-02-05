@@ -21,7 +21,7 @@ mesclics_admin_message_import:
 mesclics_admin_edition:
     path: /edition/
     defaults:
-        _controller: MesClicsPostBundle:Edition:index
+        _controller: MesClicsPostBundle:Post:posts
 
 mesclics_admin_edition_post_import:
     resource: "@MesClicsPostBundle/Resources/config/routing.yml"

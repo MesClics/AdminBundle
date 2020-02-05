@@ -9,17 +9,10 @@
 {% endblock deskHeadNavRails %}
 
 {% block deskMain %}
-    {% if  countMessages('unread') > 0 %}
-        <div class= "oocss-widget">
-            <div class="oocss-widget--head">
-                {% if countMessages('unread') > 1 %}
-                    <h2 class="oocss-title-section">{{ countMessages('unread') }} nouveaux messages</h2>
-                {% else %}
-                    <h2 class="oocss-title-section">{{ countMessages('unread') }} nouveau message</h2>
-                {% endif %}
-            </div>
-        </div>
-    {% endif %}
 
     {% include "MesClicsNavigationBundle:Widgets:LastActions.html.twig" %}
+
+    {% for widget in widgets %}
+        {% include widget.template  with widget.variables %}
+    {% endfor %}
 {% endblock deskMain %}

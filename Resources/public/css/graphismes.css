@@ -122,92 +122,97 @@
 
 .oocss-widget.actions .oocss-widget--head::before{
     mask-image: url('../../mesclicsnavigation/images/svg/action.svg');
-    -webkit-mask: url('../../mesclicsnavigation/images/svg/action.svg');
+    -webkit-mask-image: url('../../mesclicsnavigation/images/svg/action.svg');
 }
 
 .oocss-widget.client-links .oocss-widget--head::before{
     mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/links.svg');
-    -webkit-mask: url('../../mesclicsespaceclient/images/icones/clients/svg/links.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/links.svg');
 }
 
 .oocss-widget.clients-search .oocss-widget--head::before{
         mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/search.svg');
-        -webkit-mask: url('../../mesclicsespaceclient/images/icones/clients/svg/search.svg');
+        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/search.svg');
 }
 
 .oocss-widget.client-new .oocss-widget--head::before{
         mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/new.svg');
-        -webkit-mask: url('../../mesclicsespaceclient/images/icones/clients/svg/new.svg');
+        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/new.svg');
 }
 
 .oocss-widget.client-update .oocss-widget--head::before{
         mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/edit.svg');
-        -webkit-mask: url('../../mesclicsespaceclient/images/icones/clients/svg/edit.svg');
+        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/edit.svg');
 }
 
 .oocss-widget.clients-list .oocss-widget--head::before{
         mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/client.svg');
-        -webkit-mask: url('../../mesclicsespaceclient/images/icones/clients/svg/client.svg');
+        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/client.svg');
 }
 
 .oocss-widget.client-projets .oocss-widget--head::before{
         mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
-        -webkit-mask: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
+        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
 }
 
 .oocss-widget.client-projets-new .oocss-widget--head::before{
         mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/new.svg');
-        -webkit-mask: url('../../mesclicsespaceclient/images/icones/projets/svg/new.svg');
+        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/new.svg');
 }
 
 .oocss-widget.client-projet-edit .oocss-widget--head::before{
         mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/edit.svg');
-        -webkit-mask: url('../../mesclicsespaceclient/images/icones/projets/svg/edit.svg');
+        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/edit.svg');
 }
 
 .oocss-widget.client-contrats .oocss-widget--head::before{
         mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/contrat.svg');
-        -webkit-mask: url('../../mesclicsespaceclient/images/icones/contrats/svg/contrat.svg');
+        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/contrat.svg');
 }
 
 .oocss-widget.client-contrats-new .oocss-widget--head::before{
         mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/new.svg');
-        -webkit-mask: url('../../mesclicsespaceclient/images/icones/contrats/svg/new.svg');
+        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/new.svg');
 }
 
 .oocss-widget.client-contrat-projets .oocss-widget--head::before{
         mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
-        -webkit-mask: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
+        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
 }
 
 .oocss-widget.posts-list .oocss-widget--head::before{
         mask-image: url('../../mesclicspost/images/icones/svg/post.svg');
-        -webkit-mask: url('../../mesclicspost/images/icones/svg/post.svg');
+        -webkit-mask-image: url('../../mesclicspost/images/icones/svg/post.svg');
 }
 
 .oocss-widget.posts-new .oocss-widget--head::before{
         mask-image: url('../../mesclicspost/images/icones/svg/post-new.svg');
-        -webkit-mask: url('../../mesclicspost/images/icones/svg/post-new.svg');
+        -webkit-mask-image: url('../../mesclicspost/images/icones/svg/post-new.svg');
 }
 
 .oocss-widget.posts-edit .oocss-widget--head::before{
         mask-image: url('../../mesclicspost/images/icones/svg/post-edit.svg');
-        -webkit-mask: url('../../mesclicspost/images/icones/svg/post-edit.svg');
+        -webkit-mask-image: url('../../mesclicspost/images/icones/svg/post-edit.svg');
 }
 
 .oocss-widget.collections-new .oocss-widget--head::before{
         mask-image: url('../../mesclicspost/images/icones/svg/collection-new.svg');
-        -webkit-mask: url('../../mesclicspost/images/icones/svg/collection-new.svg');
+        -webkit-mask-image: url('../../mesclicspost/images/icones/svg/collection-new.svg');
 }
 
 .oocss-widget.collections-list .oocss-widget--head::before{
         mask-image: url('../../mesclicspost/images/icones/svg/collection.svg');
-        -webkit-mask: url('../../mesclicspost/images/icones/svg/collection.svg');
+        -webkit-mask-image: url('../../mesclicspost/images/icones/svg/collection.svg');
 }
 
 .oocss-widget.collections-edit .oocss-widget--head::before{
         mask-image: url('../../mesclicspost/images/icones/svg/collection-edit.svg');
-        -webkit-mask: url('../../mesclicspost/images/icones/svg/collection-edit.svg');
+        -webkit-mask-image: url('../../mesclicspost/images/icones/svg/collection-edit.svg');
+}
+
+.oocss-widget.comment .oocss-widget--head::before{
+    mask-image: url('../../mesclicscomment/images/icones/comments.svg');
+    -webkit-mask-image: url('../../mesclicscomment/images/icones/comments.svg');
 }
 /***********************/
 
@@ -468,6 +473,72 @@
     background-image: url('../../mesclics/images/interface/ashes/cross.png');
 }
 /**************************/
+
+/***** COMMENTS *****/
+.comments .oocss-child{
+    margin-left: var(--gap-m);
+    padding-left: var(--gap-s);
+}
+
+.comment .oocss-pinned{
+    /* background-color: var(--yellow); */
+    padding: var(--gap-m);
+    border: var(--gap-xxs) solid var(--yellow);
+    border-radius: var(--gap-m);
+}
+
+.comment-management .oocss-button.oocss-interface{
+    mask-size: cover;
+    -webkit-mask-size: cover;
+    background-color: var(--grey);
+}
+
+
+.comment-management .oocss-button.oocss-interface:hover{
+    background-color: var(--yellow);
+}
+
+.oocss-button.oocss-interface.edit{
+    mask-image: url('../../mesclicscomment/images/icones/comment.svg');
+    -webkit-mask-image: url('../../mesclics/images/svg/edit.svg');
+}
+
+.oocss-button.oocss-interface.comment{
+    mask-image: url('../../mesclicscomment/images/icones/comment.svg');
+    -webkit-mask-image: url('../../mesclicscomment/images/icones/comment.svg');
+}
+
+.oocss-button.oocss-interface.pin{
+    mask-image: url('../../mesclics/images/svg/pin.svg');
+    -webkit-mask-image: url('../../mesclics/images/svg/pin.svg');
+}
+
+.oocss-button.oocss-interface.pin.oocss-pinned{
+    background-color: var(--yellow);
+}
+
+.oocss-button.oocss-interface.remove{
+    mask-image: url('../../mesclics/images/svg/trash.svg');
+    -webkit-mask-image: url('../../mesclics/images/svg/trash.svg');
+}
+/********************/
+
+/***** QUOTES *****/
+
+.oocss-quote::before{
+    mask-size: cover;
+    -webkit-mask-size: cover !important;
+    background-position: top center;
+    background-color: var(--grey) !important;
+    background-repeat: no-repeat;
+    mask-image: url('../../mesclicscomment/images/icones/comments.svg');
+    -webkit-mask-image: url('../../mesclicscomment/images/icones/comments.svg');
+}
+
+.highlight2 .oocss-quote::before{
+   background-color: var(--yellow) !important;
+}
+/******************/
 
 
 
