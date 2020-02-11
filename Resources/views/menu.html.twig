@@ -1,50 +1,50 @@
-<li class="bottom_bar-admin_menu--item {% if currentSection is same as ('déconnexion') %}active{% endif %}">
-    <a class="admin_menu_item-button admin_menu_item-button logout" href="{{ path('mesclics_security_logout') }}">
-        <span class="admin_menu_item-label admin_menu_item-label logout">Déconnexion</span>
+<li class="bottom_bar-admin_menu--item">
+    <a class="admin_menu_item-button logout" href="{{ path('mesclics_security_logout') }}">
+        <span class="admin_menu_item-label logout">Déconnexion</span>
     </a>
 </li>
 
-<li class="bottom_bar-admin_menu--item {% if currentSection is same as ('home') %}active{% endif %}">
-    <a class="admin_menu_item-button admin_menu_item-button home" href="{{ path('mesclics_admin_home')}}">
-        <span class="admin_menu_item-label admin_menu_item-label home">Accueil</span>
+<li class="bottom_bar-admin_menu--item">
+    <a class="admin_menu_item-button home" href="{{ path('mesclics_admin_home')}}">
+        <span class="admin_menu_item-label home">Accueil</span>
     </a>
 </li>
 
-<li class="bottom_bar-admin_menu--item {% if currentSection is same as ('messages') %}[ bottom_bar-admin_menu--item active ]{% endif %}">
-    <a class="admin_menu_item-button admin_menu_item-button messages" href="{{ path('mesclics_admin_messages')}}">
-        <span class="admin_menu_item-label admin_menu_item-label messages">Messages</span>
+<li class="bottom_bar-admin_menu--item">
+    <a class="admin_menu_item-button messages" href="{{ path('mesclics_admin_messages')}}">
+        <span class="admin_menu_item-label messages">Messages</span>
         {% if countMessages('unread') > 0 %}
             <span class="[ oocss-index oocss-index__d__admin_menu oocss-index__d__admin_menu messages ]">{{ countMessages('unread') }}</span>
         {% endif %}
     </a>
 </li>
 
-<li class="bottom_bar-admin_menu--item {% if currentSection is same as ('edition') %} active{% endif %}">
-    <a class="admin_menu_item-button admin_menu_item-button edition" href="{{ path('mesclics_admin_edition') }}">
-        <span class="admin_menu_item-label admin_menu_item-label edition">Edition</span>
+<li class="bottom_bar-admin_menu--item">
+    <a class="admin_menu_item-button edition" href="{{ path('mesclics_admin_edition') }}">
+        <span class="admin_menu_item-label edition">Edition</span>
     </a>
 </li>
 
-<li class="bottom_bar-admin_menu--item {% if currentSection is same as ('medias') %}active{% endif %}">
-    <a class="admin_menu_item-button admin_menu_item-button medias" href="">
-        <span class="admin_menu_item-label admin_menu_item-label medias">Medias</span>
+<li class="bottom_bar-admin_menu--item">
+    <a class="admin_menu_item-button medias" href="">
+        <span class="admin_menu_item-label medias">Medias</span>
     </a>
 </li>
 
-<li class="bottom_bar-admin_menu--item {% if currentSection is same as ('clients') %}active{% endif %}">
-    <a class="admin_menu_item-button admin_menu_item-button clients" href="{{ path('mesclics_admin_clients')}}">
-        <span class="admin_menu_item-label admin_menu_item-label clients">Clients</span>
+<li class="bottom_bar-admin_menu--item">
+    <a class="admin_menu_item-button clients" href="{{ path('mesclics_admin_clients')}}">
+        <span class="admin_menu_item-label clients">Clients</span>
     </a>
 </li>
 
-<li class="bottom_bar-admin_menu--item {% if currentSection is same as ('users') %}active{% endif %}">
-    <a class="admin_menu_item-button admin_menu_item-button users" href="{{ path('mesclics_admin_users')}}">
-        <span class="admin_menu_item-label admin_menu_item-label users">Utilisateurs</span>
+<li class="bottom_bar-admin_menu--item">
+    <a class="admin_menu_item-button users" href="{{ path('mesclics_admin_users')}}">
+        <span class="admin_menu_item-label users">Utilisateurs</span>
     </a>
 </li>
 
-<li class="bottom_bar-admin_menu--item {% if currentSection is same as ('stats') %}active{% endif %}">
-    <a class="admin_menu_item-button admin_menu_item-button stats" href="">
-        <span class="admin_menu_item-label admin_menu_item-label stats">Statistiques</span>
+<li class="bottom_bar-admin_menu--item">
+    <a class="admin_menu_item-button stats" href="">
+        <span class="admin_menu_item-label stats">Statistiques</span>
     </a>
 </li>

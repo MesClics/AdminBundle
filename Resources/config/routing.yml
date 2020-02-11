@@ -26,7 +26,3 @@ mesclics_admin_edition:
 mesclics_admin_edition_post_import:
     resource: "@MesClicsPostBundle/Resources/config/routing.yml"
     prefix:   edition/
-    
-mesclics_admin_edition_collection_import:
-    resource: "@MesClicsPostBundle/Resources/config/routing.yml"
-    prefix: edition/

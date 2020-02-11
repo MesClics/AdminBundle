@@ -411,6 +411,7 @@ overflow: hidden;
         grid-auto-flow: column;
         grid-column-gap: var(--gap-s);
         grid-row-gap: var(--gap-m);
+        /* grid-template-columns: repeat(auto-fill, 1fr); */
     }
         .oocss-headed-block.oocss-horizontal{
             grid-column-gap: var(--gap-m);
@@ -664,6 +665,7 @@ overflow: hidden;
     display: grid;
     grid-row-gap: var(--gap-xl);
     grid-column-gap: var(--gap-m);
+    grid-auto-columns: minmax(auto, 100%);
 }
 
 .oocss-widget-closed .oocss-widget--content{
@@ -675,6 +677,7 @@ overflow: hidden;
     padding: var(--gap-m);
     margin-bottom: var(--gap-xl);
     margin-top: var(--gap-xl);
+    /* display: grid; */
 }
 
 .oocss-widget-closed .oocss-widget--content-zone{
@@ -2726,6 +2729,10 @@ label{
         display: inline-block;
         /* text-align: center; */
         letter-spacing: 2px;
+        font-style: italic;
+    }
+    .oocss-instruction:not(.oocss-discret)::first-letter{
+        text-transform: uppercase;
     }
         .oocss-instruction.oocss-discret{
             letter-spacing: normal;
