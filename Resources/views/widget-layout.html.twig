@@ -1,0 +1,14 @@
+{% extends "MesClicsUtilsBundle:Widget:widget-template.html.twig" %}
+
+{% block widgetClass %}{{ "oocss-widget " ~ widget.class|default() }}{% endblock widgetClass %}
+{% block widgetHead %}
+    <div class="oocss-widget--head">
+        {% block widgetTitle %}<h2 class="oocss-widget--title">{{ widget.title|default("") }}</h2>{% endblock widgetTitle %}
+    </div>
+{% endblock widgetHead %}
+
+{% block widgetContentContainer %}
+    <div class="oocss-widget--content">
+        {% block widgetContent %}{% endblock widgetContent %}
+    </div>
+{% endblock widgetContentContainer %}
