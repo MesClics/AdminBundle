@@ -1991,8 +1991,8 @@ a, a:hover, select, select:hover, option, option:hover, input, input:hover, labe
     color: var(--red);
 }
 
-.desk-main{
-}
+/* .desk-main{
+} */
 
 .desk-lateral{
    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
@@ -2078,7 +2078,7 @@ a, a:hover, select, select:hover, option, option:hover, input, input:hover, labe
         -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/new.svg');
 }
 
-.oocss-widget.client-update .oocss-widget--head::before{
+.oocss-widget.client-edit .oocss-widget--head::before{
         mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/edit.svg');
         -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/edit.svg');
 }

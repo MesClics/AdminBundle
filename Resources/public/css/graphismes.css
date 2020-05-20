@@ -53,8 +53,8 @@
     color: var(--red);
 }
 
-.desk-main{
-}
+/* .desk-main{
+} */
 
 .desk-lateral{
    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
@@ -140,7 +140,7 @@
         -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/new.svg');
 }
 
-.oocss-widget.client-update .oocss-widget--head::before{
+.oocss-widget.client-edit .oocss-widget--head::before{
         mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/edit.svg');
         -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/edit.svg');
 }
