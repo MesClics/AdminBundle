@@ -40,11 +40,13 @@
             {# bloc main : contenu principal #}
             <div class="desk-main">
                 {% block deskMain %}
-                {% if widgets is defined and widgets is not empty %}
-                    {% for widget in widgets %}
+                    {% if widgets is defined and widgets is not empty %}
+                        {% for widget in widgets %}
+                            {% include widget.template with widget.variables|default({}) %}
+                        {% endfor %}
+                    {% elseif widget is defined %}
                         {% include widget.template with widget.variables|default({}) %}
-                    {% endfor %}
-                {% endif %}
+                    {% endif %}
                 {% endblock deskMain %}
             </div>
             {# bloc lateral : contenu panneau droite écran #}
