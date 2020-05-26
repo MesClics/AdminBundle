@@ -74,6 +74,9 @@
         background-color: var(--yellow);
         color: var(--smoke);
     }
+        .oocss-widget.highlight2 .oocss-button{
+            background-color: var(--yellow);
+        }
     .oocss-widget.oocss-discret{
         background-color: transparent;
         color: var(--red);
@@ -173,6 +176,11 @@
 .oocss-widget.client-contrats .oocss-widget--head::before{
         mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/contrat.svg');
         -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/contrat.svg');
+}
+
+.oocss-widget.client-contrats-info .oocss-widget--head::before{
+        mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/info.svg');
+        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/info.svg');
 }
 
 .oocss-widget.client-contrats-new .oocss-widget--head::before{
@@ -346,7 +354,7 @@
     
 
 .oocss-table-data-icon path{
-    stroke: var(--ashes);
+    fill: var(--ashes);
 }
 
     /* MESSAGES */
