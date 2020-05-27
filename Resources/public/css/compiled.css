@@ -2131,6 +2131,11 @@ a, a:hover, select, select:hover, option, option:hover, input, input:hover, labe
     -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/projet.svg');
 }
 
+.oocss-widget.client-contrat-edit .oocss-widget--head::before{
+    mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/edit.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/edit.svg');
+}
+
 .oocss-widget.posts-list .oocss-widget--head::before{
     mask-image: url('../../mesclicspost/images/icones/svg/post.svg');
     -webkit-mask-image: url('../../mesclicspost/images/icones/svg/post.svg');
