@@ -189,8 +189,8 @@
 }
 
 .oocss-widget.client-contrat-projets .oocss-widget--head::before{
-    mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
-    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
+    mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/projet.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/projet.svg');
 }
 
 .oocss-widget.posts-list .oocss-widget--head::before{
