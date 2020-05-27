@@ -134,28 +134,28 @@
 }
 
 .oocss-widget.clients-search .oocss-widget--head::before{
-        mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/search.svg');
-        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/search.svg');
+    mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/search.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/search.svg');
 }
 
 .oocss-widget.client-new .oocss-widget--head::before{
-        mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/new.svg');
-        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/new.svg');
+    mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/new.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/new.svg');
 }
 
 .oocss-widget.client-edit .oocss-widget--head::before{
-        mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/edit.svg');
-        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/edit.svg');
+    mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/edit.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/edit.svg');
 }
 
 .oocss-widget.clients-list .oocss-widget--head::before{
-        mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/client.svg');
-        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/client.svg');
+    mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/client.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/client.svg');
 }
 
 .oocss-widget.client-projets .oocss-widget--head::before{
-        mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
-        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
+    mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
 }
 
 .oocss-widget.client-projets-info .oocss-widget--head::before{
@@ -164,63 +164,63 @@
 }
 
 .oocss-widget.client-projets-new .oocss-widget--head::before{
-        mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/new.svg');
-        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/new.svg');
+    mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/new.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/new.svg');
 }
 
 .oocss-widget.client-projet-edit .oocss-widget--head::before{
-        mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/edit.svg');
-        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/edit.svg');
+    mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/edit.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/edit.svg');
 }
 
 .oocss-widget.client-contrats .oocss-widget--head::before{
-        mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/contrat.svg');
-        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/contrat.svg');
+    mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/contrat.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/contrat.svg');
 }
 
 .oocss-widget.client-contrats-info .oocss-widget--head::before{
-        mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/info.svg');
-        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/info.svg');
+    mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/info.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/info.svg');
 }
 
 .oocss-widget.client-contrats-new .oocss-widget--head::before{
-        mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/new.svg');
-        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/new.svg');
+    mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/new.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/new.svg');
 }
 
 .oocss-widget.client-contrat-projets .oocss-widget--head::before{
-        mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
-        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
+    mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
 }
 
 .oocss-widget.posts-list .oocss-widget--head::before{
-        mask-image: url('../../mesclicspost/images/icones/svg/post.svg');
-        -webkit-mask-image: url('../../mesclicspost/images/icones/svg/post.svg');
+    mask-image: url('../../mesclicspost/images/icones/svg/post.svg');
+    -webkit-mask-image: url('../../mesclicspost/images/icones/svg/post.svg');
 }
 
 .oocss-widget.posts-new .oocss-widget--head::before{
-        mask-image: url('../../mesclicspost/images/icones/svg/post-new.svg');
-        -webkit-mask-image: url('../../mesclicspost/images/icones/svg/post-new.svg');
+    mask-image: url('../../mesclicspost/images/icones/svg/post-new.svg');
+    -webkit-mask-image: url('../../mesclicspost/images/icones/svg/post-new.svg');
 }
 
 .oocss-widget.posts-edit .oocss-widget--head::before{
-        mask-image: url('../../mesclicspost/images/icones/svg/post-edit.svg');
-        -webkit-mask-image: url('../../mesclicspost/images/icones/svg/post-edit.svg');
+    mask-image: url('../../mesclicspost/images/icones/svg/post-edit.svg');
+    -webkit-mask-image: url('../../mesclicspost/images/icones/svg/post-edit.svg');
 }
 
 .oocss-widget.collections-new .oocss-widget--head::before{
-        mask-image: url('../../mesclicspost/images/icones/svg/collection-new.svg');
-        -webkit-mask-image: url('../../mesclicspost/images/icones/svg/collection-new.svg');
+    mask-image: url('../../mesclicspost/images/icones/svg/collection-new.svg');
+    -webkit-mask-image: url('../../mesclicspost/images/icones/svg/collection-new.svg');
 }
 
 .oocss-widget.collections-list .oocss-widget--head::before{
-        mask-image: url('../../mesclicspost/images/icones/svg/collection.svg');
-        -webkit-mask-image: url('../../mesclicspost/images/icones/svg/collection.svg');
+    mask-image: url('../../mesclicspost/images/icones/svg/collection.svg');
+    -webkit-mask-image: url('../../mesclicspost/images/icones/svg/collection.svg');
 }
 
 .oocss-widget.collections-edit .oocss-widget--head::before{
-        mask-image: url('../../mesclicspost/images/icones/svg/collection-edit.svg');
-        -webkit-mask-image: url('../../mesclicspost/images/icones/svg/collection-edit.svg');
+    mask-image: url('../../mesclicspost/images/icones/svg/collection-edit.svg');
+    -webkit-mask-image: url('../../mesclicspost/images/icones/svg/collection-edit.svg');
 }
 
 .oocss-widget.comment .oocss-widget--head::before{
