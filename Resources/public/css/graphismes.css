@@ -232,6 +232,19 @@
     mask-image: url('../../mesclicscomment/images/icones/comments.svg');
     -webkit-mask-image: url('../../mesclicscomment/images/icones/comments.svg');
 }
+
+.oocss-widget.unread-messages .oocss-widget--head::before{
+    mask-image: url('../../mesclicsmessages/images/icones/svg/unread.svg');
+    -webkit-mask-image: url('../../mesclicsmessages/images/icones/svg/unread.svg');
+}
+.oocss-widget.sent-messages .oocss-widget--head::before{
+    mask-image: url('../../mesclicsmessages/images/icones/svg/sent.svg');
+    -webkit-mask-image: url('../../mesclicsmessages/images/icones/svg/sent.svg');
+}
+.oocss-widget.new-message .oocss-widget--head::before{
+    mask-image: url('../../mesclicsmessages/images/icones/svg/new.svg');
+    -webkit-mask-image: url('../../mesclicsmessages/images/icones/svg/new.svg');
+}
 /***********************/
 
 /* OOCSS-BUTTON */
