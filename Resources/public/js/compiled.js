@@ -775,8 +775,6 @@ window.addEventListener("load", function(e){
             elt.classList.remove("oocss-widget-closed");
             elt.classList.add("oocss-widget-opened");
         }
-
-        console.log(elt);
     }
 
     widgets.forEach(function(widget){
@@ -790,8 +788,9 @@ window.addEventListener("load", function(e){
                         handleOpenClose(widget)
                     });
                     widgetHead.append(openClose);
-
-                    widget.classList.add("oocss-widget-opened");
+                    if(!widget.classList.contains("oocss-widget-closed")){
+                        widget.classList.add("oocss-widget-opened");
+                    }
 
                 }
         }
