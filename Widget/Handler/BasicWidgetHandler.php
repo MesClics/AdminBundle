@@ -8,6 +8,5 @@ use MesClics\UtilsBundle\Widget\Handler\WidgetHandler;
 
 class BasicWidgetHandler extends WidgetHandler{    
     public function handleRequest(Widget $widget, Request $request){
-        return $request;
     }
 }
