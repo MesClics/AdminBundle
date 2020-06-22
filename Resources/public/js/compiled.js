@@ -286,6 +286,49 @@ if(form && !hasBeenAnimated){
             messageAddClass(e);
     });
 };
+var messageWidget = document.querySelector(".oocss-widget.message");
+var messageButtons = document.querySelectorAll(".message-preview");
+if(messageButtons){
+    for (let messageButton of messageButtons) {
+        let url = messageButton.dataset.link;
+        messageButton.addEventListener("click", function(e){
+            let messageData = ajaxGet(url, previewMessage);
+        });
+    }
+}
+
+var previewMessage = function(jsonResponse){
+    if (jsonResponse) {
+        var message = JSON.parse(jsonResponse).results[0];
+        
+        var messageRow = document.querySelector('.message-' + message.id);
+
+
+        var title = messageWidget.querySelector(".oocss-widget--title");
+        var content = messageWidget.querySelector(".message--content");
+        var headers = messageWidget.querySelector(".message--headers");
+        var controls = messageWidget.querySelector(".message--controls");
+
+        var date = document.createElement('span');
+        let parsedDate = new Date(message.date.date).toLocaleString();
+        date.textContent = "le " + parsedDate;
+
+        var author = document.createElement('span');
+        author.textContent = ", par " + message.author;
+
+        var header = document.createElement('h3');
+        header.appendChild(date);
+        header.appendChild(author);
+
+        headers.innerHTML = null;
+        headers.appendChild(header);
+        title.textContent = message.title;
+        content.textContent = message.content;
+
+        messageRow.classList.remove("unread");
+        messageWidget.classList.remove("oocss-inactive");
+    }
+}
 var slideshows = document.querySelectorAll(".oocss-slideshow");
 
 for (let i = 0; i < slideshows.length; i++) {

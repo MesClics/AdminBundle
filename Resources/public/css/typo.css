@@ -137,7 +137,7 @@
 /* SECTIONS */
 /************/
 /***** MESSAGES *****/
-    .oocss-table-row.messages__s__unread{
+    .oocss-table-row.unread{
         font-weight: var(--font-weight-bold);
     }
 /********************/

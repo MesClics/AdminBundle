@@ -5,19 +5,6 @@
 }
 /***** MESSAGE *****/
     /* MESSAGE--HEADERS */
-    .message--headers{
-        padding-bottom: 3vh;
-        border-bottom: dotted 2px var(--ashes);
-    }
-        .message--headers__d__lateral{
-            border-color: var(--ashes);
-        }
-
-    .message--content__d__lateral{
-        background-color: var(--smoke);
-        color: var(--ashes);
-    }
-
     .message-controls--item{
         background-color: var(--smoke);
     }
@@ -123,128 +110,130 @@
     background-color: transparent !important;
 }
 
+/* ACTIONS */
 .oocss-widget.actions .oocss-widget--head::before{
     mask-image: url('../../mesclicsnavigation/images/svg/action.svg');
     -webkit-mask-image: url('../../mesclicsnavigation/images/svg/action.svg');
 }
 
+/* CLIENTS */
+.oocss-widget.client-contrats .oocss-widget--head::before{
+    mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/contrat.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/contrat.svg');
+}
+.oocss-widget.client-contrat-edit .oocss-widget--head::before{
+    mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/edit.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/edit.svg');
+}
+.oocss-widget.client-contrats-info .oocss-widget--head::before{
+    mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/info.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/info.svg');
+}
+.oocss-widget.client-contrats-new .oocss-widget--head::before{
+    mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/new.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/new.svg');
+}
+.oocss-widget.client-contrat-projets .oocss-widget--head::before{
+    mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/projet.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/projet.svg');
+}
+.oocss-widget.client-edit .oocss-widget--head::before{
+    mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/edit.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/edit.svg');
+}
 .oocss-widget.client-links .oocss-widget--head::before{
     mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/links.svg');
     -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/links.svg');
 }
-
+.oocss-widget.client-new .oocss-widget--head::before{
+    mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/new.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/new.svg');
+}
+.oocss-widget.clients-list .oocss-widget--head::before{
+    mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/client.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/client.svg');
+}
+.oocss-widget.client-projets .oocss-widget--head::before{
+    mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
+}
+.oocss-widget.client-projet-edit .oocss-widget--head::before{
+    mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/edit.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/edit.svg');
+}
+.oocss-widget.client-projets-info .oocss-widget--head::before{
+    mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/info.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/info.svg');
+}
+.oocss-widget.client-projets-new .oocss-widget--head::before{
+    mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/new.svg');
+    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/new.svg');
+}
 .oocss-widget.clients-search .oocss-widget--head::before{
     mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/search.svg');
     -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/search.svg');
 }
 
-.oocss-widget.client-new .oocss-widget--head::before{
-    mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/new.svg');
-    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/new.svg');
+/* COLLECTIONS */
+.oocss-widget.collections-edit .oocss-widget--head::before{
+    mask-image: url('../../mesclicspost/images/icones/svg/collection-edit.svg');
+    -webkit-mask-image: url('../../mesclicspost/images/icones/svg/collection-edit.svg');
 }
-
-.oocss-widget.client-edit .oocss-widget--head::before{
-    mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/edit.svg');
-    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/edit.svg');
+.oocss-widget.collections-list .oocss-widget--head::before{
+    mask-image: url('../../mesclicspost/images/icones/svg/collection.svg');
+    -webkit-mask-image: url('../../mesclicspost/images/icones/svg/collection.svg');
 }
-
-.oocss-widget.clients-list .oocss-widget--head::before{
-    mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/client.svg');
-    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/client.svg');
-}
-
-.oocss-widget.client-projets .oocss-widget--head::before{
-    mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
-    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/projet.svg');
-}
-
-.oocss-widget.client-projets-info .oocss-widget--head::before{
-    mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/info.svg');
-    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/info.svg');
-}
-
-.oocss-widget.client-projets-new .oocss-widget--head::before{
-    mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/new.svg');
-    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/new.svg');
-}
-
-.oocss-widget.client-projet-edit .oocss-widget--head::before{
-    mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/edit.svg');
-    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/projets/svg/edit.svg');
-}
-
-.oocss-widget.client-contrats .oocss-widget--head::before{
-    mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/contrat.svg');
-    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/contrat.svg');
-}
-
-.oocss-widget.client-contrats-info .oocss-widget--head::before{
-    mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/info.svg');
-    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/info.svg');
-}
-
-.oocss-widget.client-contrats-new .oocss-widget--head::before{
-    mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/new.svg');
-    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/new.svg');
-}
-
-.oocss-widget.client-contrat-projets .oocss-widget--head::before{
-    mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/projet.svg');
-    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/projet.svg');
-}
-
-.oocss-widget.client-contrat-edit .oocss-widget--head::before{
-    mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/edit.svg');
-    -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/contrats/svg/edit.svg');
-}
-
-.oocss-widget.posts-list .oocss-widget--head::before{
-    mask-image: url('../../mesclicspost/images/icones/svg/post.svg');
-    -webkit-mask-image: url('../../mesclicspost/images/icones/svg/post.svg');
-}
-
-.oocss-widget.posts-new .oocss-widget--head::before{
-    mask-image: url('../../mesclicspost/images/icones/svg/post-new.svg');
-    -webkit-mask-image: url('../../mesclicspost/images/icones/svg/post-new.svg');
-}
-
-.oocss-widget.posts-edit .oocss-widget--head::before{
-    mask-image: url('../../mesclicspost/images/icones/svg/post-edit.svg');
-    -webkit-mask-image: url('../../mesclicspost/images/icones/svg/post-edit.svg');
-}
-
 .oocss-widget.collections-new .oocss-widget--head::before{
     mask-image: url('../../mesclicspost/images/icones/svg/collection-new.svg');
     -webkit-mask-image: url('../../mesclicspost/images/icones/svg/collection-new.svg');
 }
 
-.oocss-widget.collections-list .oocss-widget--head::before{
-    mask-image: url('../../mesclicspost/images/icones/svg/collection.svg');
-    -webkit-mask-image: url('../../mesclicspost/images/icones/svg/collection.svg');
-}
-
-.oocss-widget.collections-edit .oocss-widget--head::before{
-    mask-image: url('../../mesclicspost/images/icones/svg/collection-edit.svg');
-    -webkit-mask-image: url('../../mesclicspost/images/icones/svg/collection-edit.svg');
-}
-
+/* COMMENTS */
 .oocss-widget.comment .oocss-widget--head::before{
     mask-image: url('../../mesclicscomment/images/icones/comments.svg');
     -webkit-mask-image: url('../../mesclicscomment/images/icones/comments.svg');
 }
 
-.oocss-widget.unread-messages .oocss-widget--head::before{
-    mask-image: url('../../mesclicsmessages/images/icones/svg/unread.svg');
-    -webkit-mask-image: url('../../mesclicsmessages/images/icones/svg/unread.svg');
+/* MESSAGES */
+.oocss-widget.message .oocss-widget--head::before{
+    mask-image: url('../../mesclicsmessages/images/icones/svg/inbox.svg');
+    -webkit-mask-image: url('../../mesclicsmessages/images/icones/svg/inbox.svg');
 }
-.oocss-widget.sent-messages .oocss-widget--head::before{
-    mask-image: url('../../mesclicsmessages/images/icones/svg/sent.svg');
-    -webkit-mask-image: url('../../mesclicsmessages/images/icones/svg/sent.svg');
+.oocss-widget.messages .oocss-widget--head::before{
+    mask-image: url('../../mesclicsmessages/images/icones/svg/message.svg');
+    -webkit-mask-image: url('../../mesclicsmessages/images/icones/svg/message.svg');
+}
+.oocss-widget.draft-messages .oocss-widget--head::before{
+    mask-image: url('../../mesclicsmessages/images/icones/svg/draft.svg');
+    -webkit-mask-image: url('../../mesclicsmessages/images/icones/svg/draft.svg');
 }
 .oocss-widget.new-message .oocss-widget--head::before{
     mask-image: url('../../mesclicsmessages/images/icones/svg/new.svg');
     -webkit-mask-image: url('../../mesclicsmessages/images/icones/svg/new.svg');
 }
+.oocss-widget.sent-messages .oocss-widget--head::before{
+    mask-image: url('../../mesclicsmessages/images/icones/svg/sent.svg');
+    -webkit-mask-image: url('../../mesclicsmessages/images/icones/svg/sent.svg');
+}
+.oocss-widget.unread-messages .oocss-widget--head::before{
+    mask-image: url('../../mesclicsmessages/images/icones/svg/unread.svg');
+    -webkit-mask-image: url('../../mesclicsmessages/images/icones/svg/unread.svg');
+}
+
+/* POSTS */
+.oocss-widget.posts-edit .oocss-widget--head::before{
+    mask-image: url('../../mesclicspost/images/icones/svg/post-edit.svg');
+    -webkit-mask-image: url('../../mesclicspost/images/icones/svg/post-edit.svg');
+}
+.oocss-widget.posts-list .oocss-widget--head::before{
+    mask-image: url('../../mesclicspost/images/icones/svg/post.svg');
+    -webkit-mask-image: url('../../mesclicspost/images/icones/svg/post.svg');
+}
+.oocss-widget.posts-new .oocss-widget--head::before{
+    mask-image: url('../../mesclicspost/images/icones/svg/post-new.svg');
+    -webkit-mask-image: url('../../mesclicspost/images/icones/svg/post-new.svg');
+}
+
 /***********************/
 
 /* OOCSS-BUTTON */
@@ -279,7 +268,9 @@
     
     /* CLIENTS */
     .oocss-widget:not(.oocss-discret) .oocss-headed-block.client-remove:before{
-        background-image: url('../../mesclicsespaceclient/images/icones/clients/svg/grey/remove.svg');
+        mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/grey/remove.svg');
+        -webkit-mask-image: url('../../mesclicsespaceclient/images/icones/clients/svg/grey/remove.svg');
+        background-color: var(--grey);
     }
     .oocss-headed-block.client-contrats:before{
         background-image: url('../../mesclicsespaceclient/images/icones/contrats/white/contrat.png');
@@ -330,19 +321,29 @@
 
     /* MESSAGES */
     .oocss-headed-block.messages-all:before{
-            background-image: url('../../mesclicsmessages/images/icones/white/lus.png');
+        mask-image: url('../../mesclicsmessages/images/icones/svg/message.svg');
+        -webkit-mask-image: url('../../mesclicsmessages/images/icones/svg/message.svg');
+        background-color: var(--smoke);
     }
     .oocss-headed-block.messages-draft:before{
-        background-image: url('../../mesclicsmessages/images/icones/white/non-lus.png');
+        mask-image: url('../../mesclicsmessages/images/icones/svg/draft.svg');        
+        -webkit-mask-image: url('../../mesclicsmessages/images/icones/svg/draft.svg');
+        background-color: var(--smoke);
     }
     .oocss-headed-block.message-new:before{
-        background-image: url('../../mesclicsmessages/images/icones/white/new.png');
+        mask-image: url('../../mesclicsmessages/images/icones/svg/new.svg');        
+        -webkit-mask-image: url('../../mesclicsmessages/images/icones/svg/new.svg');
+        background-color: var(--smoke);
     }
     .oocss-headed-block.messages-sent:before{
-        background-image: url('../../mesclicsmessages/images/icones/white/envoyes.png');
+        mask-image: url('../../mesclicsmessages/images/icones/svg/sent.svg');        
+        -webkit-mask-image: url('../../mesclicsmessages/images/icones/svg/sent.svg');
+        background-color: var(--smoke);
     }
     .oocss-headed-block.messages-unread:before{
-        background-image: url('../../mesclicsmessages/images/icones/white/messages.png');
+        mask-image: url('../../mesclicsmessages/images/icones/svg/unread.svg');        
+        -webkit-mask-image: url('../../mesclicsmessages/images/icones/svg/unread.svg');
+        background-color: var(--smoke);
     }
     
     /* POSTS */
@@ -376,7 +377,7 @@
 }
 
     /* MESSAGES */
-    .oocss-table-row.messages__s__unread .oocss-table-data{
+    .oocss-table-row.unread .oocss-table-data{
         color: var(--red);
     }
 
