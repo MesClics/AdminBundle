@@ -13,6 +13,10 @@ mesclics_admin_user_import:
     prefix: users
 
 # MESSAGES
+mesclics_admin_api_message_import:
+    resource: "@MesClicsMessagesBundle/Resources/config/routing-api.yml"
+    prefix: api/messages
+
 mesclics_admin_message_import:
     resource: "@MesClicsMessagesBundle/Resources/config/routing.yml"
     prefix: messages
