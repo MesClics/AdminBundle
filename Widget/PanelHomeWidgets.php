@@ -29,16 +29,12 @@ class PanelHomeWidgets extends WidgetsContainer{
         $this->addWidget(new UnreadMessagesWidget($params['user'], $this->basic_handler));
         $unread_messages_widget = $this->getWidget('unread_messages');
         $unread_messages_widget
-            ->addClasses(['unread-messages', 'small']);
+            ->addClasses(['unread-messages', 'small', 'highlight']);
             
             if(sizeof($unread_messages_widget->getMessages()) > 1){
                 $unread_messages_widget->setTitle($unread_messages_widget->countMessages() . ' messages non lus');
             } else{
                 $unread_messages_widget->setTitle($unread_messages_widget->countMessages() . ' message non lu');
             };
-
-        if(sizeof($unread_messages_widget->getMessages()) > 0){
-            $unread_messages_widget->addClass('highlight');
-        }
     }
 }
